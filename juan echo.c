@@ -70,21 +70,19 @@ int main(void) {
 			}
 			GpioDataRegs.GPADAT.bit.GPIO0 = 0;
 
-			int p = (0.3 * 3000); //seconds and sampling rate
-			int x = (iterator - p);
-			int g = ((iterator - p) - x);
-			int y = (1-0.6)*Buffer1[i] + 0.6Buffer1[g];
-			
-												 
 			if (interruptTimerFlag) {
-				digitalToAnalogConverter_send(Buffer1[j]+ 0x7FFF);
-				j++;
-				interruptTimerFlag = 0;
-				if (j >= endLoop) {
-					j = 0;
+
+				int p = (0.3 * 3000); //seconds and sampling rate
+				int x = (j - p);
+				if ( x < 0 ){
+					x += endLoop;
 				}
 
-		}
+				int y = (1-0.4)*Buffer1[j] + 0.4*Buffer1[x];
+
+				digitalToAnalogConverter_send(y + 0x7FFF);
+				j++;
+				}
 		}
 
 		return 0;
