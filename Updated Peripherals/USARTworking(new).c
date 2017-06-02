@@ -7,13 +7,10 @@
 /**********************************USART**************************************/
 void USARTenable(){
 
-  __interrupt void inCharISR();
-
-  void interruptInit();
-  void timerInit();
-  void outChar(char c);
-  void outWord(char* word);
-  void startUSART();
+  //__interrupt void inCharISR();
+  interruptInit();
+  timerInit();
+  startUSART();
 
 }
 
