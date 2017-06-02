@@ -5,10 +5,6 @@
  *      Author: Ish's Master Race PC
  */
 
-<<<<<<< HEAD
-=======
-//henlo
->>>>>>> james_1
 
 #include <DSP28x_Project.h>
 #include "OneToOneI2CDriver.h"
@@ -47,8 +43,8 @@ volatile Uint32 pong_1[BUFFER_SIZE] = {0};
 volatile Uint16 ping_2[BUFFER_SIZE] = {0};
 volatile Uint16 pong_2[BUFFER_SIZE] = {0};
 volatile Uint32 * pingData = ping_1;
-volatile Uint32 * pingCalc = ping_2;
-volatile Uint32 * pongData = pong_1;
+volatile Uint32 * pingCalc = pong_1;
+volatile Uint32 * pongData = ping_2;
 volatile Uint32 * pongCalc = pong_2;
 
 volatile Uint32 garbage= 0x7BADB015;
@@ -173,14 +169,14 @@ void Init_DMA(void)
     DMACH1ModeConfig( DMA_TINT1, 1, 0, 1, 0, 0, 0, 0, 0, 0 );
 
     //setup DMA2 (triggered on McBSPB RRDY flag)
-    DMACH2AddrConfig( (volatile Uint16*) &pingData[0] + 1 , (volatile Uint16*) &McbspbRegs.DRR2.all );
+    DMACH2AddrConfig( (volatile Uint16*) &pong_1[0] + 1 , (volatile Uint16*) &McbspbRegs.DRR2);
     DMACH2BurstConfig( 1, 1, -1 ); //send 2 words per burst, increment source address, decrement destination address by 1 (32 bits little endian)
     DMACH2TransferConfig( BUFFER_SIZE - 1, 0, 3 );  //get N = BUFFER_SIZE ADC values, wrap to same McBSP values, increment Destination by 3
     DMACH2WrapConfig( 0, 0, BUFFER_SIZE - 1, 0 );
     DMACH2ModeConfig(DMA_MREVTB, 1, 0, 1, 0, 0, 0, 0, 1, 1 );
 
     //setup DMA3 (triggered on Timer1 overflow)
-    DMACH3AddrConfig( (volatile Uint16*) &McbspaRegs.DXR1 , (volatile Uint16*) &pingCalc[0] );
+    DMACH3AddrConfig( (volatile Uint16*) &McbspaRegs.DXR1, (volatile Uint16*) &pong_2[0] );
     DMACH3BurstConfig( 0, 0, 0 );
     DMACH3TransferConfig( BUFFER_SIZE - 1, 1, 0 );
     DMACH3WrapConfig( 0xFFFF, 0, 0, 0 );
