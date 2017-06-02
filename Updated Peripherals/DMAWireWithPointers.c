@@ -42,8 +42,12 @@ volatile Uint32 ping_1[BUFFER_SIZE] = {0};
 volatile Uint32 pong_1[BUFFER_SIZE] = {0};
 volatile Uint16 ping_2[BUFFER_SIZE] = {0};
 volatile Uint16 pong_2[BUFFER_SIZE] = {0};
+volatile Uint32 * pingData = ping_1;
+volatile Uint32 * pingCalc = ping_2;
+volatile Uint32 * pongData = pong_1;
+volatile Uint32 * pongCalc = pong_2;
+
 volatile Uint32 garbage= 0x7BADB015;
-volatile Uint16 program_state = 0;
 volatile Uint16 ready = 0;
 volatile Uint16 count = 0;
 
@@ -75,18 +79,17 @@ interrupt void DMA_CH2(void)
     while(ready)
     {
 
-        if(program_state == 0)
-        {
-            DMACH2AddrConfig( (volatile Uint16*) &ping_1[0] + 1 , (volatile Uint16*) &McbspbRegs.DRR2.all );
-            DMACH3AddrConfig( (volatile Uint16*) &McbspaRegs.DXR1 , (volatile Uint16*) &ping_2[0] );
-        }
-        else if(program_state == 1)
-        {
-            DMACH2AddrConfig( (volatile Uint16*) &pong_1[0] + 1 , (volatile Uint16*) &McbspbRegs.DRR2.all );
-            DMACH3AddrConfig( (volatile Uint16*) &McbspaRegs.DXR1 , (volatile Uint16*) &pong_2[0] );
-        }
+    		//Switch pointers
+		Uint32* temp = pingData;
+		pingData = pingCalc;
+		pingCalc = temp;
+		temp = pongData;
+		pongData = pongCalc;
+		pongCalc = temp;
 
-        program_state ^= 1;
+		//Reassign src/address
+		DMACH2AddrConfig( (volatile Uint16*) &pingData[0] + 1 , (volatile Uint16*) &McbspbRegs.DRR2.all );
+		DMACH3AddrConfig( (volatile Uint16*) &McbspaRegs.DXR1 , (volatile Uint16*) &pingCalc[0] );
 
         EALLOW;
         GpioDataRegs.GPADAT.bit.GPIO1 ^= 1;
@@ -116,27 +119,13 @@ int main(void)
         {
             GpioDataRegs.GPADAT.bit.GPIO3 ^= 1;
 
-            if(program_state == 0)
-            {
+			for(int i = 0; i < BUFFER_SIZE; i++)
+			{
+				pingCalc[i] = (Uint16) ((pingData[i] >> 2) & 0xFFFF);
+			}
 
-                for(int i = 0; i < BUFFER_SIZE; i++)
-                {
-                    ping_2[i] = (Uint16) ((ping_1[i] >> 2) & 0xFFFF);
-                }
-
-            }
-            else if(program_state == 1)
-            {
-
-                for(int i = 0; i < BUFFER_SIZE; i++)
-                {
-                   pong_2[i] = (Uint16) ((pong_1[i] >> 2) & 0xFFFF);
-                }
-
-            }
-
-           ready = 1;
-           GpioDataRegs.GPADAT.bit.GPIO3 ^= 1;
+			ready = 1;
+            GpioDataRegs.GPADAT.bit.GPIO3 ^= 1;
         }
 
 
@@ -180,14 +169,14 @@ void Init_DMA(void)
     DMACH1ModeConfig( DMA_TINT1, 1, 0, 1, 0, 0, 0, 0, 0, 0 );
 
     //setup DMA2 (triggered on McBSPB RRDY flag)
-    DMACH2AddrConfig( (volatile Uint16*) &pong_1[0] + 1 , (volatile Uint16*) &McbspbRegs.DRR2);
+    DMACH2AddrConfig( (volatile Uint16*) &pingData[0] + 1 , (volatile Uint16*) &McbspbRegs.DRR2.all );
     DMACH2BurstConfig( 1, 1, -1 ); //send 2 words per burst, increment source address, decrement destination address by 1 (32 bits little endian)
     DMACH2TransferConfig( BUFFER_SIZE - 1, 0, 3 );  //get N = BUFFER_SIZE ADC values, wrap to same McBSP values, increment Destination by 3
     DMACH2WrapConfig( 0, 0, BUFFER_SIZE - 1, 0 );
     DMACH2ModeConfig(DMA_MREVTB, 1, 0, 1, 0, 0, 0, 0, 1, 1 );
 
     //setup DMA3 (triggered on Timer1 overflow)
-    DMACH3AddrConfig( (volatile Uint16*) &McbspaRegs.DXR1, (volatile Uint16*) &pong_2[0] );
+    DMACH3AddrConfig( (volatile Uint16*) &McbspaRegs.DXR1 , (volatile Uint16*) &pingCalc[0] );
     DMACH3BurstConfig( 0, 0, 0 );
     DMACH3TransferConfig( BUFFER_SIZE - 1, 1, 0 );
     DMACH3WrapConfig( 0xFFFF, 0, 0, 0 );
