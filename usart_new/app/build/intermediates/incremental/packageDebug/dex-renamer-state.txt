@@ -1,0 +1,7 @@
+#Thu Jun 01 12:03:40 EDT 2017
+base.0=/Users/jamessafko/Documents/Android_Studio/usart_new/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_4bc6b6ece4707435c6ec2555e0d8ab6c7023fab6
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/jamessafko/Documents/Android_Studio/usart_new/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_684a8a7bb08607ad873627accf0db6b0ec8b086e/classes.dex
+base.1=/Users/jamessafko/Documents/Android_Studio/usart_new/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_684a8a7bb08607ad873627accf0db6b0ec8b086e
+file.0=/Users/jamessafko/Documents/Android_Studio/usart_new/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_4bc6b6ece4707435c6ec2555e0d8ab6c7023fab6/classes.dex
