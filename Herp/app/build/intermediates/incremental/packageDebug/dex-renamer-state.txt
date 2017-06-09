@@ -1,0 +1,7 @@
+#Thu Jun 08 13:27:05 EDT 2017
+base.0=/Users/jamessafko/Documents/workspace2/WildcardAudio/Herp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_344c2c3b1e3075bc1ce26e300965fae0c70ae38f
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/jamessafko/Documents/workspace2/WildcardAudio/Herp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_1fb3956990122f635706f7696dbf5f7cf55d8d4d/classes.dex
+base.1=/Users/jamessafko/Documents/workspace2/WildcardAudio/Herp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_1fb3956990122f635706f7696dbf5f7cf55d8d4d
+file.0=/Users/jamessafko/Documents/workspace2/WildcardAudio/Herp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_344c2c3b1e3075bc1ce26e300965fae0c70ae38f/classes.dex

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Herp/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
+        "source": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Herp/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Herp/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher_round.png",
+        "source": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Herp/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    }
+]
