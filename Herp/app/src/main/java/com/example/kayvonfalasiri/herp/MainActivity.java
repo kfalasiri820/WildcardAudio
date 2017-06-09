@@ -3,6 +3,7 @@ package com.example.kayvonfalasiri.herp;
 
 import android.hardware.usb.UsbAccessory;
 import android.hardware.usb.UsbDeviceConnection;
+import android.hardware.usb.UsbEndpoint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Activity;
@@ -32,37 +33,37 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MyActivity";
-    private TextView myText = null;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final byte outBuffer[] = {0b01010101, 0b00001111, 0b01111110, 0b00110011};
+        final byte src[] = {0b01010101, 0b00001111, 0b01111110, 0b00110011};
 
 
-        LinearLayout lView = new LinearLayout(this);
+        final TextView myText = (TextView) findViewById(R.id.herp);
 
-        myText = new TextView(this);
         myText.append("My Text\n");
 
-        lView.addView(myText);
 
 
-        //final Button button = (Button) findViewById(R.id.button);
-
-        Button button = new Button(this);
-        button.setText("serial");
+        final Button button = (Button) findViewById(R.id.button);
+//
+//        Button button = new Button(this);
+//        button.setText("serial");
 
 //        button.setOnClickListener(new View.OnClickListener() {
 //            public void onClick(View v) {
 //                Log.d(TAG, "button works?");
 //            }
 //        });
-
-        lView.addView(button);
-
-        setContentView(lView);
+//
+//        lView.addView(button);
+//
+//        setContentView(lView);
 
 
 
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         UsbDeviceConnection connection = manager.openDevice(driver.getDevice());
         if (connection == null) {
             Log.d(TAG, "chosen juan 3");
-            myText.setText(" null connection");
+            myText.append(" null connection");
             return;
 
             // You probably need to call UsbManager.requestPermission(driver.getDevice(), ..)
@@ -102,21 +103,16 @@ public class MainActivity extends AppCompatActivity {
             myText.append("connected, port open in try\n");
 
         } catch (IOException e) {
-            myText.append(" caught an error in port open");
+            myText.append(" caught an error in port open\n");
             e.printStackTrace();
-
-
-
         }
 
 //        button.setOnClickListener(new View.OnClickListener() {
 //            public void onClick(View v) {
-//                myText.append(" we pressed a button\n");
-//                //Log.d(TAG, "button works?");
+                myText.append(" we pressed a button\n");
                 try{
                     myText.append(" before wrote stuff\n");
-                    int numBytesWritten = port.write(outBuffer, 1000);
-                    Log.d(TAG, "Wrote " + numBytesWritten + " bytes.");
+                    port.write(src, 1000);
                     myText.append(" after wrote stuff\n");
                 }catch (IOException e) {
                     e.printStackTrace();
@@ -132,8 +128,17 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        private void writetoserial()
-        {
-
-        }
+//        public void buttonPressed(View view){
+//            //Log.d(TAG, "button works?");
+//            try{
+//                myText.append(" we pressed a button\n");
+//                myText.append(" before wrote stuff\n");
+//                int numBytesWritten = port.write(outBuffer, 1000);
+//                Log.d(TAG, "Wrote " + numBytesWritten + " bytes.");
+//                myText.append(" after wrote stuff\n");
+//            }catch (IOException e) {
+//                e.printStackTrace();
+//                myText.append(" crashed bitch");
+//            }
+//        }
     }

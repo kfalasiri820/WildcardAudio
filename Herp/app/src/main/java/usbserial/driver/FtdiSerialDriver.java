@@ -345,6 +345,10 @@ public class FtdiSerialDriver implements UsbSerialDriver {
                         writeBuffer = mWriteBuffer;
                     }
 
+                    if(endpoint == null)
+                        Log.d(TAG, "endpoint NULL");
+                    if(writeBuffer == null)
+                        Log.d(TAG, "write buffer NULL");
                     amtWritten = mConnection.bulkTransfer(endpoint, writeBuffer, writeLength,
                             timeoutMillis);
                 }
