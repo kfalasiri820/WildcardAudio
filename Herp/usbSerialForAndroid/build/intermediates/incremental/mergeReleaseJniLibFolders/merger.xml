@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/jamessafko/Documents/workspace2/WildcardAudio/Herp/usbSerialForAndroid/src/main/jniLibs"/></dataSet><dataSet config="release"><source path="/Users/jamessafko/Documents/workspace2/WildcardAudio/Herp/usbSerialForAndroid/src/release/jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/kayvonfalasiri/Desktop/wildcard/Herp/usbSerialForAndroid/src/main/jniLibs"/></dataSet><dataSet config="release"><source path="/Users/kayvonfalasiri/Desktop/wildcard/Herp/usbSerialForAndroid/src/release/jniLibs"/></dataSet></merger>
