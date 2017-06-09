@@ -4,8 +4,16 @@
         "source": "/Users/jamessafko/.android/build-cache/1cc82cd5b1db354e4da3c8ed2a6c85412e996388/output/res/color/abc_secondary_text_material_light.xml"
     },
     {
+        "merged": "/Users/kayvonfalasiri/Desktop/wildcard/Herp/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
+        "source": "/Users/kayvonfalasiri/.android/build-cache/f65e6ea4465729ca4c5ebb6058a093d03283f9fc/output/res/color/switch_thumb_material_dark.xml"
+    },
+    {
         "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Herp/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
         "source": "/Users/jamessafko/.android/build-cache/1cc82cd5b1db354e4da3c8ed2a6c85412e996388/output/res/color/abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/kayvonfalasiri/Desktop/wildcard/Herp/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
+        "source": "/Users/kayvonfalasiri/.android/build-cache/f65e6ea4465729ca4c5ebb6058a093d03283f9fc/output/res/color/abc_primary_text_material_light.xml"
     },
     {
         "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Herp/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
@@ -16,8 +24,32 @@
         "source": "/Users/jamessafko/.android/build-cache/1cc82cd5b1db354e4da3c8ed2a6c85412e996388/output/res/color/abc_primary_text_material_light.xml"
     },
     {
+        "merged": "/Users/kayvonfalasiri/Desktop/wildcard/Herp/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
+        "source": "/Users/kayvonfalasiri/.android/build-cache/f65e6ea4465729ca4c5ebb6058a093d03283f9fc/output/res/color/abc_secondary_text_material_dark.xml"
+    },
+    {
         "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Herp/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
         "source": "/Users/jamessafko/.android/build-cache/1cc82cd5b1db354e4da3c8ed2a6c85412e996388/output/res/color/abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "/Users/kayvonfalasiri/Desktop/wildcard/Herp/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
+        "source": "/Users/kayvonfalasiri/.android/build-cache/f65e6ea4465729ca4c5ebb6058a093d03283f9fc/output/res/color/abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "/Users/kayvonfalasiri/Desktop/wildcard/Herp/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
+        "source": "/Users/kayvonfalasiri/.android/build-cache/f65e6ea4465729ca4c5ebb6058a093d03283f9fc/output/res/color/abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "/Users/kayvonfalasiri/Desktop/wildcard/Herp/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
+        "source": "/Users/kayvonfalasiri/.android/build-cache/f65e6ea4465729ca4c5ebb6058a093d03283f9fc/output/res/color/switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "/Users/kayvonfalasiri/Desktop/wildcard/Herp/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
+        "source": "/Users/kayvonfalasiri/.android/build-cache/f65e6ea4465729ca4c5ebb6058a093d03283f9fc/output/res/color/abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/kayvonfalasiri/Desktop/wildcard/Herp/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
+        "source": "/Users/kayvonfalasiri/.android/build-cache/f65e6ea4465729ca4c5ebb6058a093d03283f9fc/output/res/color/abc_hint_foreground_material_light.xml"
     },
     {
         "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Herp/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
@@ -30,6 +62,18 @@
     {
         "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Herp/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
         "source": "/Users/jamessafko/.android/build-cache/1cc82cd5b1db354e4da3c8ed2a6c85412e996388/output/res/color/switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "/Users/kayvonfalasiri/Desktop/wildcard/Herp/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
+        "source": "/Users/kayvonfalasiri/.android/build-cache/f65e6ea4465729ca4c5ebb6058a093d03283f9fc/output/res/color/abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "/Users/kayvonfalasiri/Desktop/wildcard/Herp/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
+        "source": "/Users/kayvonfalasiri/.android/build-cache/f65e6ea4465729ca4c5ebb6058a093d03283f9fc/output/res/color/abc_search_url_text.xml"
+    },
+    {
+        "merged": "/Users/kayvonfalasiri/Desktop/wildcard/Herp/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
+        "source": "/Users/kayvonfalasiri/.android/build-cache/f65e6ea4465729ca4c5ebb6058a093d03283f9fc/output/res/color/abc_secondary_text_material_light.xml"
     },
     {
         "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Herp/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
