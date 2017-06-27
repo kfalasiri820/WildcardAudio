@@ -1,0 +1,7 @@
+#Fri Jun 09 11:46:22 EDT 2017
+base.0=/Users/kayvonfalasiri/Desktop/wildcard/Herp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_af6128e875e0aa9bfa15f8d15cb437955881730d
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/kayvonfalasiri/Desktop/wildcard/Herp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_cdc76e47ff0d5bbfb8c8b4dcda1f9b31d5a7c5ab/classes.dex
+base.1=/Users/kayvonfalasiri/Desktop/wildcard/Herp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_cdc76e47ff0d5bbfb8c8b4dcda1f9b31d5a7c5ab
+file.0=/Users/kayvonfalasiri/Desktop/wildcard/Herp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_af6128e875e0aa9bfa15f8d15cb437955881730d/classes.dex
