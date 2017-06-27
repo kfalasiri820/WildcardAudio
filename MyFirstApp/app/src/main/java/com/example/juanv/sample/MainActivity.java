@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.TextView;
 
 import java.io.IOException;
 import java.util.List;
@@ -25,20 +26,21 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     public UsbSerialPort port = null;
     private SeekBar volumeSeekbar = null;
-    private AudioManager audioManager = null;
+    TextView myText;
     //final byte outBuffer[] = {};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        initControls();
+
+        myText = (TextView) findViewById(R.id.textView5);
 
         UsbManager manager = (UsbManager) getSystemService(Context.USB_SERVICE);
         List<UsbSerialDriver> availableDrivers = UsbSerialProber.getDefaultProber().findAllDrivers(manager);
         if (availableDrivers.isEmpty()) {
             Log.d(TAG, "chosen juan 2");
-            //myText.append(" driver empty\n");
+            myText.setText(" driver empty\n");
             return;
 
         }
@@ -47,8 +49,7 @@ public class MainActivity extends AppCompatActivity {
         UsbSerialDriver driver = availableDrivers.get(0);
         UsbDeviceConnection connection = manager.openDevice(driver.getDevice());
         if (connection == null) {
-            Log.d(TAG, "chosen juan 3");
-            //myText.setText(" null connection");
+            myText.setText(" null connection");
             return;
 
             // You probably need to call UsbManager.requestPermission(driver.getDevice(), ..)
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         // Read some data! Most have just one port (port 0).
         port = driver.getPorts().get(0);
         //Log.d(TAG, "chosen juan 4");
-        //myText.append(" connected before try\n");
+        myText.setText(" connected before try\n");
 
         try {
             port.open(connection);
@@ -67,10 +68,10 @@ public class MainActivity extends AppCompatActivity {
             //            int numBytesRead = port.read(buffer, 1000);
             //            Log.d(TAG, "Read " + numBytesRead + " bytes.");
             //            Log.d(TAG, "chosen juan 5");
-            //myText.append("connected, port open in try\n");
+            myText.append("connected, port open in try\n");
 
         } catch (IOException e) {
-            //myText.append(" caught an error in port open");
+            myText.append(" caught an error in port open");
             e.printStackTrace();
 
 
@@ -84,8 +85,8 @@ public class MainActivity extends AppCompatActivity {
             final MediaPlayer mPlayer = MediaPlayer.create(MainActivity.this, R.raw.redbone);
             public void onClick(View v) {
 
-                byte outBuffer[] = {0b01001011};
-                sendserial(port, outBuffer);
+                byte btn1[] = {0b01001011};
+                sendserial(port, btn1);
 
 //                if(mPlayer.isPlaying())
 //                {
@@ -103,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
             final MediaPlayer mPlayer = MediaPlayer.create(MainActivity.this, R.raw.redboneecho);
             public void onClick(View v) {
 
-                byte outBuffer[] = {0b01001011};
-                sendserial(port, outBuffer);
+                byte btn2[] = {0b01001011};
+                sendserial(port, btn2);
 
 //                if(mPlayer.isPlaying())
 //                {
@@ -122,8 +123,8 @@ public class MainActivity extends AppCompatActivity {
             final MediaPlayer mPlayer = MediaPlayer.create(MainActivity.this, R.raw.redbonewah);
             public void onClick(View v) {
 
-                byte outBuffer[] = {0b01001011};
-                sendserial(port, outBuffer);
+                byte btn3[] = {0b01001011};
+                sendserial(port, btn3);
 
 
 //                if(mPlayer.isPlaying())
@@ -142,8 +143,8 @@ public class MainActivity extends AppCompatActivity {
             final MediaPlayer mPlayer = MediaPlayer.create(MainActivity.this, R.raw.redbonephasor);
             public void onClick(View v) {
 
-                byte outBuffer[] = {0b01001011};
-                sendserial(port, outBuffer);
+                byte btn4[] = {0b01001011};
+                sendserial(port, btn4);
 
 //                if(mPlayer.isPlaying())
 //                {
@@ -162,8 +163,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                byte outBuffer[] = {0b01001011};
-                sendserial(port, outBuffer);
+                byte btn5[] = {0b01001011};
+                sendserial(port, btn5);
 
 //                if(mPlayer.isPlaying())
 //                {
@@ -182,8 +183,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                byte outBuffer[] = {0b01001011};
-                sendserial(port, outBuffer);
+                byte btn6[] = {0b01001011};
+                sendserial(port, btn6);
 
 
 //                if(mPlayer.isPlaying())
@@ -196,15 +197,17 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+        initControls(port);
     }
 
     public void sendserial(UsbSerialPort port, byte outBuffer[]){
 //            myText.append("button pressed2\n");
         try{
-            //myText.append(" before wrote stuff\n");
+            myText.append(" before wrote stuff\n");
             int numBytesWritten = port.write(outBuffer, 1000);
             //Log.d(TAG, "Wrote " + numBytesWritten + " bytes.");
-            //myText.append(" after wrote stuff\n");
+            myText.append(" after wrote stuff\n");
         }catch (IOException e) {
             e.printStackTrace();
             //myText.append(" crashed bitch\n");
@@ -219,44 +222,66 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    private void initControls()
-//    {
-//        try
-//        {
-//            volumeSeekbar = (SeekBar)findViewById(R.id.volume);
-//            audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-//            volumeSeekbar.setMax(audioManager
-//                    .getStreamMaxVolume(AudioManager.STREAM_MUSIC));
-//            volumeSeekbar.setProgress(audioManager
-//                    .getStreamVolume(AudioManager.STREAM_MUSIC));
-//
-//
-//            volumeSeekbar.setOnSeekBarChangeListener(new OnSeekBarChangeListener()
-//            {
-//                @Override
-//                public void onStopTrackingTouch(SeekBar arg0)
-//                {
-//                }
-//
-//                @Override
-//                public void onStartTrackingTouch(SeekBar arg0)
-//                {
-//                }
-//
-//                @Override
-//                public void onProgressChanged(SeekBar arg0, int progress, boolean arg2)
-//                {
-//                    audioManager.setStreamVolume(AudioManager.STREAM_MUSIC,
-//                            progress, 0);
-//                    //byte Progress = volumeSeekbar.getProgess();
-//                }
-//            });
-//        }
-//        catch (Exception e)
-//        {
-//            e.printStackTrace();
-//        }
-//    }
+    private void initControls(final UsbSerialPort port)
+    {
+        try
+        {
+            volumeSeekbar = (SeekBar)findViewById(R.id.volume);
+            volumeSeekbar.setMax(100);
+
+            volumeSeekbar.setOnSeekBarChangeListener(new OnSeekBarChangeListener()
+            {
+                @Override
+                public void onStopTrackingTouch(SeekBar arg0)
+                {
+//                    byte value = (byte) volumeSeekbar.getProgress();
+                    //byte outBuffer[] = new byte[5];
+//                    byte outBuffer[] = {0b01001011};
+//                    sendserial(port, outBuffer);
+                    //myText.setText(outBuffer[0]);
+                    //myText.append(" end of method volume change");
+                }
+
+                @Override
+                public void onStartTrackingTouch(SeekBar arg0)
+                {
+                }
+
+                @Override
+                public void onProgressChanged(SeekBar arg0, int progress, boolean arg2)
+                {
+                    myText.setText(String.valueOf(progress));
+//                    byte v = valueOf(progress);
+                    //int value = volumeSeekbar.getProgress();
+                    //myText.setText("value of" + value);
+                    //byte v = volumeSeekbar.valueOf(progress);
+//                    byte send = (byte) value;
+//                    byte outBuffer[] = {send};
+                    byte value = (byte) (volumeSeekbar.getProgress() & 0xff);
+                    byte outBuffer[] = {value};
+                    sendserial(port, outBuffer);
+
+                }
+//                byte value = (byte) volumeSeekbar.getProgress();
+//                byte outBuffer[] = {};
+//                outBuffer[0] = value;
+//                myText.setText(outBuffer[0]);
+//                myText.append(" end of method volume change");
+//                sendserial(port, outBuffer);
+            });
+
+//            byte value = (byte) volumeSeekbar.getProgress();
+//            byte outBuffer[] = {};
+//            outBuffer[0] = value;
+//            myText.setText(outBuffer[0]);
+//            myText.append(" end of method volume change");
+//            sendserial(port, outBuffer);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
 
 }
 
