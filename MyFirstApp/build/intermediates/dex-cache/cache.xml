@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/jamessafko/Documents/workspace2/WildcardAudio/MyFirstApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b73fddb10194383f93f90548f283cd7485dbea22">
+        <dex dex="/Users/jamessafko/Documents/workspace2/WildcardAudio/MyFirstApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_2950d9ff5f5261c671b189086d76bc03488ab63f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jamessafko/Documents/workspace2/WildcardAudio/MyFirstApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/jamessafko/Documents/workspace2/WildcardAudio/MyFirstApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_c215528562f8a1520e1a647d75a5d47e7eb0d48d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/jamessafko/.gradle/caches/modules-2/files-2.1/org.jdom/jdom2/2.0.6/6f14738ec2e9dd0011e343717fa624a10f8aab64/jdom2-2.0.6.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6f14738ec2e9dd0011e343717fa624a10f8aab64">
+        <dex dex="/Users/jamessafko/Documents/workspace2/WildcardAudio/MyFirstApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/jdom2-2.0.6_7b466528839613e6cd34a7203e3ef72d43d6657e/classes.dex" />
+    </item>
+
+</items>
