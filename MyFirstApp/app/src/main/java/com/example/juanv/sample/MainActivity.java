@@ -13,10 +13,9 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
-
+import com.devadvance.circularseekbar.CircularSeekBar;
 import java.io.IOException;
 import java.util.List;
-
 import usbserial.driver.UsbSerialDriver;
 import usbserial.driver.UsbSerialPort;
 import usbserial.driver.UsbSerialProber;
@@ -35,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         myText = (TextView) findViewById(R.id.textView5);
+
 
         UsbManager manager = (UsbManager) getSystemService(Context.USB_SERVICE);
         List<UsbSerialDriver> availableDrivers = UsbSerialProber.getDefaultProber().findAllDrivers(manager);
