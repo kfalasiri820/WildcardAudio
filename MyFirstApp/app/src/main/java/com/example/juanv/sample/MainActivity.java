@@ -36,38 +36,38 @@ public class MainActivity extends AppCompatActivity {
 
         myText = (TextView) findViewById(R.id.textView5);
 
-//        UsbManager manager = (UsbManager) getSystemService(Context.USB_SERVICE);
-//        List<UsbSerialDriver> availableDrivers = UsbSerialProber.getDefaultProber().findAllDrivers(manager);
-//        if (availableDrivers.isEmpty()) {
-//            Log.d(TAG, "chosen juan 2");
-//            myText.setText(" driver empty\n");
-//            return;
-//        }
-//
-//        // Open a connection to the first available driver.
-//        UsbSerialDriver driver = availableDrivers.get(0);
-//        UsbDeviceConnection connection = manager.openDevice(driver.getDevice());
-//        if (connection == null) {
-//            myText.setText(" null connection");
-//            return;
-//            // You probably need to call UsbManager.requestPermission(driver.getDevice(), ..)
-//        }
-//
-//        // Read some data! Most have just one port (port 0).
-//        port = driver.getPorts().get(0);
-//        //Log.d(TAG, "chosen juan 4");
-//        myText.setText(" connected before try\n");
-//
-//        try {
-//            port.open(connection);
-//            port.setParameters(9600, 8, UsbSerialPort.STOPBITS_1, UsbSerialPort.PARITY_NONE);
-//            myText.append("connected, port open in try\n");
-//
-//        } catch (IOException e) {
-//            myText.append(" caught an error in port open");
-//            e.printStackTrace();
-//
-//        }
+        UsbManager manager = (UsbManager) getSystemService(Context.USB_SERVICE);
+        List<UsbSerialDriver> availableDrivers = UsbSerialProber.getDefaultProber().findAllDrivers(manager);
+        if (availableDrivers.isEmpty()) {
+            Log.d(TAG, "chosen juan 2");
+            myText.setText(" driver empty\n");
+            return;
+        }
+
+        // Open a connection to the first available driver.
+        UsbSerialDriver driver = availableDrivers.get(0);
+        UsbDeviceConnection connection = manager.openDevice(driver.getDevice());
+        if (connection == null) {
+            myText.setText(" null connection");
+            return;
+            // You probably need to call UsbManager.requestPermission(driver.getDevice(), ..)
+        }
+
+        // Read some data! Most have just one port (port 0).
+        port = driver.getPorts().get(0);
+        //Log.d(TAG, "chosen juan 4");
+        myText.setText(" connected before try\n");
+
+        try {
+            port.open(connection);
+            port.setParameters(9600, 8, UsbSerialPort.STOPBITS_1, UsbSerialPort.PARITY_NONE);
+            myText.append("connected, port open in try\n");
+
+        } catch (IOException e) {
+            myText.append(" caught an error in port open");
+            e.printStackTrace();
+
+        }
 
         initSliderControls(port);
     }
