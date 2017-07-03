@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Jun 27 14:35:51 EDT 2017
+#Mon Jul 03 11:48:12 EDT 2017
 210.set=ANDROID_RESOURCE
 282.file=/Users/jamessafko/Documents/workspace2/WildcardAudio/MyFirstApp/app/build/intermediates/res/resources-debug.ap_/res/drawable/notification_bg_low.xml
 14.set=ANDROID_RESOURCE
