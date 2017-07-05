@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                     byte value = (byte)(volumeSeekbar.getProgress() & 0xFF);
                     byte outBuffer[] = {value};
                     myText.setText("Value is " + value);
-                    //sendserial(port, outBuffer);
+                    sendserial(port, outBuffer);
                 }
             });
         }
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    @Override
+//    //@Override
 //    protected void onDestroy(UsbSerialPort port){
 //        super.onDestroy();
 //        try {
