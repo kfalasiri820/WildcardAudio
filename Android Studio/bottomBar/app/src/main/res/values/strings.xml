@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">bottomBar</string>
+    <string name="echo" />
+    <string name="collapse_button1" />
+</resources>

@@ -4,8 +4,8 @@
 
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app2="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,78 +13,226 @@
     tools:layout_editor_absoluteY="89dp"
     tools:layout_editor_absoluteX="0dp">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="672dp"
+        android:layout_height="506dp"
+        android:layout_marginRight="-18dp"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="-39dp">
+
+
+        <SeekBar
+            android:id="@+id/volume"
+            android:layout_width="332dp"
+            android:layout_height="49dp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="148dp"
+            android:layout_marginTop="268dp"
+            app:layout_constraintHorizontal_bias="0.888"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="73dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1" />
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/phasor"
+        android:layout_width="110dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="274dp"
+        android:layout_marginRight="274dp"
+        android:layout_marginTop="8dp"
+        android:text="Phasor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.104" />
+
+    <RelativeLayout
         android:id="@+id/rootRL"
-        xmlns:app="http://schemas.android.com/apk/res/com.devadvance.circulartest"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp">
-    </RelativeLayout>
-
-       <android.support.constraint.ConstraintLayout
-        android:layout_width="628dp"
-        android:layout_height="616dp"
-        tools:layout_editor_absoluteY="-209dp"
-        app:layout_constraintRight_toRightOf="parent"
-           android:id="@+id/constraintLayout"
-           android:layout_marginRight="0dp"
-           tools:layout_editor_absoluteX="396dp">
-
-
-           <SeekBar
-               android:id="@+id/volume"
-               android:layout_width="332dp"
-               android:layout_height="49dp"
-               android:layout_marginLeft="260dp"
-               android:layout_marginStart="148dp"
-               android:layout_marginTop="268dp"
-               app:layout_constraintLeft_toLeftOf="parent"
-               app:layout_constraintTop_toTopOf="parent"
-               android:layout_marginRight="8dp"
-               app:layout_constraintRight_toRightOf="parent"
-               app:layout_constraintHorizontal_bias="0.888" />
-
-           <TextView
-               android:id="@+id/textView5"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="TextView"
-               tools:layout_constraintRight_creator="1"
-               tools:layout_constraintBottom_creator="1"
-               app:layout_constraintBottom_toBottomOf="parent"
-               app:layout_constraintRight_toRightOf="parent"
-               tools:layout_constraintLeft_creator="1"
-               android:layout_marginBottom="258dp"
-               app:layout_constraintHorizontal_bias="0.722"
-               android:layout_marginLeft="8dp"
-               app:layout_constraintLeft_toLeftOf="parent" />
-       </android.support.constraint.ConstraintLayout>
-
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"></RelativeLayout>
 
     <com.devadvance.circularseekbar.CircularSeekBar
         android:id="@+id/circularSeekBar1"
         android:layout_width="138dp"
         android:layout_height="139dp"
         android:layout_marginLeft="407dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="0dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginRight="8dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="205dp"
+        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.358" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteY="177dp" />
 
     <Button
         android:id="@+id/serialComms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="239dp"
         android:text="serial init"
-        android:layout_marginTop="59dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="164dp"
-        app:layout_constraintLeft_toLeftOf="@+id/constraintLayout" />
+        app:layout_constraintLeft_toLeftOf="@+id/constraintLayout"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#FFF"
+        android:text="Loop 1"
+        android:textColor="#000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/MLG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="384dp"
+        android:layout_marginStart="384dp"
+        android:layout_marginTop="355dp"
+        android:text="Normal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/echo"
+        android:layout_width="110dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="544dp"
+        android:layout_marginRight="544dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/echo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.104" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="351dp"
+        android:layout_height="467dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="121dp"
+            android:background="#FFF"
+            android:text="Loop 2"
+            android:textColor="#000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="240dp"
+            android:background="#FFF"
+            android:text="Loop 3"
+            android:textColor="#000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="356dp"
+            android:background="#FFF"
+            android:text="Loop 4"
+            android:textColor="#000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SeekBar
+            android:id="@+id/seekBar2"
+            android:layout_width="296dp"
+            android:layout_height="41dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="168dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SeekBar
+            android:id="@+id/seekBar4"
+            android:layout_width="296dp"
+            android:layout_height="41dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="168dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SeekBar
+            android:id="@+id/seekBar3"
+            android:layout_width="296dp"
+            android:layout_height="41dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="56dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SeekBar
+            android:id="@+id/seekBar6"
+            android:layout_width="296dp"
+            android:layout_height="41dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="392dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SeekBar
+            android:id="@+id/seekBar5"
+            android:layout_width="296dp"
+            android:layout_height="41dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="284dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>
 

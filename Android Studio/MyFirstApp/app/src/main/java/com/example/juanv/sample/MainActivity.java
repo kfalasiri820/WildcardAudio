@@ -3,11 +3,13 @@ package com.example.juanv.sample;
 import android.content.Context;
 import android.hardware.usb.UsbDeviceConnection;
 import android.hardware.usb.UsbManager;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
@@ -32,6 +34,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         myText = (TextView) findViewById(R.id.textView5);
+
+        LinearLayout bottomSheetLayout
+                = (LinearLayout) findViewById(R.id.layout_bottom_sheet);
+
+        //get bottom sheet behavior from bottom sheet view
+        BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(mLayoutBottomSheet);
 
         serialButtonInit();//initialize serial comms
         serialSliderInit(port);//initialize button
