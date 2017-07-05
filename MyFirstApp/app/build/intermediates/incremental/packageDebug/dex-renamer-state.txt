@@ -1,4 +1,4 @@
-#Mon Jul 03 17:02:48 EDT 2017
+#Wed Jul 05 11:01:19 EDT 2017
 base.0=/Users/jamessafko/Documents/workspace2/WildcardAudio/MyFirstApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_2950d9ff5f5261c671b189086d76bc03488ab63f
 renamed.1=classes2.dex
 renamed.0=classes.dex
