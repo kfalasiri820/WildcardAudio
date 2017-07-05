@@ -1,4 +1,0 @@
-#Wed Jul 05 10:41:00 EDT 2017
-base.0=/Users/jamessafko/Documents/workspace2/WildcardAudio/MyFirstApp/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7
-renamed.0=classes.dex
-file.0=/Users/jamessafko/Documents/workspace2/WildcardAudio/MyFirstApp/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex
