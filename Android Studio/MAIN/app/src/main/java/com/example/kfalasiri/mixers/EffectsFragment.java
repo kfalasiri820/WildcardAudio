@@ -19,7 +19,6 @@ public class EffectsFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         view = inflater.inflate(R.layout.effects_fragment, container, false);
         bottomEffectsInit();
         return view;

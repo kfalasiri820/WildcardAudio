@@ -38,6 +38,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintBottom_toTopOf="parent">
 
+            <!--Line Effects Button 1-->
             <Button
                 android:id="@+id/MicrophoneEffect1Button"
                 android:layout_width="wrap_content"
@@ -87,6 +88,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <!--Mic Effects Button 1-->
             <Button
                 android:id="@+id/LineEffect1Button"
                 android:layout_width="wrap_content"

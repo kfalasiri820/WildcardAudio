@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
         adapter.addFragment(new MixerFragment(), "Mixer");
         adapter.addFragment(new EffectsFragment(), "Effects");
+        adapter.addFragment(new SettingsFragment(), "Settings");
         viewPager.setAdapter(adapter);
     }
 
