@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     public UsbSerialPort port = null;
     private SeekBar volumeSeekbar = null;
     TextView myText;
+    BottomSheetBehavior echoBehavior, reverbBehavior;
 
     //Executes on creation of app
     @Override
@@ -35,13 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
         myText = (TextView) findViewById(R.id.textView5);
 
-        LinearLayout bottomSheetLayout
-                = (LinearLayout) findViewById(R.id.layout_bottom_sheet);
 
-        //get bottom sheet behavior from bottom sheet view
-        BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(mLayoutBottomSheet);
-
+        bottomEffectsInit();//init bottom button
         serialButtonInit();//initialize serial comms
+
         serialSliderInit(port);//initialize button
     }
 
@@ -69,6 +67,40 @@ public class MainActivity extends AppCompatActivity {
         }catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void bottomEffectsInit(){
+        final View echoView = findViewById(R.id.echoBottom);
+        echoBehavior = BottomSheetBehavior.from(echoView);
+        echoBehavior.setPeekHeight(0);
+        final Button echoButtonMain = (Button) findViewById(R.id.echoButton);
+        echoButtonMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View echoView) {
+                if(echoBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
+                    echoBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                }
+                else {
+                    echoBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+            }
+        });
+
+        final View reverbView = findViewById(R.id.reverbBottom);
+        reverbBehavior = BottomSheetBehavior.from(reverbView);
+        reverbBehavior.setPeekHeight(0);
+        final Button reverbButtonMain = (Button) findViewById(R.id.reverbButton);
+        reverbButtonMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(reverbBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
+                    reverbBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                }
+                else {
+                    reverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+            }
+        });
     }
 
     //Code for initializing serial communications
