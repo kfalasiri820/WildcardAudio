@@ -17,7 +17,7 @@
         tools:layout_editor_absoluteY="8dp">
 
         <!--Reverb Mic Bottom Sheet-->
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/micReverbBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -27,17 +27,31 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="-100dp">
 
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="134dp"
                 android:padding="16dp"
                 android:text="Mic Reverb"
                 android:textSize="16sp"
-                tools:ignore="HardcodedText" />
-        </LinearLayout>
+                tools:ignore="HardcodedText"
+                tools:layout_editor_absoluteY="8dp"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ToggleButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+        </android.support.constraint.ConstraintLayout>
 
         <!--Chorus Mic Bottom Sheet-->
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/micChorusBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -47,17 +61,31 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="-100dp">
 
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="134dp"
                 android:padding="16dp"
                 android:text="Mic Chorus"
                 android:textSize="16sp"
-                tools:ignore="HardcodedText" />
-        </LinearLayout>
+                tools:ignore="HardcodedText"
+                tools:layout_editor_absoluteY="8dp"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ToggleButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+        </android.support.constraint.ConstraintLayout>
 
         <!--Bitcrusher Mic Bottom Sheet-->
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/micCrusherBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -67,17 +95,31 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="-100dp">
 
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="134dp"
                 android:padding="16dp"
                 android:text="Mic Bitcrusher"
                 android:textSize="16sp"
-                tools:ignore="HardcodedText" />
-        </LinearLayout>
+                tools:ignore="HardcodedText"
+                tools:layout_editor_absoluteY="8dp"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ToggleButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+        </android.support.constraint.ConstraintLayout>
 
         <!--Flanger Mic Bottom Sheet-->
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/micFlangerBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -87,17 +129,31 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="-100dp">
 
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="134dp"
                 android:padding="16dp"
                 android:text="Mic Flanger"
                 android:textSize="16sp"
-                tools:ignore="HardcodedText" />
-        </LinearLayout>
+                tools:ignore="HardcodedText"
+                tools:layout_editor_absoluteY="8dp"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ToggleButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+        </android.support.constraint.ConstraintLayout>
 
         <!--Phaser Mic Bottom Sheet-->
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/micPhaserBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -107,17 +163,31 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="-100dp">
 
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="134dp"
                 android:padding="16dp"
                 android:text="Mic Phaser"
                 android:textSize="16sp"
-                tools:ignore="HardcodedText" />
-        </LinearLayout>
+                tools:ignore="HardcodedText"
+                tools:layout_editor_absoluteY="8dp"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ToggleButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+        </android.support.constraint.ConstraintLayout>
 
         <!--Delay Mic Bottom Sheet-->
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/micDelayBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -128,13 +198,28 @@
             tools:layout_editor_absoluteY="-100dp">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="496dp"
+                android:layout_height="134dp"
                 android:padding="16dp"
                 android:text="Mic Delay"
                 android:textSize="16sp"
-                tools:ignore="HardcodedText" />
-        </LinearLayout>
+                tools:ignore="HardcodedText"
+                tools:layout_editor_absoluteY="8dp"
+                tools:layout_editor_absoluteX="8dp"
+                android:id="@+id/textView2" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ToggleButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/textView2"
+                app:layout_constraintLeft_toRightOf="@+id/textView2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/mic_constraint_layout"
@@ -215,6 +300,8 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintVertical_bias="0.867"
                 tools:ignore="HardcodedText" />
+
+
         </android.support.constraint.ConstraintLayout>
 
     </android.support.design.widget.CoordinatorLayout>
@@ -230,7 +317,7 @@
         tools:layout_editor_absoluteY="8dp">
 
         <!--Reverb Line Bottom Sheet-->
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/lineReverbBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -241,16 +328,29 @@
             tools:layout_editor_absoluteY="-100dp">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="496dp"
+                android:layout_height="134dp"
                 android:padding="16dp"
                 android:text="line Reverb"
                 android:textSize="16sp"
-                tools:ignore="HardcodedText" />
-        </LinearLayout>
+                tools:ignore="HardcodedText"
+                tools:layout_editor_absoluteY="8dp"
+                tools:layout_editor_absoluteX="9224dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ToggleButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+        </android.support.constraint.ConstraintLayout>
 
         <!--Chorus Line Bottom Sheet-->
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/lineChorusBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -261,16 +361,29 @@
             tools:layout_editor_absoluteY="-100dp">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="496dp"
+                android:layout_height="134dp"
                 android:padding="16dp"
                 android:text="line Chorus"
                 android:textSize="16sp"
-                tools:ignore="HardcodedText" />
-        </LinearLayout>
+                tools:ignore="HardcodedText"
+                tools:layout_editor_absoluteY="8dp"
+                tools:layout_editor_absoluteX="9224dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ToggleButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+        </android.support.constraint.ConstraintLayout>
 
         <!--Bitcrusher Line Bottom Sheet-->
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/lineCrusherBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -281,16 +394,29 @@
             tools:layout_editor_absoluteY="-100dp">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="496dp"
+                android:layout_height="134dp"
                 android:padding="16dp"
                 android:text="line Bitcrusher"
                 android:textSize="16sp"
-                tools:ignore="HardcodedText" />
-        </LinearLayout>
+                tools:ignore="HardcodedText"
+                tools:layout_editor_absoluteY="8dp"
+                tools:layout_editor_absoluteX="9224dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ToggleButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+        </android.support.constraint.ConstraintLayout>
 
         <!--Flanger Line Bottom Sheet-->
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/lineFlangerBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -301,16 +427,29 @@
             tools:layout_editor_absoluteY="-100dp">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="496dp"
+                android:layout_height="134dp"
                 android:padding="16dp"
                 android:text="line Flanger"
                 android:textSize="16sp"
-                tools:ignore="HardcodedText" />
-        </LinearLayout>
+                tools:ignore="HardcodedText"
+                tools:layout_editor_absoluteY="8dp"
+                tools:layout_editor_absoluteX="9224dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ToggleButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+        </android.support.constraint.ConstraintLayout>
 
         <!--Phaser Line Bottom Sheet-->
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/linePhaserBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -321,16 +460,29 @@
             tools:layout_editor_absoluteY="-100dp">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="496dp"
+                android:layout_height="134dp"
                 android:padding="16dp"
                 android:text="line Phaser"
                 android:textSize="16sp"
-                tools:ignore="HardcodedText" />
-        </LinearLayout>
+                tools:ignore="HardcodedText"
+                tools:layout_editor_absoluteY="8dp"
+                tools:layout_editor_absoluteX="9224dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ToggleButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+        </android.support.constraint.ConstraintLayout>
 
         <!--Delay Line Bottom Sheet-->
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/lineDelayBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -341,13 +493,26 @@
             tools:layout_editor_absoluteY="-100dp">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="496dp"
+                android:layout_height="134dp"
                 android:padding="16dp"
                 android:text="line Delay"
                 android:textSize="16sp"
-                tools:ignore="HardcodedText" />
-        </LinearLayout>
+                tools:ignore="HardcodedText"
+                tools:layout_editor_absoluteY="8dp"
+                tools:layout_editor_absoluteX="9224dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ToggleButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+        </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/line_constraint_layout"
@@ -414,8 +579,7 @@
                 app:layout_constraintHorizontal_bias="0.148"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/line_phaser_button"
-                android:layout_marginTop="-7dp" />
+                app:layout_constraintTop_toTopOf="@+id/line_phaser_button" />
         </android.support.constraint.ConstraintLayout>
 
         <!--Mic Effect 1-->
