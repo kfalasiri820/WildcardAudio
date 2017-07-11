@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 public class SettingsFragment extends Fragment {
     ////////////////////////////////////////////GLOBALS////////////////////////////////////////////
-    private static final String TAG = "EffectsFragment";
+    private static final String TAG = "EffectsMicFragment";
     View view;
 
     ////////////////////////////////////////////On Create//////////////////////////////////////////

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.kfalasiri.mixers.MixerFragment"
+    tools:context="com.example.kfalasiri.mixers.MainActivity"
     tools:layout_editor_absoluteY="89dp"
     tools:layout_editor_absoluteX="0dp">
 
@@ -39,7 +39,8 @@
         android:layout_marginStart="373dp"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="373dp" />
+        android:layout_marginLeft="373dp"
+        tools:ignore="RtlHardcoded" />
 
     <!--Debug View-->
     <TextView
@@ -156,12 +157,12 @@
         tools:layout_constraintBottom_creator="1"
         android:layout_marginStart="198dp"
         app:layout_constraintBottom_toBottomOf="@+id/volume4"
-        android:layout_marginEnd="198dp"
+        android:layout_marginEnd="199dp"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintTop_toTopOf="@+id/volume4"
         app:layout_constraintLeft_toRightOf="@+id/volume1"
         android:layout_marginLeft="198dp"
-        android:layout_marginRight="198dp" />
+        android:layout_marginRight="199dp" />
 
     <android.widget.VerticalSeekBar
         android:id="@+id/volume1"
@@ -202,15 +203,161 @@
         android:paddingTop="0dp"
         android:rotation="0"
         tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        android:layout_marginStart="205dp"
-        android:layout_marginEnd="198dp"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/sliderFiveSolo"
         android:layout_marginTop="27dp"
         app:layout_constraintTop_toBottomOf="@+id/volume"
+        app:layout_constraintLeft_toLeftOf="@+id/sliderFiveSolo" />
+
+    <Button
+        android:id="@+id/sliderFiveSolo"
+        android:layout_width="75dp"
+        android:layout_height="48dp"
+        android:text="Solo"
+        app:layout_constraintBottom_toBottomOf="@+id/sliderFourSolo"
+        app:layout_constraintLeft_toLeftOf="@+id/sliderFiveMute"
+        app:layout_constraintRight_toRightOf="@+id/sliderFiveMute"
+        app:layout_constraintTop_toTopOf="@+id/sliderFourSolo"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/sliderFiveMute"
+        android:layout_width="75dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="26dp"
+        android:layout_marginEnd="214dp"
+        android:layout_marginRight="214dp"
+        android:text="@string/mute"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <Button
+        android:id="@+id/sliderFourSolo"
+        android:layout_width="75dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="164dp"
+        android:layout_marginLeft="165dp"
+        android:layout_marginRight="164dp"
+        android:layout_marginStart="165dp"
+        android:text="Solo"
+        app:layout_constraintBottom_toBottomOf="@+id/sliderThreeSolo"
+        app:layout_constraintLeft_toLeftOf="@+id/sliderThreeMute"
+        app:layout_constraintRight_toRightOf="@+id/sliderFiveMute"
+        app:layout_constraintTop_toTopOf="@+id/sliderThreeSolo"
+        tools:ignore="HardcodedText"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/volume"
-        android:layout_marginLeft="205dp"
-        android:layout_marginRight="198dp" />
+        tools:layout_constraintRight_creator="1" />
+
+    <Button
+        android:id="@+id/sliderFourMute"
+        android:layout_width="75dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="26dp"
+        android:text="Mute"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/sliderFourSolo"
+        app:layout_constraintRight_toRightOf="@+id/sliderFourSolo"
+        tools:ignore="HardcodedText"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <Button
+        android:id="@+id/sliderThreeSolo"
+        android:layout_width="75dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginStart="14dp"
+        android:text="Solo"
+        app:layout_constraintBottom_toBottomOf="@+id/sliderTwoSolo"
+        app:layout_constraintLeft_toLeftOf="@+id/volume3"
+        app:layout_constraintRight_toRightOf="@+id/volume3"
+        app:layout_constraintTop_toTopOf="@+id/sliderTwoSolo"
+        tools:ignore="HardcodedText"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <Button
+        android:id="@+id/sliderThreeMute"
+        android:layout_width="75dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="26dp"
+        android:text="Mute"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="@+id/sliderThreeSolo"
+        app:layout_constraintRight_toRightOf="@+id/sliderThreeSolo"
+        tools:ignore="HardcodedText"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <Button
+        android:id="@+id/sliderTwoSolo"
+        android:layout_width="75dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginLeft="49dp"
+        android:layout_marginRight="49dp"
+        android:layout_marginStart="49dp"
+        android:text="Solo"
+        app:layout_constraintBottom_toBottomOf="@+id/sliderOneSolo"
+        app:layout_constraintLeft_toRightOf="@+id/volume1"
+        app:layout_constraintRight_toLeftOf="@+id/volume3"
+        app:layout_constraintTop_toTopOf="@+id/sliderOneSolo"
+        tools:ignore="HardcodedText"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <Button
+        android:id="@+id/sliderTwoMute"
+        android:layout_width="75dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="26dp"
+        android:text="Mute"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/sliderTwoSolo"
+        app:layout_constraintRight_toRightOf="@+id/sliderTwoSolo"
+        tools:ignore="HardcodedText"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <Button
+        android:id="@+id/sliderOneSolo"
+        android:layout_width="75dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:text="Solo"
+        app:layout_constraintBottom_toTopOf="@+id/sliderOneMute"
+        app:layout_constraintLeft_toLeftOf="@+id/volume1"
+        app:layout_constraintRight_toRightOf="@+id/volume1"
+        tools:ignore="HardcodedText"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <Button
+        android:id="@+id/sliderOneMute"
+        android:layout_width="75dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="26dp"
+        android:text="Mute"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/sliderOneSolo"
+        app:layout_constraintRight_toRightOf="@+id/sliderOneSolo"
+        tools:ignore="HardcodedText"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
 
 </android.support.constraint.ConstraintLayout>

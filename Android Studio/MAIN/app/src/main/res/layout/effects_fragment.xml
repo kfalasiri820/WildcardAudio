@@ -2,19 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.kfalasiri.mixers.MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--Line Effects-->
+    <!--Mic Effects-->
     <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/mic_coordinator_layout"
         android:layout_width="512dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="@+id/line_coordinator_layout"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
+        <!--Reverb Mic Bottom Sheet-->
         <LinearLayout
-            android:id="@+id/micEffect1Bottom"
+            android:id="@+id/micReverbBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:background="@android:color/holo_green_dark"
@@ -27,99 +31,381 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="16dp"
-                android:text="@string/microphone_effect_1"
+                android:text="Mic Reverb"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!--Chorus Mic Bottom Sheet-->
+        <LinearLayout
+            android:id="@+id/micChorusBottom"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/holo_green_dark"
+            android:clipToPadding="false"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-100dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:text="Mic Chorus"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!--Bitcrusher Mic Bottom Sheet-->
+        <LinearLayout
+            android:id="@+id/micCrusherBottom"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/holo_green_dark"
+            android:clipToPadding="false"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-100dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:text="Mic Bitcrusher"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!--Flanger Mic Bottom Sheet-->
+        <LinearLayout
+            android:id="@+id/micFlangerBottom"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/holo_green_dark"
+            android:clipToPadding="false"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-100dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:text="Mic Flanger"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!--Phaser Mic Bottom Sheet-->
+        <LinearLayout
+            android:id="@+id/micPhaserBottom"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/holo_green_dark"
+            android:clipToPadding="false"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-100dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:text="Mic Phaser"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!--Delay Mic Bottom Sheet-->
+        <LinearLayout
+            android:id="@+id/micDelayBottom"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/holo_green_dark"
+            android:clipToPadding="false"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-100dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:text="Mic Delay"
                 android:textSize="16sp" />
         </LinearLayout>
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/MicrophoneEffectLayout"
-            android:layout_width="512dp"
+            android:id="@+id/mic_constraint_layout"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintBottom_toTopOf="parent">
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="0dp">
 
-            <!--Line Effects Button 1-->
             <Button
-                android:id="@+id/MicrophoneEffect1Button"
+                android:id="@+id/mic_delay_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/microphoneeffect1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_constraintLeft_creator="1" />
 
-            <fragment
-                android:id="@+id/fragment"
-                android:name="com.example.kfalasiri.mixers.ButtonsFragment"
+                android:text="Delay"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/mic_chorus_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/mic_flanger_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:layout_editor_absoluteX="55dp"
-                tools:layout_editor_absoluteY="25dp"
-                tools:layout="@layout/buttons" />
+                android:layout_margin="0dp"
+
+                android:text="Flanger"
+                app:layout_constraintRight_toLeftOf="@+id/mic_chorus_button"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/mic_bitcrusher_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Crusher"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/mic_phaser_button"
+                app:layout_constraintTop_toTopOf="@+id/mic_phaser_button"
+                android:layout_marginTop="-6dp" />
+
+            <Button
+                android:id="@+id/mic_phaser_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Phaser"
+                app:layout_constraintRight_toLeftOf="@+id/mic_bitcrusher_button"
+                app:layout_constraintLeft_toRightOf="@+id/mic_reverb_button"
+                app:layout_constraintTop_toTopOf="@+id/mic_reverb_button"
+                android:layout_marginTop="-6dp" />
+
+            <Button
+                android:id="@+id/mic_chorus_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="chorus"
+                app:layout_constraintRight_toLeftOf="@+id/mic_delay_button"
+                app:layout_constraintLeft_toRightOf="@+id/mic_flanger_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/mic_reverb_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+
+                android:text="reverb"
+                app:layout_constraintRight_toLeftOf="@+id/mic_phaser_button"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/mic_flanger_button"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp"
+                app:layout_constraintVertical_bias="0.867" />
         </android.support.constraint.ConstraintLayout>
 
     </android.support.design.widget.CoordinatorLayout>
 
 
-    <!--Mic Effects-->
+    <!--Line Effects-->
     <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/line_coordinator_layout"
         android:layout_width="512dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
+        <!--Reverb Line Bottom Sheet-->
         <LinearLayout
-            android:id="@+id/lineEffect1Bottom"
+            android:id="@+id/lineReverbBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:background="@color/colorPrimary"
+            android:background="@android:color/holo_green_dark"
             android:clipToPadding="false"
             app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="89dp">
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-100dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="16dp"
-                android:text="@string/line_effect_1"
+                android:text="line Reverb"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!--Chorus Line Bottom Sheet-->
+        <LinearLayout
+            android:id="@+id/lineChorusBottom"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/holo_green_dark"
+            android:clipToPadding="false"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-100dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:text="line Chorus"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!--Bitcrusher Line Bottom Sheet-->
+        <LinearLayout
+            android:id="@+id/lineCrusherBottom"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/holo_green_dark"
+            android:clipToPadding="false"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-100dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:text="line Bitcrusher"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!--Flanger Line Bottom Sheet-->
+        <LinearLayout
+            android:id="@+id/lineFlangerBottom"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/holo_green_dark"
+            android:clipToPadding="false"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-100dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:text="line Flanger"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!--Phaser Line Bottom Sheet-->
+        <LinearLayout
+            android:id="@+id/linePhaserBottom"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/holo_green_dark"
+            android:clipToPadding="false"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-100dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:text="line Phaser"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!--Delay Line Bottom Sheet-->
+        <LinearLayout
+            android:id="@+id/lineDelayBottom"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/holo_green_dark"
+            android:clipToPadding="false"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-100dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:text="line Delay"
                 android:textSize="16sp" />
         </LinearLayout>
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/LineEffectLayout"
+            android:id="@+id/line_constraint_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <!--Mic Effects Button 1-->
-            <fragment
-                android:id="@+id/fragment4"
-                android:name="com.example.kfalasiri.mixers.ButtonsFragment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:layout="@layout/buttons"
-                tools:layout_editor_absoluteX="47dp"
-                tools:layout_editor_absoluteY="31dp" />
+            android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/LineEffect1Button"
+                android:id="@+id/line_phaser_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/lineeffect1"
+                android:text="@string/phaser"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:layout_constraintBottom_creator="1"
-                tools:layout_constraintLeft_creator="1" />
+                app:layout_constraintVertical_bias="0.358" />
 
+            <Button
+                android:id="@+id/line_flanger_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/flanger"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.148"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/line_chorus_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chorus"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/line_delay_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/henlo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.851"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/line_bitcrusher_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/crusher"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.851"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.358" />
+
+            <Button
+                android:id="@+id/line_reverb_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reverb"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.148"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.358" />
         </android.support.constraint.ConstraintLayout>
 
         <!--Mic Effect 1-->
