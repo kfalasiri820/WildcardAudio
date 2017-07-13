@@ -39,7 +39,7 @@
                 tools:layout_editor_absoluteX="8dp" />
 
             <ToggleButton
-                android:id="@+id/toggleButton5"
+                android:id="@+id/MicReverbSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -73,7 +73,7 @@
                 tools:layout_editor_absoluteX="8dp" />
 
             <ToggleButton
-                android:id="@+id/toggleButton4"
+                android:id="@+id/MicChorusSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -107,7 +107,7 @@
                 tools:layout_editor_absoluteX="8dp" />
 
             <ToggleButton
-                android:id="@+id/toggleButton3"
+                android:id="@+id/MicCrusherSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -141,7 +141,7 @@
                 tools:layout_editor_absoluteX="8dp" />
 
             <ToggleButton
-                android:id="@+id/toggleButton2"
+                android:id="@+id/MicFlangerSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -175,7 +175,7 @@
                 tools:layout_editor_absoluteX="8dp" />
 
             <ToggleButton
-                android:id="@+id/toggleButton1"
+                android:id="@+id/MicPhaserSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -209,7 +209,7 @@
                 android:id="@+id/textView2" />
 
             <ToggleButton
-                android:id="@+id/toggleButton"
+                android:id="@+id/MicDelaySwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ToggleButton"
@@ -338,7 +338,7 @@
                 tools:layout_editor_absoluteX="9224dp" />
 
             <ToggleButton
-                android:id="@+id/toggleButton11"
+                android:id="@+id/LineReverbSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -371,7 +371,7 @@
                 tools:layout_editor_absoluteX="9224dp" />
 
             <ToggleButton
-                android:id="@+id/toggleButton10"
+                android:id="@+id/LineChorusSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -404,7 +404,7 @@
                 tools:layout_editor_absoluteX="9224dp" />
 
             <ToggleButton
-                android:id="@+id/toggleButton9"
+                android:id="@+id/LineCrusherSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -437,7 +437,7 @@
                 tools:layout_editor_absoluteX="9224dp" />
 
             <ToggleButton
-                android:id="@+id/toggleButton8"
+                android:id="@+id/LineFlangerSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -470,7 +470,7 @@
                 tools:layout_editor_absoluteX="9224dp" />
 
             <ToggleButton
-                android:id="@+id/toggleButton7"
+                android:id="@+id/LinePhaserSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -503,7 +503,7 @@
                 tools:layout_editor_absoluteX="9224dp" />
 
             <ToggleButton
-                android:id="@+id/toggleButton6"
+                android:id="@+id/LineDelaySwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

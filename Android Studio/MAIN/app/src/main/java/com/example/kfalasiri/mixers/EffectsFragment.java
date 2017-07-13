@@ -1,6 +1,8 @@
 package com.example.kfalasiri.mixers;
 
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.PaintDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetBehavior;
@@ -9,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.ToggleButton;
 
 public class EffectsFragment extends Fragment{
     ////////////////////////////////////////////GLOBALS////////////////////////////////////////////
@@ -37,6 +41,22 @@ public class EffectsFragment extends Fragment{
         final Button linePhaserButton = (Button) view.findViewById(R.id.line_phaser_button);
         final Button lineDelayButton = (Button) view.findViewById(R.id.line_delay_button);
 
+        final ToggleButton lineReverbSwitch = (ToggleButton) view.findViewById(R.id.LineReverbSwitch);
+        final ToggleButton lineChorusSwitch = (ToggleButton) view.findViewById(R.id.LineChorusSwitch);
+        final ToggleButton lineCrusherSwitch = (ToggleButton) view.findViewById(R.id.LineCrusherSwitch);
+        final ToggleButton lineFlangerSwitch = (ToggleButton) view.findViewById(R.id.LineFlangerSwitch);
+        final ToggleButton linePhaserSwitch = (ToggleButton) view.findViewById(R.id.LinePhaserSwitch);
+        final ToggleButton lineDelaySwitch = (ToggleButton) view.findViewById(R.id.LineDelaySwitch);
+
+        lineChorusButton.setBackgroundColor(Color.WHITE);
+        lineReverbButton.setBackgroundColor(Color.WHITE);
+        lineCrusherButton.setBackgroundColor(Color.WHITE);
+        lineFlangerButton.setBackgroundColor(Color.WHITE);
+        lineDelayButton.setBackgroundColor(Color.WHITE);
+        linePhaserButton.setBackgroundColor(Color.WHITE);
+
+
+
         View lineReverbView = view.findViewById(R.id.lineReverbBottom);
         lineReverbBehavior = BottomSheetBehavior.from(lineReverbView);
         lineReverbBehavior.setPeekHeight(0);
@@ -44,12 +64,11 @@ public class EffectsFragment extends Fragment{
             @Override
             public void onClick(View echoView) {
                 if(lineReverbBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
-                    lineReverbButton.setBackgroundColor(Color.BLUE);
-                    lineChorusButton.setBackgroundColor(Color.WHITE);
-                    lineDelayButton.setBackgroundColor(Color.WHITE);
-                    lineFlangerButton.setBackgroundColor(Color.WHITE);
-                    lineCrusherButton.setBackgroundColor(Color.WHITE);
-                    linePhaserButton.setBackgroundColor(Color.WHITE);
+
+                    if(!lineReverbSwitch.isChecked())
+                    {
+                        lineReverbButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
 
                     lineReverbBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                     lineChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -62,6 +81,36 @@ public class EffectsFragment extends Fragment{
                     lineReverbButton.setBackgroundColor(Color.WHITE);
                     lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
+                if(!lineChorusSwitch.isChecked())
+                {
+                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineCrusherSwitch.isChecked())
+                {
+                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!linePhaserSwitch.isChecked())
+                {
+                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineFlangerSwitch.isChecked())
+                {
+                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineDelaySwitch.isChecked())
+                {
+                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+        lineReverbSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    lineReverbButton.setBackgroundColor(Color.BLUE);
+                } else {
+                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                }
             }
         });
 
@@ -73,12 +122,11 @@ public class EffectsFragment extends Fragment{
             @Override
             public void onClick(View echoView) {
                 if(lineChorusBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
-                    lineChorusButton.setBackgroundColor(Color.BLUE);
-                    lineDelayButton.setBackgroundColor(Color.WHITE);
-                    lineReverbButton.setBackgroundColor(Color.WHITE);
-                    lineFlangerButton.setBackgroundColor(Color.WHITE);
-                    lineCrusherButton.setBackgroundColor(Color.WHITE);
-                    linePhaserButton.setBackgroundColor(Color.WHITE);
+
+                    if(!lineChorusSwitch.isChecked())
+                    {
+                        lineChorusButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
 
                     lineChorusBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                     lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -91,6 +139,37 @@ public class EffectsFragment extends Fragment{
                     lineChorusButton.setBackgroundColor(Color.WHITE);
                     lineChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
+
+                if(!lineReverbSwitch.isChecked())
+                {
+                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineCrusherSwitch.isChecked())
+                {
+                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!linePhaserSwitch.isChecked())
+                {
+                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineFlangerSwitch.isChecked())
+                {
+                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineDelaySwitch.isChecked())
+                {
+                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+        lineChorusSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    lineChorusButton.setBackgroundColor(Color.BLUE);
+                } else {
+                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                }
             }
         });
 
@@ -101,12 +180,11 @@ public class EffectsFragment extends Fragment{
             @Override
             public void onClick(View echoView) {
                 if(lineCrusherBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
-                    lineCrusherButton.setBackgroundColor(Color.BLUE);
-                    lineChorusButton.setBackgroundColor(Color.WHITE);
-                    lineReverbButton.setBackgroundColor(Color.WHITE);
-                    lineFlangerButton.setBackgroundColor(Color.WHITE);
-                    lineDelayButton.setBackgroundColor(Color.WHITE);
-                    linePhaserButton.setBackgroundColor(Color.WHITE);
+
+                    if(!lineCrusherSwitch.isChecked())
+                    {
+                        lineCrusherButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
 
                     lineCrusherBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                     lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -119,6 +197,38 @@ public class EffectsFragment extends Fragment{
                     lineCrusherButton.setBackgroundColor(Color.WHITE);
                     lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
+
+                if(!lineReverbSwitch.isChecked())
+                {
+                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineChorusSwitch.isChecked())
+                {
+                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!linePhaserSwitch.isChecked())
+                {
+                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineFlangerSwitch.isChecked())
+                {
+                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineDelaySwitch.isChecked())
+                {
+                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+
+        lineCrusherSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    lineCrusherButton.setBackgroundColor(Color.BLUE);
+                } else {
+                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                }
             }
         });
 
@@ -129,12 +239,11 @@ public class EffectsFragment extends Fragment{
             @Override
             public void onClick(View echoView) {
                 if(lineFlangerBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
-                    lineFlangerButton.setBackgroundColor(Color.BLUE);
-                    lineChorusButton.setBackgroundColor(Color.WHITE);
-                    lineReverbButton.setBackgroundColor(Color.WHITE);
-                    lineDelayButton.setBackgroundColor(Color.WHITE);
-                    lineCrusherButton.setBackgroundColor(Color.WHITE);
-                    linePhaserButton.setBackgroundColor(Color.WHITE);
+
+                    if(!lineFlangerSwitch.isChecked())
+                    {
+                        lineFlangerButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
 
                     lineFlangerBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                     lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -147,6 +256,37 @@ public class EffectsFragment extends Fragment{
                     lineFlangerButton.setBackgroundColor(Color.WHITE);
                     lineFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
+
+                if(!lineReverbSwitch.isChecked())
+                {
+                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineChorusSwitch.isChecked())
+                {
+                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!linePhaserSwitch.isChecked())
+                {
+                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineCrusherSwitch.isChecked())
+                {
+                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineDelaySwitch.isChecked())
+                {
+                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+        lineFlangerSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    lineFlangerButton.setBackgroundColor(Color.BLUE);
+                } else {
+                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                }
             }
         });
 
@@ -157,12 +297,11 @@ public class EffectsFragment extends Fragment{
             @Override
             public void onClick(View echoView) {
                 if(linePhaserBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
-                    linePhaserButton.setBackgroundColor(Color.BLUE);
-                    lineChorusButton.setBackgroundColor(Color.WHITE);
-                    lineReverbButton.setBackgroundColor(Color.WHITE);
-                    lineFlangerButton.setBackgroundColor(Color.WHITE);
-                    lineCrusherButton.setBackgroundColor(Color.WHITE);
-                    lineDelayButton.setBackgroundColor(Color.WHITE);
+
+                    if(!linePhaserSwitch.isChecked())
+                    {
+                        linePhaserButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
 
                     linePhaserBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                     lineFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -175,6 +314,36 @@ public class EffectsFragment extends Fragment{
                     linePhaserButton.setBackgroundColor(Color.WHITE);
                     linePhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
+                if(!lineReverbSwitch.isChecked())
+                {
+                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineChorusSwitch.isChecked())
+                {
+                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineCrusherSwitch.isChecked())
+                {
+                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineFlangerSwitch.isChecked())
+                {
+                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineDelaySwitch.isChecked())
+                {
+                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+        linePhaserSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    linePhaserButton.setBackgroundColor(Color.BLUE);
+                } else {
+                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                }
             }
         });
 
@@ -185,12 +354,11 @@ public class EffectsFragment extends Fragment{
             @Override
             public void onClick(View echoView) {
                 if(lineDelayBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
-                    lineDelayButton.setBackgroundColor(Color.BLUE);
-                    lineChorusButton.setBackgroundColor(Color.WHITE);
-                    lineReverbButton.setBackgroundColor(Color.WHITE);
-                    lineFlangerButton.setBackgroundColor(Color.WHITE);
-                    lineCrusherButton.setBackgroundColor(Color.WHITE);
-                    linePhaserButton.setBackgroundColor(Color.WHITE);
+
+                    if(!lineDelaySwitch.isChecked())
+                    {
+                        lineDelayButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
 
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                     linePhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -202,6 +370,35 @@ public class EffectsFragment extends Fragment{
                 else {
                     lineDelayButton.setBackgroundColor(Color.WHITE);
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+                if(!lineReverbSwitch.isChecked())
+                {
+                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineChorusSwitch.isChecked())
+                {
+                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineCrusherSwitch.isChecked())
+                {
+                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineFlangerSwitch.isChecked())
+                {
+                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!linePhaserSwitch.isChecked())
+                {
+                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+        lineDelaySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    lineDelayButton.setBackgroundColor(Color.BLUE);
+                } else {
+                    lineDelayButton.setBackgroundColor(Color.WHITE);
                 }
             }
         });
@@ -218,6 +415,21 @@ public class EffectsFragment extends Fragment{
         final Button micFlangerButton = (Button) view.findViewById(R.id.mic_flanger_button);
         final Button micCrusherButton = (Button) view.findViewById(R.id.mic_bitcrusher_button);
 
+        final ToggleButton micReverbSwitch = (ToggleButton) view.findViewById(R.id.MicReverbSwitch);
+        final ToggleButton micChorusSwitch = (ToggleButton) view.findViewById(R.id.MicChorusSwitch);
+        final ToggleButton micCrusherSwitch = (ToggleButton) view.findViewById(R.id.MicCrusherSwitch);
+        final ToggleButton micFlangerSwitch = (ToggleButton) view.findViewById(R.id.MicFlangerSwitch);
+        final ToggleButton micPhaserSwitch = (ToggleButton) view.findViewById(R.id.MicPhaserSwitch);
+        final ToggleButton micDelaySwitch = (ToggleButton) view.findViewById(R.id.MicDelaySwitch);
+
+
+        micChorusButton.setBackgroundColor(Color.WHITE);
+        micReverbButton.setBackgroundColor(Color.WHITE);
+        micCrusherButton.setBackgroundColor(Color.WHITE);
+        micFlangerButton.setBackgroundColor(Color.WHITE);
+        micDelayButton.setBackgroundColor(Color.WHITE);
+        micPhaserButton.setBackgroundColor(Color.WHITE);
+
         final View micReverbView = view.findViewById(R.id.micReverbBottom);
         micReverbBehavior = BottomSheetBehavior.from(micReverbView);
         micReverbBehavior.setPeekHeight(0);
@@ -225,13 +437,10 @@ public class EffectsFragment extends Fragment{
             @Override
             public void onClick(View echoView) {
                 if(micReverbBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
-                    micReverbButton.setBackgroundColor(Color.GREEN);
-                    micChorusButton.setBackgroundColor(Color.WHITE);
-                    micDelayButton.setBackgroundColor(Color.WHITE);
-                    micCrusherButton.setBackgroundColor(Color.WHITE);
-                    micFlangerButton.setBackgroundColor(Color.WHITE);
-                    micPhaserButton.setBackgroundColor(Color.WHITE);
-
+                    if(!micDelaySwitch.isChecked())
+                    {
+                        micDelayButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
 
                     micReverbBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                     micChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -239,13 +448,49 @@ public class EffectsFragment extends Fragment{
                     micFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micPhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
                 }
                 else {
                     micReverbButton.setBackgroundColor(Color.WHITE);
                     micReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
+                if(!micChorusSwitch.isChecked())
+                {
+                    micChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micCrusherSwitch.isChecked())
+                {
+                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micPhaserSwitch.isChecked())
+                {
+                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micFlangerSwitch.isChecked())
+                {
+                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micDelaySwitch.isChecked())
+                {
+                    micDelayButton.setBackgroundColor(Color.WHITE);
+                }
             }
         });
+
+
+
+        micReverbSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    micReverbButton.setBackgroundColor(Color.GREEN);
+                }
+                else {
+                    micReverbButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+
 
 
         final View micChorusView = view.findViewById(R.id.micChorusBottom);
@@ -254,14 +499,13 @@ public class EffectsFragment extends Fragment{
         micChorusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(micChorusBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
-                    micChorusButton.setBackgroundColor(Color.GREEN);
-                    micDelayButton.setBackgroundColor(Color.WHITE);
-                    micReverbButton.setBackgroundColor(Color.WHITE);
-                    micCrusherButton.setBackgroundColor(Color.WHITE);
-                    micFlangerButton.setBackgroundColor(Color.WHITE);
-                    micPhaserButton.setBackgroundColor(Color.WHITE);
 
+                if(micChorusBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
+
+                    if(!micChorusSwitch.isChecked())
+                    {
+                        micChorusButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
 
                     micChorusBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                     micReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -269,10 +513,43 @@ public class EffectsFragment extends Fragment{
                     micFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micPhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
                 }
                 else {
                     micChorusButton.setBackgroundColor(Color.WHITE);
                     micChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
+                if(!micReverbSwitch.isChecked())
+                {
+                    micReverbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micCrusherSwitch.isChecked())
+                {
+                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micPhaserSwitch.isChecked())
+                {
+                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micFlangerSwitch.isChecked())
+                {
+                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micDelaySwitch.isChecked())
+                {
+                    micDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+        micChorusSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    micChorusButton.setBackgroundColor(Color.GREEN);
+                }
+                else {
+                    micChorusButton.setBackgroundColor(Color.WHITE);
                 }
             }
         });
@@ -284,12 +561,11 @@ public class EffectsFragment extends Fragment{
             @Override
             public void onClick(View echoView) {
                 if(micCrusherBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
-                    micCrusherButton.setBackgroundColor(Color.GREEN);
-                    micChorusButton.setBackgroundColor(Color.WHITE);
-                    micReverbButton.setBackgroundColor(Color.WHITE);
-                    micDelayButton.setBackgroundColor(Color.WHITE);
-                    micFlangerButton.setBackgroundColor(Color.WHITE);
-                    micPhaserButton.setBackgroundColor(Color.WHITE);
+
+                    if(!micCrusherSwitch.isChecked())
+                    {
+                        micCrusherButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
 
 
                     micCrusherBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -298,10 +574,42 @@ public class EffectsFragment extends Fragment{
                     micFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micPhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
                 }
                 else {
                     micCrusherButton.setBackgroundColor(Color.WHITE);
                     micCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+                if(!micChorusSwitch.isChecked())
+                {
+                    micChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micReverbSwitch.isChecked())
+                {
+                    micReverbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micPhaserSwitch.isChecked())
+                {
+                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micFlangerSwitch.isChecked())
+                {
+                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micDelaySwitch.isChecked())
+                {
+                    micDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+        micCrusherSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    micCrusherButton.setBackgroundColor(Color.GREEN);
+                }
+                else {
+                    micCrusherButton.setBackgroundColor(Color.WHITE);
                 }
             }
         });
@@ -313,13 +621,11 @@ public class EffectsFragment extends Fragment{
             @Override
             public void onClick(View echoView) {
                 if(micFlangerBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
-                    micFlangerButton.setBackgroundColor(Color.GREEN);
-                    micChorusButton.setBackgroundColor(Color.WHITE);
-                    micReverbButton.setBackgroundColor(Color.WHITE);
-                    micCrusherButton.setBackgroundColor(Color.WHITE);
-                    micDelayButton.setBackgroundColor(Color.WHITE);
-                    micPhaserButton.setBackgroundColor(Color.WHITE);
 
+                    if(!micFlangerSwitch.isChecked())
+                    {
+                        micFlangerButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
 
                     micFlangerBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                     micCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -328,9 +634,42 @@ public class EffectsFragment extends Fragment{
                     micPhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
+
                 else {
                     micFlangerButton.setBackgroundColor(Color.WHITE);
                     micFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
+                if(!micChorusSwitch.isChecked())
+                {
+                    micChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micCrusherSwitch.isChecked())
+                {
+                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micPhaserSwitch.isChecked())
+                {
+                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micReverbSwitch.isChecked())
+                {
+                    micReverbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micDelaySwitch.isChecked())
+                {
+                    micDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+        micFlangerSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    micFlangerButton.setBackgroundColor(Color.GREEN);
+                }
+                else {
+                    micFlangerButton.setBackgroundColor(Color.WHITE);
                 }
             }
         });
@@ -342,13 +681,11 @@ public class EffectsFragment extends Fragment{
             @Override
             public void onClick(View echoView) {
                 if(micPhaserBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
-                    micPhaserButton.setBackgroundColor(Color.GREEN);
-                    micChorusButton.setBackgroundColor(Color.WHITE);
-                    micReverbButton.setBackgroundColor(Color.WHITE);
-                    micCrusherButton.setBackgroundColor(Color.WHITE);
-                    micFlangerButton.setBackgroundColor(Color.WHITE);
-                    micDelayButton.setBackgroundColor(Color.WHITE);
 
+                    if(!micPhaserSwitch.isChecked())
+                    {
+                        micPhaserButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
 
                     micPhaserBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                     micFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -356,28 +693,62 @@ public class EffectsFragment extends Fragment{
                     micReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
                 }
+
                 else {
                     micPhaserButton.setBackgroundColor(Color.WHITE);
                     micPhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
+                if(!micChorusSwitch.isChecked())
+                {
+                    micChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micCrusherSwitch.isChecked())
+                {
+                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micReverbSwitch.isChecked())
+                {
+                    micReverbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micFlangerSwitch.isChecked())
+                {
+                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micDelaySwitch.isChecked())
+                {
+                    micDelayButton.setBackgroundColor(Color.WHITE);
+                }
+
+            }
+        });
+
+        micPhaserSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    micPhaserButton.setBackgroundColor(Color.GREEN);
+                }
+                else {
+                    micPhaserButton.setBackgroundColor(Color.WHITE);
                 }
             }
         });
 
         final View micDelayView = view.findViewById(R.id.micDelayBottom);
+        boolean micDelayCheck;
         micDelayBehavior = BottomSheetBehavior.from(micDelayView);
         micDelayBehavior.setPeekHeight(0);
         micDelayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
                 if(micDelayBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
-                    micDelayButton.setBackgroundColor(Color.GREEN);
-                    micChorusButton.setBackgroundColor(Color.WHITE);
-                    micReverbButton.setBackgroundColor(Color.WHITE);
-                    micCrusherButton.setBackgroundColor(Color.WHITE);
-                    micFlangerButton.setBackgroundColor(Color.WHITE);
-                    micPhaserButton.setBackgroundColor(Color.WHITE);
 
+                    if(!micDelaySwitch.isChecked())
+                    {
+                        micDelayButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
 
                     micDelayBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                     micPhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -385,12 +756,48 @@ public class EffectsFragment extends Fragment{
                     micCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
                 }
+
                 else {
                     micDelayButton.setBackgroundColor(Color.WHITE);
                     micDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
+
+                if(!micChorusSwitch.isChecked())
+                {
+                    micChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micCrusherSwitch.isChecked())
+                {
+                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micPhaserSwitch.isChecked())
+                {
+                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micFlangerSwitch.isChecked())
+                {
+                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micReverbSwitch.isChecked())
+                {
+                    micReverbButton.setBackgroundColor(Color.WHITE);
+                }
             }
         });
+
+        micDelaySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    micDelayButton.setBackgroundColor(Color.GREEN);
+                }
+                else {
+                    micDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+
     }
 }
