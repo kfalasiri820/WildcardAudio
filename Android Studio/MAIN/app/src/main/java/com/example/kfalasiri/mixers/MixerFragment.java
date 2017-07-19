@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import com.hoho.android.usbserial.driver.UsbSerialPort;
@@ -28,6 +29,11 @@ public class MixerFragment extends Fragment {
     private SeekBar volumeSeekbar = null;
     View view;
     TextView myText;
+    Boolean isPlay = false;
+    Boolean isPlay2 = false;
+    Boolean isPlay3 = false;
+    Boolean isPlay4 = false;
+    Boolean isPlay5 = false;
 
     ////////////////////////////////////////////On Create//////////////////////////////////////////
     @Nullable
@@ -35,10 +41,92 @@ public class MixerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.mixer_fragment, container, false);
         myText = (TextView) view.findViewById(R.id.debugTextView);
-
         serialInit();
         serialSliderInit();//initialize button
+
+        final ImageButton mutebutton1 = (ImageButton) view.findViewById(R.id.sliderFiveMute);
+        mutebutton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (isPlay) {
+                    mutebutton1.setBackgroundResource(R.drawable.mutebuttonpressed);
+                }
+                else {
+                    mutebutton1.setBackgroundResource(R.drawable.mutebutton);
+                }
+
+                isPlay = !isPlay;
+            }
+        });
+
+        final ImageButton mutebutton2 = (ImageButton) view.findViewById(R.id.sliderTwoMute);
+        mutebutton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (isPlay2) {
+                    mutebutton2.setBackgroundResource(R.drawable.mutebuttonpressed);
+                }
+                else {
+                    mutebutton2.setBackgroundResource(R.drawable.mutebutton);
+                }
+                isPlay2 = !isPlay2;
+            }
+        });
+
+
+        final ImageButton mutebutton3 = (ImageButton) view.findViewById(R.id.sliderThreeMute);
+        mutebutton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (isPlay3) {
+                    mutebutton3.setBackgroundResource(R.drawable.mutebuttonpressed);
+                }
+                else {
+                    mutebutton3.setBackgroundResource(R.drawable.mutebutton);
+                }
+                isPlay3 = !isPlay3;
+            }
+        });
+
+
+        final ImageButton mutebutton4 = (ImageButton) view.findViewById(R.id.sliderFourMute);
+        mutebutton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (isPlay4) {
+                    mutebutton4.setBackgroundResource(R.drawable.mutebuttonpressed);
+                }
+                else {
+                    mutebutton4.setBackgroundResource(R.drawable.mutebutton);
+                }
+
+                isPlay4 = !isPlay4;
+            }
+        });
+
+
+        final ImageButton mutebutton5 = (ImageButton) view.findViewById(R.id.sliderOneMute);
+        mutebutton5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (isPlay5) {
+                    mutebutton5.setBackgroundResource(R.drawable.mutebuttonpressed);
+                }
+                else {
+                    mutebutton5.setBackgroundResource(R.drawable.mutebutton);
+                }
+
+                isPlay5 = !isPlay5;
+            }
+        });
+
+
         return view;
+
+
     }
 
     /////////////////////////////////////////////serial/////////////////////////////////////////////
@@ -52,6 +140,8 @@ public class MixerFragment extends Fragment {
             e.printStackTrace();
         }
     }
+
+
 
     private void serialInit(){
         UsbManager manager = (UsbManager) getActivity().getSystemService(Context.USB_SERVICE);

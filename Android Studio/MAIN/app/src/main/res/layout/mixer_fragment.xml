@@ -210,18 +210,19 @@
 
     <Button
         android:id="@+id/sliderFiveSolo"
-        android:layout_width="75dp"
+        android:layout_width="48dp"
         android:layout_height="48dp"
-        android:text="Solo"
+        android:background="@drawable/solobutton"
         app:layout_constraintBottom_toBottomOf="@+id/sliderFourSolo"
         app:layout_constraintLeft_toLeftOf="@+id/sliderFiveMute"
         app:layout_constraintRight_toRightOf="@+id/sliderFiveMute"
         app:layout_constraintTop_toTopOf="@+id/sliderFourSolo"
         tools:ignore="HardcodedText" />
 
-    <Button
+    <ImageButton
         android:id="@+id/sliderFiveMute"
-        android:layout_width="75dp"
+        android:layout_width="48dp"
+        android:background="@drawable/mutebutton"
         android:layout_height="48dp"
         android:layout_marginBottom="26dp"
         android:layout_marginEnd="214dp"
@@ -234,13 +235,13 @@
 
     <Button
         android:id="@+id/sliderFourSolo"
-        android:layout_width="75dp"
+        android:background="@drawable/solobutton"
+        android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginEnd="164dp"
         android:layout_marginLeft="165dp"
         android:layout_marginRight="164dp"
         android:layout_marginStart="165dp"
-        android:text="Solo"
         app:layout_constraintBottom_toBottomOf="@+id/sliderThreeSolo"
         app:layout_constraintLeft_toLeftOf="@+id/sliderThreeMute"
         app:layout_constraintRight_toRightOf="@+id/sliderFiveMute"
@@ -249,11 +250,12 @@
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1" />
 
-    <Button
+    <ImageButton
         android:id="@+id/sliderFourMute"
-        android:layout_width="75dp"
+        android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginBottom="26dp"
+        android:background="@drawable/mutebutton"
         android:text="Mute"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -266,13 +268,13 @@
 
     <Button
         android:id="@+id/sliderThreeSolo"
-        android:layout_width="75dp"
+        android:background="@drawable/solobutton"
+        android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginEnd="14dp"
         android:layout_marginLeft="14dp"
         android:layout_marginRight="14dp"
         android:layout_marginStart="14dp"
-        android:text="Solo"
         app:layout_constraintBottom_toBottomOf="@+id/sliderTwoSolo"
         app:layout_constraintLeft_toLeftOf="@+id/volume3"
         app:layout_constraintRight_toRightOf="@+id/volume3"
@@ -281,11 +283,12 @@
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1" />
 
-    <Button
+    <ImageButton
         android:id="@+id/sliderThreeMute"
-        android:layout_width="75dp"
+        android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginBottom="26dp"
+        android:background="@drawable/mutebutton"
         android:text="Mute"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -298,13 +301,13 @@
 
     <Button
         android:id="@+id/sliderTwoSolo"
-        android:layout_width="75dp"
+        android:background="@drawable/solobutton"
+        android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginEnd="49dp"
         android:layout_marginLeft="49dp"
         android:layout_marginRight="49dp"
         android:layout_marginStart="49dp"
-        android:text="Solo"
         app:layout_constraintBottom_toBottomOf="@+id/sliderOneSolo"
         app:layout_constraintLeft_toRightOf="@+id/volume1"
         app:layout_constraintRight_toLeftOf="@+id/volume3"
@@ -313,9 +316,10 @@
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1" />
 
-    <Button
+    <ImageButton
         android:id="@+id/sliderTwoMute"
-        android:layout_width="75dp"
+        android:background="@drawable/mutebutton"
+        android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginBottom="26dp"
         android:text="Mute"
@@ -330,13 +334,13 @@
 
     <Button
         android:id="@+id/sliderOneSolo"
-        android:layout_width="75dp"
+        android:background="@drawable/solobutton"
+        android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginEnd="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
-        android:text="Solo"
         app:layout_constraintBottom_toTopOf="@+id/sliderOneMute"
         app:layout_constraintLeft_toLeftOf="@+id/volume1"
         app:layout_constraintRight_toRightOf="@+id/volume1"
@@ -345,9 +349,10 @@
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1" />
 
-    <Button
+    <ImageButton
         android:id="@+id/sliderOneMute"
-        android:layout_width="75dp"
+        android:background="@drawable/mutebutton"
+        android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginBottom="26dp"
         android:text="Mute"
