@@ -365,4 +365,35 @@
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1" />
 
+
+    <ImageButton
+        android:id="@+id/sliderSixMute"
+        android:background="@drawable/mutebutton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:layout_constraintLeft_toRightOf="@+id/sliderFiveMute"
+        android:layout_marginLeft="105dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="26dp" />
+
+    <Button
+        android:id="@+id/sliderSixSolo"
+        android:background="@drawable/solobutton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/sliderSixMute"
+        app:layout_constraintLeft_toLeftOf="@+id/volume6"
+        app:layout_constraintRight_toRightOf="@+id/volume6"
+        tools:ignore="HardcodedText"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginBottom="-10dp" />
+
 </android.support.constraint.ConstraintLayout>
+
+

@@ -34,6 +34,7 @@ public class MixerFragment extends Fragment {
     Boolean isPlay3 = false;
     Boolean isPlay4 = false;
     Boolean isPlay5 = false;
+    Boolean isPlay6 = false;
 
     ////////////////////////////////////////////On Create//////////////////////////////////////////
     @Nullable
@@ -44,7 +45,7 @@ public class MixerFragment extends Fragment {
         serialInit();
         serialSliderInit();//initialize button
 
-        final ImageButton mutebutton1 = (ImageButton) view.findViewById(R.id.sliderFiveMute);
+        final ImageButton mutebutton1 = (ImageButton) view.findViewById(R.id.sliderOneMute);
         mutebutton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,7 +108,7 @@ public class MixerFragment extends Fragment {
         });
 
 
-        final ImageButton mutebutton5 = (ImageButton) view.findViewById(R.id.sliderOneMute);
+        final ImageButton mutebutton5 = (ImageButton) view.findViewById(R.id.sliderFiveMute);
         mutebutton5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -120,6 +121,22 @@ public class MixerFragment extends Fragment {
                 }
 
                 isPlay5 = !isPlay5;
+            }
+        });
+
+        final ImageButton mutebutton6 = (ImageButton) view.findViewById(R.id.sliderSixMute);
+        mutebutton6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (isPlay6) {
+                    mutebutton6.setBackgroundResource(R.drawable.mutebuttonpressed);
+                }
+                else {
+                    mutebutton6.setBackgroundResource(R.drawable.mutebutton);
+                }
+
+                isPlay6 = !isPlay6;
             }
         });
 

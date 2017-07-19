@@ -31,8 +31,8 @@ public class EffectsFragment extends Fragment{
     }
 
     BottomSheetBehavior lineReverbBehavior, lineChorusBehavior, lineCrusherBehavior,
-            lineFlangerBehavior, linePhaserBehavior, lineDelayBehavior, lineBehaviorBottom;
-    public void bottomLineEffectsInit(){
+            lineFlangerBehavior, linePhaserBehavior, lineDelayBehavior, lineTremoloBehavior, lineBehaviorBottom;
+    public void bottomLineEffectsInit() {
 
         final Button lineReverbButton = (Button) view.findViewById(R.id.line_reverb_button);
         final Button lineChorusButton = (Button) view.findViewById(R.id.line_chorus_button);
@@ -40,6 +40,7 @@ public class EffectsFragment extends Fragment{
         final Button lineFlangerButton = (Button) view.findViewById(R.id.line_flanger_button);
         final Button linePhaserButton = (Button) view.findViewById(R.id.line_phaser_button);
         final Button lineDelayButton = (Button) view.findViewById(R.id.line_delay_button);
+        final Button lineTremoloButton = (Button) view.findViewById(R.id.line_tremolo_button);
 
         final ToggleButton lineReverbSwitch = (ToggleButton) view.findViewById(R.id.LineReverbSwitch);
         final ToggleButton lineChorusSwitch = (ToggleButton) view.findViewById(R.id.LineChorusSwitch);
@@ -47,6 +48,7 @@ public class EffectsFragment extends Fragment{
         final ToggleButton lineFlangerSwitch = (ToggleButton) view.findViewById(R.id.LineFlangerSwitch);
         final ToggleButton linePhaserSwitch = (ToggleButton) view.findViewById(R.id.LinePhaserSwitch);
         final ToggleButton lineDelaySwitch = (ToggleButton) view.findViewById(R.id.LineDelaySwitch);
+        final ToggleButton lineTremoloSwitch = (ToggleButton) view.findViewById(R.id.LineTremoloSwitch);
 
         lineChorusButton.setBackgroundColor(Color.WHITE);
         lineReverbButton.setBackgroundColor(Color.WHITE);
@@ -54,6 +56,61 @@ public class EffectsFragment extends Fragment{
         lineFlangerButton.setBackgroundColor(Color.WHITE);
         lineDelayButton.setBackgroundColor(Color.WHITE);
         linePhaserButton.setBackgroundColor(Color.WHITE);
+        lineTremoloButton.setBackgroundColor(Color.WHITE);
+
+        View lineTremoloView = view.findViewById(R.id.lineTremoloBottom);
+        lineTremoloBehavior = BottomSheetBehavior.from(lineTremoloView);
+        lineTremoloBehavior.setPeekHeight(0);
+        lineTremoloButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View echoView) {
+                if (lineTremoloBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
+
+                    if (!lineTremoloSwitch.isChecked()) {
+                        lineTremoloButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
+
+                    lineTremoloBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    linePhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                } else {
+                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                    lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+                if (!lineReverbSwitch.isChecked()) {
+                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineChorusSwitch.isChecked()) {
+                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineCrusherSwitch.isChecked()) {
+                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!linePhaserSwitch.isChecked()) {
+                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineFlangerSwitch.isChecked()) {
+                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineDelaySwitch.isChecked()) {
+                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+        lineTremoloSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    lineTremoloButton.setBackgroundColor(Color.BLUE);
+                } else {
+                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
 
 
 
@@ -71,6 +128,7 @@ public class EffectsFragment extends Fragment{
                     }
 
                     lineReverbBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -80,6 +138,11 @@ public class EffectsFragment extends Fragment{
                 else {
                     lineReverbButton.setBackgroundColor(Color.WHITE);
                     lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
+                if(!lineTremoloSwitch.isChecked())
+                {
+                    lineTremoloButton.setBackgroundColor(Color.WHITE);
                 }
                 if(!lineChorusSwitch.isChecked())
                 {
@@ -129,6 +192,7 @@ public class EffectsFragment extends Fragment{
                     }
 
                     lineChorusBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -140,6 +204,10 @@ public class EffectsFragment extends Fragment{
                     lineChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
+                if(!lineTremoloSwitch.isChecked())
+                {
+                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                }
                 if(!lineReverbSwitch.isChecked())
                 {
                     lineReverbButton.setBackgroundColor(Color.WHITE);
@@ -187,6 +255,7 @@ public class EffectsFragment extends Fragment{
                     }
 
                     lineCrusherBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -198,6 +267,10 @@ public class EffectsFragment extends Fragment{
                     lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
+                if(!lineTremoloSwitch.isChecked())
+                {
+                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                }
                 if(!lineReverbSwitch.isChecked())
                 {
                     lineReverbButton.setBackgroundColor(Color.WHITE);
@@ -246,6 +319,7 @@ public class EffectsFragment extends Fragment{
                     }
 
                     lineFlangerBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -257,6 +331,10 @@ public class EffectsFragment extends Fragment{
                     lineFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
+                if(!lineTremoloSwitch.isChecked())
+                {
+                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                }
                 if(!lineReverbSwitch.isChecked())
                 {
                     lineReverbButton.setBackgroundColor(Color.WHITE);
@@ -304,6 +382,7 @@ public class EffectsFragment extends Fragment{
                     }
 
                     linePhaserBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -313,6 +392,11 @@ public class EffectsFragment extends Fragment{
                 else {
                     linePhaserButton.setBackgroundColor(Color.WHITE);
                     linePhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
+                if(!lineTremoloSwitch.isChecked())
+                {
+                    lineTremoloButton.setBackgroundColor(Color.WHITE);
                 }
                 if(!lineReverbSwitch.isChecked())
                 {
@@ -361,6 +445,7 @@ public class EffectsFragment extends Fragment{
                     }
 
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     linePhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -370,6 +455,10 @@ public class EffectsFragment extends Fragment{
                 else {
                     lineDelayButton.setBackgroundColor(Color.WHITE);
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+                if(!lineTremoloSwitch.isChecked())
+                {
+                    lineTremoloButton.setBackgroundColor(Color.WHITE);
                 }
                 if(!lineReverbSwitch.isChecked())
                 {

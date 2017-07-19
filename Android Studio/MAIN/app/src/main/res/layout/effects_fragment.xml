@@ -322,7 +322,7 @@
             android:id="@+id/lineReverbBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:background="@android:color/holo_green_dark"
+            android:background="@android:color/holo_blue_dark"
             android:clipToPadding="false"
             app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
             tools:layout_editor_absoluteX="0dp"
@@ -355,7 +355,7 @@
             android:id="@+id/lineChorusBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:background="@android:color/holo_green_dark"
+            android:background="@android:color/holo_blue_dark"
             android:clipToPadding="false"
             app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
             tools:layout_editor_absoluteX="0dp"
@@ -388,7 +388,7 @@
             android:id="@+id/lineCrusherBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:background="@android:color/holo_green_dark"
+            android:background="@android:color/holo_blue_dark"
             android:clipToPadding="false"
             app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
             tools:layout_editor_absoluteX="0dp"
@@ -421,7 +421,7 @@
             android:id="@+id/lineFlangerBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:background="@android:color/holo_green_dark"
+            android:background="@android:color/holo_blue_dark"
             android:clipToPadding="false"
             app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
             tools:layout_editor_absoluteX="0dp"
@@ -454,7 +454,7 @@
             android:id="@+id/linePhaserBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:background="@android:color/holo_green_dark"
+            android:background="@android:color/holo_blue_dark"
             android:clipToPadding="false"
             app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
             tools:layout_editor_absoluteX="0dp"
@@ -487,7 +487,7 @@
             android:id="@+id/lineDelayBottom"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:background="@android:color/holo_green_dark"
+            android:background="@android:color/holo_blue_dark"
             android:clipToPadding="false"
             app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
             tools:layout_editor_absoluteX="0dp"
@@ -505,6 +505,40 @@
 
             <ToggleButton
                 android:id="@+id/LineDelaySwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ToggleButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+
+        <!--Tremolo line bottom sheet-->
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/lineTremoloBottom"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/holo_blue_dark"
+            android:clipToPadding="false"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-100dp">
+
+            <TextView
+                android:layout_width="496dp"
+                android:layout_height="134dp"
+                android:padding="16dp"
+                android:text="line Tremolo"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText"
+                tools:layout_editor_absoluteY="8dp"
+                tools:layout_editor_absoluteX="10760dp" />
+
+            <ToggleButton
+                android:id="@+id/LineTremoloSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
