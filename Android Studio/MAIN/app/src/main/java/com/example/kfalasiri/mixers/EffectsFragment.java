@@ -526,9 +526,9 @@ public class EffectsFragment extends Fragment{
             @Override
             public void onClick(View echoView) {
                 if(micReverbBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
-                    if(!micDelaySwitch.isChecked())
+                    if(!micReverbSwitch.isChecked())
                     {
-                        micDelayButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micReverbButton.setBackgroundColor(Color.parseColor("#82ffa4"));
                     }
 
                     micReverbBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
