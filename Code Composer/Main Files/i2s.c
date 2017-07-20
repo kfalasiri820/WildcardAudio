@@ -22,12 +22,12 @@ void main(){
 	DisableDog();
 	InitPll(0,3);
 	InitPeripheralClocks();
-	//InitMcbspaGpio();
-	//InitMcbspaI2S();
+	InitMcbspaGpio();
+	InitMcbspaI2S();
 	timer_init(150.0,22.6757);
 	enable_timer_interrupt();
 
-	GpioCtrlRegs.GPAMUX2.bit.GPIO23 = 0; // demphasis 0
+	//GpioCtrlRegs.GPAMUX2.bit.GPIO23 = 0; // lrclk
 	GpioCtrlRegs.GPAMUX2.bit.GPIO24 = 0; // demphasis 0
 	GpioCtrlRegs.GPAMUX2.bit.GPIO25 = 0; // demphasis 1
 	GpioCtrlRegs.GPAMUX2.bit.GPIO26 = 0; // pdwn
