@@ -31,7 +31,8 @@ public class EffectsFragment extends Fragment{
     }
 
     BottomSheetBehavior lineReverbBehavior, lineChorusBehavior, lineCrusherBehavior,
-            lineFlangerBehavior, linePhaserBehavior, lineDelayBehavior, lineTremoloBehavior, lineBehaviorBottom;
+            lineFlangerBehavior, linePhaserBehavior, lineDelayBehavior, lineTremoloBehavior, lineBehaviorBottom,
+        lineAutowahBehavior, lineDistortionBehavior, lineNoisegateBehavior, lineAtbBehavior, lineRingmodBehavior;
     public void bottomLineEffectsInit() {
 
         final Button lineReverbButton = (Button) view.findViewById(R.id.line_reverb_button);
@@ -41,6 +42,12 @@ public class EffectsFragment extends Fragment{
         final Button linePhaserButton = (Button) view.findViewById(R.id.line_phaser_button);
         final Button lineDelayButton = (Button) view.findViewById(R.id.line_delay_button);
         final Button lineTremoloButton = (Button) view.findViewById(R.id.line_tremolo_button);
+        final Button lineNoisegateButton = (Button) view.findViewById(R.id.line_noisegate_button);
+        final Button lineAtbButton = (Button) view.findViewById(R.id.line_atb_button);
+        final Button lineRingmodButton = (Button) view.findViewById(R.id.line_ringmod_button);
+        final Button lineDistortionButton = (Button) view.findViewById(R.id.line_distortion_button);
+        final Button lineAutowahButton = (Button) view.findViewById(R.id.line_autowah_button);
+
 
         final ToggleButton lineReverbSwitch = (ToggleButton) view.findViewById(R.id.LineReverbSwitch);
         final ToggleButton lineChorusSwitch = (ToggleButton) view.findViewById(R.id.LineChorusSwitch);
@@ -49,6 +56,11 @@ public class EffectsFragment extends Fragment{
         final ToggleButton linePhaserSwitch = (ToggleButton) view.findViewById(R.id.LinePhaserSwitch);
         final ToggleButton lineDelaySwitch = (ToggleButton) view.findViewById(R.id.LineDelaySwitch);
         final ToggleButton lineTremoloSwitch = (ToggleButton) view.findViewById(R.id.LineTremoloSwitch);
+        final ToggleButton lineAutowahSwitch = (ToggleButton) view.findViewById(R.id.LineAutowahSwitch);
+        final ToggleButton lineDistortionSwitch = (ToggleButton) view.findViewById(R.id.LineDistortionSwitch);
+        final ToggleButton lineNoisegateSwitch = (ToggleButton) view.findViewById(R.id.LineNoisegateSwitch);
+        final ToggleButton lineAtbSwitch = (ToggleButton) view.findViewById(R.id.LineAtbSwitch);
+        final ToggleButton lineRingmodSwitch = (ToggleButton) view.findViewById(R.id.LineRingmodSwitch);
 
         lineChorusButton.setBackgroundColor(Color.WHITE);
         lineReverbButton.setBackgroundColor(Color.WHITE);
@@ -57,6 +69,11 @@ public class EffectsFragment extends Fragment{
         lineDelayButton.setBackgroundColor(Color.WHITE);
         linePhaserButton.setBackgroundColor(Color.WHITE);
         lineTremoloButton.setBackgroundColor(Color.WHITE);
+        lineNoisegateButton.setBackgroundColor(Color.WHITE);
+        lineAtbButton.setBackgroundColor(Color.WHITE);
+        lineRingmodButton.setBackgroundColor(Color.WHITE);
+        lineDistortionButton.setBackgroundColor(Color.WHITE);
+        lineAutowahButton.setBackgroundColor(Color.WHITE);
 
         View lineTremoloView = view.findViewById(R.id.lineTremoloBottom);
         lineTremoloBehavior = BottomSheetBehavior.from(lineTremoloView);
@@ -71,6 +88,11 @@ public class EffectsFragment extends Fragment{
                     }
 
                     lineTremoloBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    lineAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineDistortionBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -78,8 +100,31 @@ public class EffectsFragment extends Fragment{
                     linePhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 } else {
-                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                    if(!lineTremoloSwitch.isChecked()) {
+                        lineTremoloButton.setBackgroundColor(Color.WHITE);
+                    }
                     lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
+                if(!lineDistortionSwitch.isChecked())
+                {
+                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAtbSwitch.isChecked())
+                {
+                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAutowahSwitch.isChecked())
+                {
+                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineRingmodSwitch.isChecked())
+                {
+                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineNoisegateSwitch.isChecked())
+                {
+                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
                 }
                 if (!lineReverbSwitch.isChecked()) {
                     lineReverbButton.setBackgroundColor(Color.WHITE);
@@ -107,7 +152,14 @@ public class EffectsFragment extends Fragment{
                 if (isChecked) {
                     lineTremoloButton.setBackgroundColor(Color.BLUE);
                 } else {
-                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                    if(lineTremoloBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineTremoloSwitch.isChecked())
+                    {
+                        lineTremoloButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
+                    else
+                    {
+                        lineTremoloButton.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
@@ -494,7 +546,8 @@ public class EffectsFragment extends Fragment{
     }
 
     BottomSheetBehavior micReverbBehavior, micChorusBehavior, micCrusherBehavior,
-            micFlangerBehavior, micPhaserBehavior, micDelayBehavior;
+            micFlangerBehavior, micPhaserBehavior, micDelayBehavior, micTremoloBehavior, micAutowahBehavior, micBassemulatorBehavior,
+     micRingmodBehavior, micNoisegateBehavior, micAtbBehavior;
     public void bottomMicEffectsInit(){
 
         final Button micDelayButton = (Button) view.findViewById(R.id.mic_delay_button);
@@ -503,6 +556,12 @@ public class EffectsFragment extends Fragment{
         final Button micPhaserButton = (Button) view.findViewById(R.id.mic_phaser_button);
         final Button micFlangerButton = (Button) view.findViewById(R.id.mic_flanger_button);
         final Button micCrusherButton = (Button) view.findViewById(R.id.mic_bitcrusher_button);
+        final Button micTremoloButton = (Button) view.findViewById(R.id.mic_tremolo_button);
+        final Button micAutowahButton = (Button) view.findViewById(R.id.mic_autowah_button);
+        final Button micBassemulatorButton = (Button) view.findViewById(R.id.mic_bassemulator_button);
+        final Button micRingmodButton = (Button) view.findViewById(R.id.mic_ringmod_button);
+        final Button micNoisegateButton = (Button) view.findViewById(R.id.mic_noisegate_button);
+        final Button micAtbButton = (Button) view.findViewById(R.id.mic_atb_button);
 
         final ToggleButton micReverbSwitch = (ToggleButton) view.findViewById(R.id.MicReverbSwitch);
         final ToggleButton micChorusSwitch = (ToggleButton) view.findViewById(R.id.MicChorusSwitch);
@@ -510,6 +569,12 @@ public class EffectsFragment extends Fragment{
         final ToggleButton micFlangerSwitch = (ToggleButton) view.findViewById(R.id.MicFlangerSwitch);
         final ToggleButton micPhaserSwitch = (ToggleButton) view.findViewById(R.id.MicPhaserSwitch);
         final ToggleButton micDelaySwitch = (ToggleButton) view.findViewById(R.id.MicDelaySwitch);
+        final ToggleButton micNoisegateSwitch = (ToggleButton) view.findViewById(R.id.MicNoisegateSwitch);
+        final ToggleButton micAtbSwitch = (ToggleButton) view.findViewById(R.id.MicAtbSwitch);
+        final ToggleButton micRingmodSwitch = (ToggleButton) view.findViewById(R.id.MicRingmodSwitch);
+        final ToggleButton micTremoloSwitch = (ToggleButton) view.findViewById(R.id.MicTremoloSwitch);
+        final ToggleButton micAutowahSwitch = (ToggleButton) view.findViewById(R.id.MicAutowahSwitch);
+        final ToggleButton micBassemulatorSwitch = (ToggleButton) view.findViewById(R.id.MicBassemulatorSwitch);
 
 
         micChorusButton.setBackgroundColor(Color.WHITE);
@@ -518,6 +583,630 @@ public class EffectsFragment extends Fragment{
         micFlangerButton.setBackgroundColor(Color.WHITE);
         micDelayButton.setBackgroundColor(Color.WHITE);
         micPhaserButton.setBackgroundColor(Color.WHITE);
+        micTremoloButton.setBackgroundColor(Color.WHITE);
+        micAutowahButton.setBackgroundColor(Color.WHITE);
+        micBassemulatorButton.setBackgroundColor(Color.WHITE);
+        micRingmodButton.setBackgroundColor(Color.WHITE);
+        micNoisegateButton.setBackgroundColor(Color.WHITE);
+        micAtbButton.setBackgroundColor(Color.WHITE);
+
+
+        final View micBassemulatorView = view.findViewById(R.id.micBassemulatorBottom);
+        micBassemulatorBehavior = BottomSheetBehavior.from(micBassemulatorView);
+        micBassemulatorBehavior.setPeekHeight(0);
+        micBassemulatorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View echoView) {
+                if(micBassemulatorBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
+                    if(!micBassemulatorSwitch.isChecked())
+                    {
+                        micBassemulatorButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
+
+                    micBassemulatorBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    micTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micPhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
+                }
+                else {
+                    if(!micBassemulatorSwitch.isChecked()) {
+                        micBassemulatorButton.setBackgroundColor(Color.WHITE);
+                    }
+                    micBassemulatorBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+                if(!micAtbSwitch.isChecked())
+                {
+                    micAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micTremoloSwitch.isChecked())
+                {
+                    micTremoloButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micAutowahSwitch.isChecked())
+                {
+                    micAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micRingmodSwitch.isChecked())
+                {
+                    micRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micNoisegateSwitch.isChecked())
+                {
+                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
+
+
+                if(!micReverbSwitch.isChecked())
+                {
+                    micReverbButton.setBackgroundColor(Color.WHITE);
+                }
+
+                if(!micChorusSwitch.isChecked())
+                {
+                    micChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micCrusherSwitch.isChecked())
+                {
+                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micPhaserSwitch.isChecked())
+                {
+                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micFlangerSwitch.isChecked())
+                {
+                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micDelaySwitch.isChecked())
+                {
+                    micDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+
+
+        micBassemulatorSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    micBassemulatorButton.setBackgroundColor(Color.GREEN);
+                }
+                else {
+                    if(micBassemulatorBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micBassemulatorSwitch.isChecked())
+                    {
+                        micBassemulatorButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
+                    else
+                    {
+                        micBassemulatorButton.setBackgroundColor(Color.WHITE);
+                    }
+                }
+            }
+        });
+
+
+        final View micNoisegateView = view.findViewById(R.id.micNoisegateBottom);
+        micNoisegateBehavior = BottomSheetBehavior.from(micNoisegateView);
+        micNoisegateBehavior.setPeekHeight(0);
+        micNoisegateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View echoView) {
+                if(micNoisegateBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
+                    if(!micNoisegateSwitch.isChecked())
+                    {
+                        micNoisegateButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
+
+                    micNoisegateBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    micTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micBassemulatorBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micPhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
+                }
+                else {
+                    if(!micNoisegateSwitch.isChecked()) {
+                        micNoisegateButton.setBackgroundColor(Color.WHITE);
+                    }
+                    micNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+                if(!micAtbSwitch.isChecked())
+                {
+                    micAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micTremoloSwitch.isChecked())
+                {
+                    micTremoloButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micAutowahSwitch.isChecked())
+                {
+                    micAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micRingmodSwitch.isChecked())
+                {
+                    micRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
+                }
+
+
+                if(!micReverbSwitch.isChecked())
+                {
+                    micReverbButton.setBackgroundColor(Color.WHITE);
+                }
+
+                if(!micChorusSwitch.isChecked())
+                {
+                    micChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micCrusherSwitch.isChecked())
+                {
+                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micPhaserSwitch.isChecked())
+                {
+                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micFlangerSwitch.isChecked())
+                {
+                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micDelaySwitch.isChecked())
+                {
+                    micDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+
+
+        micNoisegateSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    micNoisegateButton.setBackgroundColor(Color.GREEN);
+                }
+                else {
+                    if(micNoisegateBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micNoisegateSwitch.isChecked())
+                    {
+                        micNoisegateButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
+                    else
+                    {
+                        micNoisegateButton.setBackgroundColor(Color.WHITE);
+                    }
+                }
+            }
+        });
+
+        final View micAtbView = view.findViewById(R.id.micAtbBottom);
+        micAtbBehavior = BottomSheetBehavior.from(micAtbView);
+        micAtbBehavior.setPeekHeight(0);
+        micAtbButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View echoView) {
+                if(micAtbBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
+                    if(!micAtbSwitch.isChecked())
+                    {
+                        micAtbButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
+
+                    micAtbBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    micTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micBassemulatorBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micPhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
+                }
+                else {
+                    if(!micAtbSwitch.isChecked()) {
+                        micAtbButton.setBackgroundColor(Color.WHITE);
+                    }
+                    micAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micTremoloSwitch.isChecked())
+                {
+                    micTremoloButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micAutowahSwitch.isChecked())
+                {
+                    micAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micRingmodSwitch.isChecked())
+                {
+                    micRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micNoisegateSwitch.isChecked())
+                {
+                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
+
+
+                if(!micReverbSwitch.isChecked())
+                {
+                    micReverbButton.setBackgroundColor(Color.WHITE);
+                }
+
+                if(!micChorusSwitch.isChecked())
+                {
+                    micChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micCrusherSwitch.isChecked())
+                {
+                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micPhaserSwitch.isChecked())
+                {
+                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micFlangerSwitch.isChecked())
+                {
+                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micDelaySwitch.isChecked())
+                {
+                    micDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+
+
+        micAtbSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    micAtbButton.setBackgroundColor(Color.GREEN);
+                }
+                else {
+                    if(micAtbBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micAtbSwitch.isChecked())
+                    {
+                        micAtbButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
+                    else
+                    {
+                        micAtbButton.setBackgroundColor(Color.WHITE);
+                    }
+                }
+            }
+        });
+
+
+        final View micRingmodView = view.findViewById(R.id.micRingmodBottom);
+        micRingmodBehavior = BottomSheetBehavior.from(micRingmodView);
+        micRingmodBehavior.setPeekHeight(0);
+        micRingmodButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View echoView) {
+                if(micRingmodBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
+                    if(!micRingmodSwitch.isChecked())
+                    {
+                        micRingmodButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
+
+                    micRingmodBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    micTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micBassemulatorBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micPhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
+                }
+                else {
+                    if(!micRingmodSwitch.isChecked()) {
+                        micRingmodButton.setBackgroundColor(Color.WHITE);
+                    }
+                    micRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+                if(!micAtbSwitch.isChecked())
+                {
+                    micAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micTremoloSwitch.isChecked())
+                {
+                    micTremoloButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micAutowahSwitch.isChecked())
+                {
+                    micAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micNoisegateSwitch.isChecked())
+                {
+                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
+
+
+                if(!micReverbSwitch.isChecked())
+                {
+                    micReverbButton.setBackgroundColor(Color.WHITE);
+                }
+
+                if(!micChorusSwitch.isChecked())
+                {
+                    micChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micCrusherSwitch.isChecked())
+                {
+                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micPhaserSwitch.isChecked())
+                {
+                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micFlangerSwitch.isChecked())
+                {
+                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micDelaySwitch.isChecked())
+                {
+                    micDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+
+
+        micRingmodSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    micRingmodButton.setBackgroundColor(Color.GREEN);
+                }
+                else {
+                    if(micRingmodBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micRingmodSwitch.isChecked())
+                    {
+                        micRingmodButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
+                    else
+                    {
+                        micRingmodButton.setBackgroundColor(Color.WHITE);
+                    }
+                }
+            }
+        });
+
+
+        final View micAutowahView = view.findViewById(R.id.micAutowahBottom);
+        micAutowahBehavior = BottomSheetBehavior.from(micAutowahView);
+        micAutowahBehavior.setPeekHeight(0);
+        micAutowahButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View echoView) {
+                if(micAutowahBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
+                    if(!micAutowahSwitch.isChecked())
+                    {
+                        micAutowahButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
+
+                    micAutowahBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    micTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micBassemulatorBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micPhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
+                }
+                else {
+                    if(!micAutowahSwitch.isChecked()) {
+                        micAutowahButton.setBackgroundColor(Color.WHITE);
+                    }
+                    micAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+                if(!micAtbSwitch.isChecked())
+                {
+                    micAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micTremoloSwitch.isChecked())
+                {
+                    micTremoloButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micRingmodSwitch.isChecked())
+                {
+                    micRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micNoisegateSwitch.isChecked())
+                {
+                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
+
+
+                if(!micReverbSwitch.isChecked())
+                {
+                    micReverbButton.setBackgroundColor(Color.WHITE);
+                }
+
+                if(!micChorusSwitch.isChecked())
+                {
+                    micChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micCrusherSwitch.isChecked())
+                {
+                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micPhaserSwitch.isChecked())
+                {
+                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micFlangerSwitch.isChecked())
+                {
+                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micDelaySwitch.isChecked())
+                {
+                    micDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+
+
+        micAutowahSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    micAutowahButton.setBackgroundColor(Color.GREEN);
+                }
+                else {
+                    if(micAutowahBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micAutowahSwitch.isChecked())
+                    {
+                        micAutowahButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
+                    else
+                    {
+                        micAutowahButton.setBackgroundColor(Color.WHITE);
+                    }
+                }
+            }
+        });
+
+
+        final View micTremoloView = view.findViewById(R.id.micTremoloBottom);
+        micTremoloBehavior = BottomSheetBehavior.from(micTremoloView);
+        micTremoloBehavior.setPeekHeight(0);
+        micTremoloButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View echoView) {
+                if(micTremoloBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
+                    if(!micTremoloSwitch.isChecked())
+                    {
+                        micTremoloButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
+
+                    micTremoloBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    micAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micBassemulatorBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micPhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
+                }
+                else {
+                    if(!micTremoloSwitch.isChecked()) {
+                        micTremoloButton.setBackgroundColor(Color.WHITE);
+                    }
+                    micTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+                if(!micAtbSwitch.isChecked())
+                {
+                    micAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micAutowahSwitch.isChecked())
+                {
+                    micAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micRingmodSwitch.isChecked())
+                {
+                    micRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micNoisegateSwitch.isChecked())
+                {
+                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
+
+
+                if(!micReverbSwitch.isChecked())
+                {
+                    micReverbButton.setBackgroundColor(Color.WHITE);
+                }
+
+                if(!micChorusSwitch.isChecked())
+                {
+                    micChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micCrusherSwitch.isChecked())
+                {
+                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micPhaserSwitch.isChecked())
+                {
+                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micFlangerSwitch.isChecked())
+                {
+                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micDelaySwitch.isChecked())
+                {
+                    micDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+
+
+        micTremoloSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    micTremoloButton.setBackgroundColor(Color.GREEN);
+                }
+                else {
+                    if(micTremoloBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micTremoloSwitch.isChecked())
+                    {
+                        micTremoloButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
+                    else
+                    {
+                        micTremoloButton.setBackgroundColor(Color.WHITE);
+                    }
+                }
+            }
+        });
+
 
         final View micReverbView = view.findViewById(R.id.micReverbBottom);
         micReverbBehavior = BottomSheetBehavior.from(micReverbView);
@@ -532,6 +1221,12 @@ public class EffectsFragment extends Fragment{
                     }
 
                     micReverbBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    micTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micBassemulatorBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -540,9 +1235,37 @@ public class EffectsFragment extends Fragment{
 
                 }
                 else {
-                    micReverbButton.setBackgroundColor(Color.WHITE);
+                    if(!micReverbSwitch.isChecked()) {
+                        micReverbButton.setBackgroundColor(Color.WHITE);
+                    }
                     micReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
+
+                if(!micAtbSwitch.isChecked())
+                {
+                    micAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micAutowahSwitch.isChecked())
+                {
+                    micAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micRingmodSwitch.isChecked())
+                {
+                    micRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micNoisegateSwitch.isChecked())
+                {
+                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micTremoloSwitch.isChecked())
+                {
+                    micTremoloButton.setBackgroundColor(Color.WHITE);
+                }
+
                 if(!micChorusSwitch.isChecked())
                 {
                     micChorusButton.setBackgroundColor(Color.WHITE);
@@ -574,7 +1297,14 @@ public class EffectsFragment extends Fragment{
                     micReverbButton.setBackgroundColor(Color.GREEN);
                 }
                 else {
-                    micReverbButton.setBackgroundColor(Color.WHITE);
+                    if(micReverbBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micReverbSwitch.isChecked())
+                    {
+                        micReverbButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
+                    else
+                    {
+                        micReverbButton.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
@@ -597,6 +1327,12 @@ public class EffectsFragment extends Fragment{
                     }
 
                     micChorusBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    micTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micBassemulatorBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -605,8 +1341,35 @@ public class EffectsFragment extends Fragment{
 
                 }
                 else {
-                    micChorusButton.setBackgroundColor(Color.WHITE);
+                    if(!micChorusSwitch.isChecked()) {
+                        micChorusButton.setBackgroundColor(Color.WHITE);
+                    }
                     micChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
+                if(!micAtbSwitch.isChecked())
+                {
+                    micAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micAutowahSwitch.isChecked())
+                {
+                    micAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micRingmodSwitch.isChecked())
+                {
+                    micRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micNoisegateSwitch.isChecked())
+                {
+                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micTremoloSwitch.isChecked())
+                {
+                    micTremoloButton.setBackgroundColor(Color.WHITE);
                 }
 
                 if(!micReverbSwitch.isChecked())
@@ -638,7 +1401,14 @@ public class EffectsFragment extends Fragment{
                     micChorusButton.setBackgroundColor(Color.GREEN);
                 }
                 else {
-                    micChorusButton.setBackgroundColor(Color.WHITE);
+                    if(micChorusBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micChorusSwitch.isChecked())
+                    {
+                        micChorusButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
+                    else
+                    {
+                        micChorusButton.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
@@ -658,6 +1428,12 @@ public class EffectsFragment extends Fragment{
 
 
                     micCrusherBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    micTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micBassemulatorBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -666,8 +1442,35 @@ public class EffectsFragment extends Fragment{
 
                 }
                 else {
-                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                    if(!micCrusherSwitch.isChecked()) {
+                        micCrusherButton.setBackgroundColor(Color.WHITE);
+                    }
                     micCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
+                if(!micAtbSwitch.isChecked())
+                {
+                    micAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micAutowahSwitch.isChecked())
+                {
+                    micAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micRingmodSwitch.isChecked())
+                {
+                    micRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micNoisegateSwitch.isChecked())
+                {
+                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micTremoloSwitch.isChecked())
+                {
+                    micTremoloButton.setBackgroundColor(Color.WHITE);
                 }
                 if(!micChorusSwitch.isChecked())
                 {
@@ -698,7 +1501,14 @@ public class EffectsFragment extends Fragment{
                     micCrusherButton.setBackgroundColor(Color.GREEN);
                 }
                 else {
-                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                    if(micCrusherBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micCrusherSwitch.isChecked())
+                    {
+                        micCrusherButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
+                    else
+                    {
+                        micCrusherButton.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
@@ -717,6 +1527,12 @@ public class EffectsFragment extends Fragment{
                     }
 
                     micFlangerBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    micTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micBassemulatorBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -725,8 +1541,35 @@ public class EffectsFragment extends Fragment{
                 }
 
                 else {
-                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                    if(!micFlangerSwitch.isChecked()) {
+                        micFlangerButton.setBackgroundColor(Color.WHITE);
+                    }
                     micFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
+                if(!micAtbSwitch.isChecked())
+                {
+                    micAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micAutowahSwitch.isChecked())
+                {
+                    micAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micRingmodSwitch.isChecked())
+                {
+                    micRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micNoisegateSwitch.isChecked())
+                {
+                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micTremoloSwitch.isChecked())
+                {
+                    micTremoloButton.setBackgroundColor(Color.WHITE);
                 }
 
                 if(!micChorusSwitch.isChecked())
@@ -758,7 +1601,14 @@ public class EffectsFragment extends Fragment{
                     micFlangerButton.setBackgroundColor(Color.GREEN);
                 }
                 else {
-                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                    if(micFlangerBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micFlangerSwitch.isChecked())
+                    {
+                        micFlangerButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
+                    else
+                    {
+                        micFlangerButton.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
@@ -777,6 +1627,12 @@ public class EffectsFragment extends Fragment{
                     }
 
                     micPhaserBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    micTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micBassemulatorBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -786,8 +1642,35 @@ public class EffectsFragment extends Fragment{
                 }
 
                 else {
-                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                    if(!micPhaserSwitch.isChecked()) {
+                        micPhaserButton.setBackgroundColor(Color.WHITE);
+                    }
                     micPhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
+                if(!micAtbSwitch.isChecked())
+                {
+                    micAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micAutowahSwitch.isChecked())
+                {
+                    micAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micRingmodSwitch.isChecked())
+                {
+                    micRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micNoisegateSwitch.isChecked())
+                {
+                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micTremoloSwitch.isChecked())
+                {
+                    micTremoloButton.setBackgroundColor(Color.WHITE);
                 }
 
                 if(!micChorusSwitch.isChecked())
@@ -820,13 +1703,19 @@ public class EffectsFragment extends Fragment{
                     micPhaserButton.setBackgroundColor(Color.GREEN);
                 }
                 else {
-                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                    if(micPhaserBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micPhaserSwitch.isChecked())
+                    {
+                        micPhaserButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
+                    else
+                    {
+                        micPhaserButton.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
 
         final View micDelayView = view.findViewById(R.id.micDelayBottom);
-        boolean micDelayCheck;
         micDelayBehavior = BottomSheetBehavior.from(micDelayView);
         micDelayBehavior.setPeekHeight(0);
         micDelayButton.setOnClickListener(new View.OnClickListener() {
@@ -840,6 +1729,12 @@ public class EffectsFragment extends Fragment{
                     }
 
                     micDelayBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    micTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micBassemulatorBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    micNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micPhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     micCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -849,8 +1744,35 @@ public class EffectsFragment extends Fragment{
                 }
 
                 else {
-                    micDelayButton.setBackgroundColor(Color.WHITE);
+                    if(!micDelaySwitch.isChecked()) {
+                        micDelayButton.setBackgroundColor(Color.WHITE);
+                    }
                     micDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
+                if(!micAtbSwitch.isChecked())
+                {
+                    micAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micAutowahSwitch.isChecked())
+                {
+                    micAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micRingmodSwitch.isChecked())
+                {
+                    micRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micNoisegateSwitch.isChecked())
+                {
+                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!micTremoloSwitch.isChecked())
+                {
+                    micTremoloButton.setBackgroundColor(Color.WHITE);
                 }
 
                 if(!micChorusSwitch.isChecked())
@@ -882,7 +1804,14 @@ public class EffectsFragment extends Fragment{
                     micDelayButton.setBackgroundColor(Color.GREEN);
                 }
                 else {
-                    micDelayButton.setBackgroundColor(Color.WHITE);
+                    if(micDelayBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micDelaySwitch.isChecked())
+                    {
+                        micDelayButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                    }
+                    else
+                    {
+                        micDelayButton.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
