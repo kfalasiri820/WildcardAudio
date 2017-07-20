@@ -5,9 +5,6 @@
  *      Author: Ish's Master Race PC
  */
 
-
-
-
 #include <DSP28x_Project.h>
 #include "timer.h"
 
@@ -38,7 +35,7 @@ void main(){
 
 
 	while(1) {
-		GpioDataRegs.GPADAT.bit.GPIO23 = 0;
+		//GpioDataRegs.GPADAT.bit.GPIO23 = 0;
 	}
 }
 
@@ -46,18 +43,13 @@ void main(){
 void InitMcbspaI2S(void){
 	/*
 	 * Connections
-	 * MCLKXA <- BCLK from DAC for transmit clock
-	 * MFSXA <- WCLK from DAC for frame sync signal
+	 * MCLKXA -> BCLK from DAC for transmit clock
+	 * MFSXA -> WCLK from DAC for frame sync signal
 	 *
-	 * Note, as of now, only using MCLKXA (not MCLKRA) for transmit.
 	 */
 
-    //Right now, the DSP is slave and codec is master (this is not what we want)
-
-	//GPIOs dood
-
 	//Bit Clock set up
-	//word size * fs * 2 = 24 * 44100 * 2 = 2,116,800
+	//word size * fs * 2
 
 	//Word Clock set up
 	//fs
