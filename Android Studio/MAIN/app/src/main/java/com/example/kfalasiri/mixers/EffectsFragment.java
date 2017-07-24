@@ -69,7 +69,7 @@ public class EffectsFragment extends Fragment{
         lineFlangerButton.setBackgroundColor(Color.WHITE);
         lineDelayButton.setBackgroundColor(Color.WHITE);
         linePhaserButton.setBackgroundColor(Color.WHITE);
-        lineTremoloButton.setBackgroundColor(Color.WHITE);
+//        lineTremoloButton.setBackgroundColor(Color.WHITE);
         lineNoisegateButton.setBackgroundColor(Color.WHITE);
         lineAtbButton.setBackgroundColor(Color.WHITE);
         lineRingmodButton.setBackgroundColor(Color.WHITE);
@@ -85,7 +85,7 @@ public class EffectsFragment extends Fragment{
                 if (lineTremoloBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
 
                     if (!lineTremoloSwitch.isChecked()) {
-                        lineTremoloButton.setBackgroundColor(Color.parseColor("#82dcff"));
+//                        lineTremoloButton.setBackgroundColor(Color.parseColor("#82dcff"));
                     }
 
                     lineTremoloBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -102,7 +102,7 @@ public class EffectsFragment extends Fragment{
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 } else {
                     if(!lineTremoloSwitch.isChecked()) {
-                        lineTremoloButton.setBackgroundColor(Color.WHITE);
+//                        lineTremoloButton.setBackgroundColor(Color.WHITE);
                     }
                     lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
