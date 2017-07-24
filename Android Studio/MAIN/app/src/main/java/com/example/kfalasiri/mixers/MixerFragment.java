@@ -29,12 +29,19 @@ public class MixerFragment extends Fragment {
     private SeekBar volumeSeekbar = null;
     View view;
     TextView myText;
-    Boolean isPlay = false;
-    Boolean isPlay2 = false;
-    Boolean isPlay3 = false;
-    Boolean isPlay4 = false;
-    Boolean isPlay5 = false;
-    Boolean isPlay6 = false;
+    Boolean isPlay = true;
+    Boolean isPlay2 = true;
+    Boolean isPlay3 = true;
+    Boolean isPlay4 = true;
+    Boolean isPlay5 = true;
+    Boolean isPlay6 = true;
+
+    Boolean isPlay7 = true;
+    Boolean isPlay8 = true;
+    Boolean isPlay9 = true;
+    Boolean isPlay10 = true;
+    Boolean isPlay11 = true;
+    Boolean isPlay12 = true;
 
     ////////////////////////////////////////////On Create//////////////////////////////////////////
     @Nullable
@@ -139,6 +146,105 @@ public class MixerFragment extends Fragment {
                 isPlay6 = !isPlay6;
             }
         });
+
+        final ImageButton solobutton1 = (ImageButton) view.findViewById(R.id.sliderOneSolo);
+        solobutton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (isPlay7) {
+                    solobutton1.setBackgroundResource(R.drawable.solobuttonpressed);
+                }
+                else {
+                    solobutton1.setBackgroundResource(R.drawable.solobutton);
+                }
+
+                isPlay7 = !isPlay7;
+            }
+        });
+
+        final ImageButton solobutton2 = (ImageButton) view.findViewById(R.id.sliderTwoSolo);
+        solobutton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (isPlay8) {
+                    solobutton2.setBackgroundResource(R.drawable.solobuttonpressed);
+                }
+                else {
+                    solobutton2.setBackgroundResource(R.drawable.solobutton);
+                }
+
+                isPlay8 = !isPlay8;
+            }
+        });
+
+        final ImageButton solobutton3 = (ImageButton) view.findViewById(R.id.sliderThreeSolo);
+        solobutton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (isPlay9) {
+                    solobutton3.setBackgroundResource(R.drawable.solobuttonpressed);
+                }
+                else {
+                    solobutton3.setBackgroundResource(R.drawable.solobutton);
+                }
+
+                isPlay9 = !isPlay9;
+            }
+        });
+
+        final ImageButton solobutton4 = (ImageButton) view.findViewById(R.id.sliderFourSolo);
+        solobutton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (isPlay10) {
+                    solobutton4.setBackgroundResource(R.drawable.solobuttonpressed);
+                }
+                else {
+                    solobutton4.setBackgroundResource(R.drawable.solobutton);
+                }
+
+                isPlay10 = !isPlay10;
+            }
+        });
+
+
+        final ImageButton solobutton5 = (ImageButton) view.findViewById(R.id.sliderFiveSolo);
+        solobutton5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (isPlay11) {
+                    solobutton5.setBackgroundResource(R.drawable.solobuttonpressed);
+                }
+                else {
+                    solobutton5.setBackgroundResource(R.drawable.solobutton);
+                }
+
+                isPlay11 = !isPlay11;
+            }
+        });
+
+
+        final ImageButton solobutton6 = (ImageButton) view.findViewById(R.id.sliderSixSolo);
+        solobutton6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (isPlay12) {
+                    solobutton6.setBackgroundResource(R.drawable.solobuttonpressed);
+                }
+                else {
+                    solobutton6.setBackgroundResource(R.drawable.solobutton);
+                }
+
+                isPlay12 = !isPlay12;
+            }
+        });
+
 
 
         return view;

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.ToggleButton;
 
 public class EffectsFragment extends Fragment{
@@ -154,11 +155,457 @@ public class EffectsFragment extends Fragment{
                 } else {
                     if(lineTremoloBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineTremoloSwitch.isChecked())
                     {
-                        lineTremoloButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        lineTremoloButton.setBackgroundColor(Color.parseColor("#82dcff"));
                     }
                     else
                     {
                         lineTremoloButton.setBackgroundColor(Color.WHITE);
+                    }
+                }
+            }
+        });
+
+        View lineAtbView = view.findViewById(R.id.lineAtbBottom);
+        lineAtbBehavior = BottomSheetBehavior.from(lineAtbView);
+        lineAtbBehavior.setPeekHeight(0);
+        lineAtbButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View echoView) {
+                if (lineAtbBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
+
+                    if (!lineAtbSwitch.isChecked()) {
+                        lineAtbButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
+
+                    lineAtbBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineDistortionBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    linePhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                } else {
+                    if(!lineAtbSwitch.isChecked()) {
+                        lineAtbButton.setBackgroundColor(Color.WHITE);
+                    }
+                    lineAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
+                if(!lineDistortionSwitch.isChecked())
+                {
+                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineTremoloSwitch.isChecked())
+                {
+                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAutowahSwitch.isChecked())
+                {
+                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineRingmodSwitch.isChecked())
+                {
+                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineNoisegateSwitch.isChecked())
+                {
+                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineReverbSwitch.isChecked()) {
+                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineChorusSwitch.isChecked()) {
+                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineCrusherSwitch.isChecked()) {
+                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!linePhaserSwitch.isChecked()) {
+                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineFlangerSwitch.isChecked()) {
+                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineDelaySwitch.isChecked()) {
+                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+        lineAtbSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    lineAtbButton.setBackgroundColor(Color.BLUE);
+                } else {
+                    if(lineAtbBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineAtbSwitch.isChecked())
+                    {
+                        lineAtbButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
+                    else
+                    {
+                        lineAtbButton.setBackgroundColor(Color.WHITE);
+                    }
+                }
+            }
+        });
+
+        View lineRingmodView = view.findViewById(R.id.lineRingmodBottom);
+        lineRingmodBehavior = BottomSheetBehavior.from(lineRingmodView);
+        lineRingmodBehavior.setPeekHeight(0);
+        lineRingmodButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View echoView) {
+                if (lineRingmodBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
+
+                    if (!lineRingmodSwitch.isChecked()) {
+                        lineRingmodButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
+
+                    lineRingmodBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    lineAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineDistortionBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    linePhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                } else {
+                    if(!lineRingmodSwitch.isChecked()) {
+                        lineRingmodButton.setBackgroundColor(Color.WHITE);
+                    }
+                    lineRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
+                if(!lineDistortionSwitch.isChecked())
+                {
+                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAtbSwitch.isChecked())
+                {
+                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAutowahSwitch.isChecked())
+                {
+                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineTremoloSwitch.isChecked())
+                {
+                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineNoisegateSwitch.isChecked())
+                {
+                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineReverbSwitch.isChecked()) {
+                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineChorusSwitch.isChecked()) {
+                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineCrusherSwitch.isChecked()) {
+                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!linePhaserSwitch.isChecked()) {
+                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineFlangerSwitch.isChecked()) {
+                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineDelaySwitch.isChecked()) {
+                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+        lineRingmodSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    lineRingmodButton.setBackgroundColor(Color.BLUE);
+                } else {
+                    if(lineRingmodBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineRingmodSwitch.isChecked())
+                    {
+                        lineRingmodButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
+                    else
+                    {
+                        lineRingmodButton.setBackgroundColor(Color.WHITE);
+                    }
+                }
+            }
+        });
+
+        View lineDistortionView = view.findViewById(R.id.lineDistortionBottom);
+        lineDistortionBehavior = BottomSheetBehavior.from(lineDistortionView);
+        lineDistortionBehavior.setPeekHeight(0);
+        lineDistortionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View echoView) {
+                if (lineDistortionBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
+
+                    if (!lineDistortionSwitch.isChecked()) {
+                        lineDistortionButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
+
+                    lineDistortionBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    lineAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    linePhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                } else {
+                    if(!lineDistortionSwitch.isChecked()) {
+                        lineDistortionButton.setBackgroundColor(Color.WHITE);
+                    }
+                    lineDistortionBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
+                if(!lineTremoloSwitch.isChecked())
+                {
+                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAtbSwitch.isChecked())
+                {
+                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAutowahSwitch.isChecked())
+                {
+                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineRingmodSwitch.isChecked())
+                {
+                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineNoisegateSwitch.isChecked())
+                {
+                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineReverbSwitch.isChecked()) {
+                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineChorusSwitch.isChecked()) {
+                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineCrusherSwitch.isChecked()) {
+                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!linePhaserSwitch.isChecked()) {
+                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineFlangerSwitch.isChecked()) {
+                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineDelaySwitch.isChecked()) {
+                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+        lineDistortionSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    lineDistortionButton.setBackgroundColor(Color.BLUE);
+                } else {
+                    if(lineDistortionBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineDistortionSwitch.isChecked())
+                    {
+                        lineDistortionButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
+                    else
+                    {
+                        lineDistortionButton.setBackgroundColor(Color.WHITE);
+                    }
+                }
+            }
+        });
+
+
+        View lineNoisegateView = view.findViewById(R.id.lineNoisegateBottom);
+        lineNoisegateBehavior = BottomSheetBehavior.from(lineNoisegateView);
+        lineNoisegateBehavior.setPeekHeight(0);
+        lineNoisegateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View echoView) {
+                if (lineNoisegateBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
+
+                    if (!lineNoisegateSwitch.isChecked()) {
+                        lineNoisegateButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
+
+                    lineNoisegateBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    lineAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineDistortionBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    linePhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                } else {
+                    if(!lineNoisegateSwitch.isChecked()) {
+                        lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                    }
+                    lineNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
+                if(!lineDistortionSwitch.isChecked())
+                {
+                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAtbSwitch.isChecked())
+                {
+                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAutowahSwitch.isChecked())
+                {
+                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineRingmodSwitch.isChecked())
+                {
+                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineTremoloSwitch.isChecked())
+                {
+                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineReverbSwitch.isChecked()) {
+                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineChorusSwitch.isChecked()) {
+                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineCrusherSwitch.isChecked()) {
+                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!linePhaserSwitch.isChecked()) {
+                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineFlangerSwitch.isChecked()) {
+                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineDelaySwitch.isChecked()) {
+                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+        lineNoisegateSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    lineNoisegateButton.setBackgroundColor(Color.BLUE);
+                } else {
+                    if(lineNoisegateBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineNoisegateSwitch.isChecked())
+                    {
+                        lineNoisegateButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
+                    else
+                    {
+                        lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                    }
+                }
+            }
+        });
+
+        View lineAutowahView = view.findViewById(R.id.lineAutowahBottom);
+        lineAutowahBehavior = BottomSheetBehavior.from(lineAutowahView);
+        lineAutowahBehavior.setPeekHeight(0);
+        lineAutowahButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View echoView) {
+                if (lineAutowahBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
+
+                    if (!lineAutowahSwitch.isChecked()) {
+                        lineAutowahButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
+
+                    lineAutowahBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    lineAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineDistortionBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    linePhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                } else {
+                    if(!lineAutowahSwitch.isChecked()) {
+                        lineAutowahButton.setBackgroundColor(Color.WHITE);
+                    }
+                    lineAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
+                if(!lineDistortionSwitch.isChecked())
+                {
+                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAtbSwitch.isChecked())
+                {
+                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineTremoloSwitch.isChecked())
+                {
+                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineRingmodSwitch.isChecked())
+                {
+                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineNoisegateSwitch.isChecked())
+                {
+                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineReverbSwitch.isChecked()) {
+                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineChorusSwitch.isChecked()) {
+                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineCrusherSwitch.isChecked()) {
+                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!linePhaserSwitch.isChecked()) {
+                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineFlangerSwitch.isChecked()) {
+                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                }
+                if (!lineDelaySwitch.isChecked()) {
+                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                }
+            }
+        });
+
+        lineAutowahSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    lineAutowahButton.setBackgroundColor(Color.BLUE);
+                } else {
+                    if(lineAutowahBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineAutowahSwitch.isChecked())
+                    {
+                        lineAutowahButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
+                    else
+                    {
+                        lineAutowahButton.setBackgroundColor(Color.WHITE);
                     }
                 }
             }
@@ -180,6 +627,11 @@ public class EffectsFragment extends Fragment{
                     }
 
                     lineReverbBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    lineAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineDistortionBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -188,10 +640,33 @@ public class EffectsFragment extends Fragment{
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
                 else {
-                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                    if(!lineReverbSwitch.isChecked()) {
+                        lineReverbButton.setBackgroundColor(Color.WHITE);
+                    }
                     lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
+
+                if(!lineDistortionSwitch.isChecked())
+                {
+                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAtbSwitch.isChecked())
+                {
+                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAutowahSwitch.isChecked())
+                {
+                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineRingmodSwitch.isChecked())
+                {
+                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineNoisegateSwitch.isChecked())
+                {
+                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
                 if(!lineTremoloSwitch.isChecked())
                 {
                     lineTremoloButton.setBackgroundColor(Color.WHITE);
@@ -224,7 +699,14 @@ public class EffectsFragment extends Fragment{
                 if (isChecked) {
                     lineReverbButton.setBackgroundColor(Color.BLUE);
                 } else {
-                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                    if(lineReverbBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineReverbSwitch.isChecked())
+                    {
+                        lineReverbButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
+                    else
+                    {
+                        lineReverbButton.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
@@ -244,6 +726,11 @@ public class EffectsFragment extends Fragment{
                     }
 
                     lineChorusBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    lineAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineDistortionBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -252,10 +739,32 @@ public class EffectsFragment extends Fragment{
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
                 else {
-                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                    if(!lineChorusSwitch.isChecked()) {
+                        lineChorusButton.setBackgroundColor(Color.WHITE);
+                    }
                     lineChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
+                if(!lineDistortionSwitch.isChecked())
+                {
+                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAtbSwitch.isChecked())
+                {
+                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAutowahSwitch.isChecked())
+                {
+                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineRingmodSwitch.isChecked())
+                {
+                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineNoisegateSwitch.isChecked())
+                {
+                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
                 if(!lineTremoloSwitch.isChecked())
                 {
                     lineTremoloButton.setBackgroundColor(Color.WHITE);
@@ -288,7 +797,14 @@ public class EffectsFragment extends Fragment{
                 if (isChecked) {
                     lineChorusButton.setBackgroundColor(Color.BLUE);
                 } else {
-                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                    if(lineChorusBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineChorusSwitch.isChecked())
+                    {
+                        lineChorusButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
+                    else
+                    {
+                        lineChorusButton.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
@@ -307,6 +823,11 @@ public class EffectsFragment extends Fragment{
                     }
 
                     lineCrusherBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    lineAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineDistortionBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -315,10 +836,32 @@ public class EffectsFragment extends Fragment{
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
                 else {
-                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                    if(!lineCrusherSwitch.isChecked()) {
+                        lineCrusherButton.setBackgroundColor(Color.WHITE);
+                    }
                     lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
+                if(!lineDistortionSwitch.isChecked())
+                {
+                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAtbSwitch.isChecked())
+                {
+                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAutowahSwitch.isChecked())
+                {
+                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineRingmodSwitch.isChecked())
+                {
+                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineNoisegateSwitch.isChecked())
+                {
+                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
                 if(!lineTremoloSwitch.isChecked())
                 {
                     lineTremoloButton.setBackgroundColor(Color.WHITE);
@@ -352,7 +895,14 @@ public class EffectsFragment extends Fragment{
                 if (isChecked) {
                     lineCrusherButton.setBackgroundColor(Color.BLUE);
                 } else {
-                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                    if(lineCrusherBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineCrusherSwitch.isChecked())
+                    {
+                        lineCrusherButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
+                    else
+                    {
+                        lineCrusherButton.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
@@ -371,6 +921,11 @@ public class EffectsFragment extends Fragment{
                     }
 
                     lineFlangerBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    lineAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineDistortionBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -379,10 +934,32 @@ public class EffectsFragment extends Fragment{
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
                 else {
+                    if(!lineFlangerSwitch.isChecked()) {
                     lineFlangerButton.setBackgroundColor(Color.WHITE);
+                }
                     lineFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
+                if(!lineDistortionSwitch.isChecked())
+                {
+                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAtbSwitch.isChecked())
+                {
+                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAutowahSwitch.isChecked())
+                {
+                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineRingmodSwitch.isChecked())
+                {
+                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineNoisegateSwitch.isChecked())
+                {
+                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
                 if(!lineTremoloSwitch.isChecked())
                 {
                     lineTremoloButton.setBackgroundColor(Color.WHITE);
@@ -415,7 +992,14 @@ public class EffectsFragment extends Fragment{
                 if (isChecked) {
                     lineFlangerButton.setBackgroundColor(Color.BLUE);
                 } else {
-                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                    if(lineFlangerBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineFlangerSwitch.isChecked())
+                    {
+                        lineFlangerButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
+                    else
+                    {
+                        lineFlangerButton.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
@@ -434,6 +1018,11 @@ public class EffectsFragment extends Fragment{
                     }
 
                     linePhaserBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    lineAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineDistortionBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -442,10 +1031,32 @@ public class EffectsFragment extends Fragment{
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
                 else {
-                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                    if(!linePhaserSwitch.isChecked()) {
+                        linePhaserButton.setBackgroundColor(Color.WHITE);
+                    }
                     linePhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
+                if(!lineDistortionSwitch.isChecked())
+                {
+                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAtbSwitch.isChecked())
+                {
+                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAutowahSwitch.isChecked())
+                {
+                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineRingmodSwitch.isChecked())
+                {
+                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineNoisegateSwitch.isChecked())
+                {
+                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                }
                 if(!lineTremoloSwitch.isChecked())
                 {
                     lineTremoloButton.setBackgroundColor(Color.WHITE);
@@ -478,7 +1089,14 @@ public class EffectsFragment extends Fragment{
                 if (isChecked) {
                     linePhaserButton.setBackgroundColor(Color.BLUE);
                 } else {
-                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                    if(linePhaserBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !linePhaserSwitch.isChecked())
+                    {
+                        linePhaserButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
+                    else
+                    {
+                        linePhaserButton.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
@@ -497,6 +1115,11 @@ public class EffectsFragment extends Fragment{
                     }
 
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                    lineAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineDistortionBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    lineNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     linePhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                     lineFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -505,8 +1128,31 @@ public class EffectsFragment extends Fragment{
                     lineChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
                 else {
-                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                    if(!lineDelaySwitch.isChecked()) {
+                        lineDelayButton.setBackgroundColor(Color.WHITE);
+                    }
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
+                if(!lineDistortionSwitch.isChecked())
+                {
+                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAtbSwitch.isChecked())
+                {
+                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineAutowahSwitch.isChecked())
+                {
+                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineRingmodSwitch.isChecked())
+                {
+                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                }
+                if(!lineNoisegateSwitch.isChecked())
+                {
+                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
                 }
                 if(!lineTremoloSwitch.isChecked())
                 {
@@ -539,7 +1185,14 @@ public class EffectsFragment extends Fragment{
                 if (isChecked) {
                     lineDelayButton.setBackgroundColor(Color.BLUE);
                 } else {
-                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                    if(lineDelayBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineDelaySwitch.isChecked())
+                    {
+                        lineDelayButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                    }
+                    else
+                    {
+                        lineDelayButton.setBackgroundColor(Color.WHITE);
+                    }
                 }
             }
         });
