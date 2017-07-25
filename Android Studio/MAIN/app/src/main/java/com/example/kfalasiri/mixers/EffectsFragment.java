@@ -36,18 +36,18 @@ public class EffectsFragment extends Fragment{
         lineAutowahBehavior, lineDistortionBehavior, lineNoisegateBehavior, lineAtbBehavior, lineRingmodBehavior;
     public void bottomLineEffectsInit() {
 
-        final Button lineReverbButton = (Button) view.findViewById(R.id.line_reverb_button);
-        final Button lineChorusButton = (Button) view.findViewById(R.id.line_chorus_button);
-        final Button lineCrusherButton = (Button) view.findViewById(R.id.line_bitcrusher_button);
-        final Button lineFlangerButton = (Button) view.findViewById(R.id.line_flanger_button);
-        final Button linePhaserButton = (Button) view.findViewById(R.id.line_phaser_button);
-        final Button lineDelayButton = (Button) view.findViewById(R.id.line_delay_button);
-        final Button lineTremoloButton = (Button) view.findViewById(R.id.line_tremolo_button);
-        final Button lineNoisegateButton = (Button) view.findViewById(R.id.line_noisegate_button);
-        final Button lineAtbButton = (Button) view.findViewById(R.id.line_atb_button);
-        final Button lineRingmodButton = (Button) view.findViewById(R.id.line_ringmod_button);
-        final Button lineDistortionButton = (Button) view.findViewById(R.id.line_distortion_button);
-        final Button lineAutowahButton = (Button) view.findViewById(R.id.line_autowah_button);
+        final ImageButton lineReverbButton = (ImageButton) view.findViewById(R.id.line_reverb_button);
+        final ImageButton lineChorusButton = (ImageButton) view.findViewById(R.id.line_chorus_button);
+        final ImageButton lineCrusherButton = (ImageButton) view.findViewById(R.id.line_bitcrusher_button);
+        final ImageButton lineFlangerButton = (ImageButton) view.findViewById(R.id.line_flanger_button);
+        final ImageButton linePhaserButton = (ImageButton) view.findViewById(R.id.line_phaser_button);
+        final ImageButton lineDelayButton = (ImageButton) view.findViewById(R.id.line_delay_button);
+        final ImageButton lineTremoloButton = (ImageButton) view.findViewById(R.id.line_tremolo_button);
+        final ImageButton lineNoisegateButton = (ImageButton) view.findViewById(R.id.line_noisegate_button);
+        final ImageButton lineAtbButton = (ImageButton) view.findViewById(R.id.line_atb_button);
+        final ImageButton lineRingmodButton = (ImageButton) view.findViewById(R.id.line_ringmod_button);
+        final ImageButton lineDistortionButton = (ImageButton) view.findViewById(R.id.line_distortion_button);
+        final ImageButton lineAutowahButton = (ImageButton) view.findViewById(R.id.line_autowah_button);
 
 
         final ToggleButton lineReverbSwitch = (ToggleButton) view.findViewById(R.id.LineReverbSwitch);
@@ -63,18 +63,6 @@ public class EffectsFragment extends Fragment{
         final ToggleButton lineAtbSwitch = (ToggleButton) view.findViewById(R.id.LineAtbSwitch);
         final ToggleButton lineRingmodSwitch = (ToggleButton) view.findViewById(R.id.LineRingmodSwitch);
 
-        lineChorusButton.setBackgroundColor(Color.WHITE);
-        lineReverbButton.setBackgroundColor(Color.WHITE);
-        lineCrusherButton.setBackgroundColor(Color.WHITE);
-        lineFlangerButton.setBackgroundColor(Color.WHITE);
-        lineDelayButton.setBackgroundColor(Color.WHITE);
-        linePhaserButton.setBackgroundColor(Color.WHITE);
-//        lineTremoloButton.setBackgroundColor(Color.WHITE);
-        lineNoisegateButton.setBackgroundColor(Color.WHITE);
-        lineAtbButton.setBackgroundColor(Color.WHITE);
-        lineRingmodButton.setBackgroundColor(Color.WHITE);
-        lineDistortionButton.setBackgroundColor(Color.WHITE);
-        lineAutowahButton.setBackgroundColor(Color.WHITE);
 
         View lineTremoloView = view.findViewById(R.id.lineTremoloBottom);
         lineTremoloBehavior = BottomSheetBehavior.from(lineTremoloView);
@@ -1203,18 +1191,18 @@ public class EffectsFragment extends Fragment{
      micRingmodBehavior, micNoisegateBehavior, micAtbBehavior;
     public void bottomMicEffectsInit(){
 
-        final Button micDelayButton = (Button) view.findViewById(R.id.mic_delay_button);
-        final Button micReverbButton = (Button) view.findViewById(R.id.mic_reverb_button);
-        final Button micChorusButton = (Button) view.findViewById(R.id.mic_chorus_button);
-        final Button micPhaserButton = (Button) view.findViewById(R.id.mic_phaser_button);
-        final Button micFlangerButton = (Button) view.findViewById(R.id.mic_flanger_button);
-        final Button micCrusherButton = (Button) view.findViewById(R.id.mic_bitcrusher_button);
-        final Button micTremoloButton = (Button) view.findViewById(R.id.mic_tremolo_button);
-        final Button micAutowahButton = (Button) view.findViewById(R.id.mic_autowah_button);
-        final Button micBassemulatorButton = (Button) view.findViewById(R.id.mic_bassemulator_button);
-        final Button micRingmodButton = (Button) view.findViewById(R.id.mic_ringmod_button);
-        final Button micNoisegateButton = (Button) view.findViewById(R.id.mic_noisegate_button);
-        final Button micAtbButton = (Button) view.findViewById(R.id.mic_atb_button);
+        final ImageButton micDelayButton = (ImageButton) view.findViewById(R.id.mic_delay_button);
+        final ImageButton micReverbButton = (ImageButton) view.findViewById(R.id.mic_reverb_button);
+        final ImageButton micChorusButton = (ImageButton) view.findViewById(R.id.mic_chorus_button);
+        final ImageButton micPhaserButton = (ImageButton) view.findViewById(R.id.mic_phaser_button);
+        final ImageButton micFlangerButton = (ImageButton) view.findViewById(R.id.mic_flanger_button);
+        final ImageButton micCrusherButton = (ImageButton) view.findViewById(R.id.mic_bitcrusher_button);
+        final ImageButton micTremoloButton = (ImageButton) view.findViewById(R.id.mic_tremolo_button);
+        final ImageButton micAutowahButton = (ImageButton) view.findViewById(R.id.mic_autowah_button);
+        final ImageButton micBassemulatorButton = (ImageButton) view.findViewById(R.id.mic_bassemulator_button);
+        final ImageButton micRingmodButton = (ImageButton) view.findViewById(R.id.mic_ringmod_button);
+        final ImageButton micNoisegateButton = (ImageButton) view.findViewById(R.id.mic_noisegate_button);
+        final ImageButton micAtbButton = (ImageButton) view.findViewById(R.id.mic_atb_button);
 
         final ToggleButton micReverbSwitch = (ToggleButton) view.findViewById(R.id.MicReverbSwitch);
         final ToggleButton micChorusSwitch = (ToggleButton) view.findViewById(R.id.MicChorusSwitch);
@@ -1230,18 +1218,7 @@ public class EffectsFragment extends Fragment{
         final ToggleButton micBassemulatorSwitch = (ToggleButton) view.findViewById(R.id.MicBassemulatorSwitch);
 
 
-        micChorusButton.setBackgroundColor(Color.WHITE);
-        micReverbButton.setBackgroundColor(Color.WHITE);
-        micCrusherButton.setBackgroundColor(Color.WHITE);
-        micFlangerButton.setBackgroundColor(Color.WHITE);
-        micDelayButton.setBackgroundColor(Color.WHITE);
-        micPhaserButton.setBackgroundColor(Color.WHITE);
-        micTremoloButton.setBackgroundColor(Color.WHITE);
-        micAutowahButton.setBackgroundColor(Color.WHITE);
-        micBassemulatorButton.setBackgroundColor(Color.WHITE);
-        micRingmodButton.setBackgroundColor(Color.WHITE);
-        micNoisegateButton.setBackgroundColor(Color.WHITE);
-        micAtbButton.setBackgroundColor(Color.WHITE);
+
 
 
         final View micBassemulatorView = view.findViewById(R.id.micBassemulatorBottom);
@@ -1253,7 +1230,7 @@ public class EffectsFragment extends Fragment{
                 if(micBassemulatorBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
                     if(!micBassemulatorSwitch.isChecked())
                     {
-                        micBassemulatorButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbuttoninbetween);
                     }
 
                     micBassemulatorBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -1272,56 +1249,56 @@ public class EffectsFragment extends Fragment{
                 }
                 else {
                     if(!micBassemulatorSwitch.isChecked()) {
-                        micBassemulatorButton.setBackgroundColor(Color.WHITE);
+                        micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
                     }
                     micBassemulatorBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
                 if(!micAtbSwitch.isChecked())
                 {
-                    micAtbButton.setBackgroundColor(Color.WHITE);
+                    micAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!micTremoloSwitch.isChecked())
                 {
-                    micTremoloButton.setBackgroundColor(Color.WHITE);
+                    micTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                 }
                 if(!micAutowahSwitch.isChecked())
                 {
-                    micAutowahButton.setBackgroundColor(Color.WHITE);
+                    micAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                 }
                 if(!micRingmodSwitch.isChecked())
                 {
-                    micRingmodButton.setBackgroundColor(Color.WHITE);
+                    micRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
                 }
                 if(!micNoisegateSwitch.isChecked())
                 {
-                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                    micNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                 }
 
 
                 if(!micReverbSwitch.isChecked())
                 {
-                    micReverbButton.setBackgroundColor(Color.WHITE);
+                    micReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
 
                 if(!micChorusSwitch.isChecked())
                 {
-                    micChorusButton.setBackgroundColor(Color.WHITE);
+                    micChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
                 if(!micCrusherSwitch.isChecked())
                 {
-                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                    micCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
                 if(!micPhaserSwitch.isChecked())
                 {
-                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                    micPhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
                 if(!micFlangerSwitch.isChecked())
                 {
-                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                    micFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
                 if(!micDelaySwitch.isChecked())
                 {
-                    micDelayButton.setBackgroundColor(Color.WHITE);
+                    micDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -1331,16 +1308,16 @@ public class EffectsFragment extends Fragment{
         micBassemulatorSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    micBassemulatorButton.setBackgroundColor(Color.GREEN);
+                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbuttonpressed);
                 }
                 else {
                     if(micBassemulatorBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micBassemulatorSwitch.isChecked())
                     {
-                        micBassemulatorButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbuttoninbetween);
                     }
                     else
                     {
-                        micBassemulatorButton.setBackgroundColor(Color.WHITE);
+                        micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
                     }
                 }
             }
@@ -1356,7 +1333,7 @@ public class EffectsFragment extends Fragment{
                 if(micNoisegateBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
                     if(!micNoisegateSwitch.isChecked())
                     {
-                        micNoisegateButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micNoisegateButton.setBackgroundResource(R.drawable.noisegatebuttoninbetween);
                     }
 
                     micNoisegateBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -1375,56 +1352,57 @@ public class EffectsFragment extends Fragment{
                 }
                 else {
                     if(!micNoisegateSwitch.isChecked()) {
-                        micNoisegateButton.setBackgroundColor(Color.WHITE);
+                        micNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                     }
                     micNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
+
                 if(!micAtbSwitch.isChecked())
                 {
-                    micAtbButton.setBackgroundColor(Color.WHITE);
+                    micAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!micTremoloSwitch.isChecked())
                 {
-                    micTremoloButton.setBackgroundColor(Color.WHITE);
+                    micTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                 }
                 if(!micAutowahSwitch.isChecked())
                 {
-                    micAutowahButton.setBackgroundColor(Color.WHITE);
+                    micAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                 }
                 if(!micRingmodSwitch.isChecked())
                 {
-                    micRingmodButton.setBackgroundColor(Color.WHITE);
+                    micRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
                 }
                 if(!micBassemulatorSwitch.isChecked())
                 {
-                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
+                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
                 }
 
 
                 if(!micReverbSwitch.isChecked())
                 {
-                    micReverbButton.setBackgroundColor(Color.WHITE);
+                    micReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
 
                 if(!micChorusSwitch.isChecked())
                 {
-                    micChorusButton.setBackgroundColor(Color.WHITE);
+                    micChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
                 if(!micCrusherSwitch.isChecked())
                 {
-                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                    micCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
                 if(!micPhaserSwitch.isChecked())
                 {
-                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                    micPhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
                 if(!micFlangerSwitch.isChecked())
                 {
-                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                    micFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
                 if(!micDelaySwitch.isChecked())
                 {
-                    micDelayButton.setBackgroundColor(Color.WHITE);
+                    micDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -1434,16 +1412,16 @@ public class EffectsFragment extends Fragment{
         micNoisegateSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    micNoisegateButton.setBackgroundColor(Color.GREEN);
+                    micNoisegateButton.setBackgroundResource(R.drawable.noisegatebuttonpressed);
                 }
                 else {
                     if(micNoisegateBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micNoisegateSwitch.isChecked())
                     {
-                        micNoisegateButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micNoisegateButton.setBackgroundResource(R.drawable.noisegatebuttoninbetween);
                     }
                     else
                     {
-                        micNoisegateButton.setBackgroundColor(Color.WHITE);
+                        micNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                     }
                 }
             }
@@ -1458,7 +1436,7 @@ public class EffectsFragment extends Fragment{
                 if(micAtbBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
                     if(!micAtbSwitch.isChecked())
                     {
-                        micAtbButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micAtbButton.setBackgroundResource(R.drawable.analog_tb_buttoninbetween);
                     }
 
                     micAtbBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -1477,56 +1455,58 @@ public class EffectsFragment extends Fragment{
                 }
                 else {
                     if(!micAtbSwitch.isChecked()) {
-                        micAtbButton.setBackgroundColor(Color.WHITE);
+                        micAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                     }
                     micAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
-                if(!micBassemulatorSwitch.isChecked())
+
+
+                if(!micNoisegateSwitch.isChecked())
                 {
-                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
+                    micNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                 }
                 if(!micTremoloSwitch.isChecked())
                 {
-                    micTremoloButton.setBackgroundColor(Color.WHITE);
+                    micTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                 }
                 if(!micAutowahSwitch.isChecked())
                 {
-                    micAutowahButton.setBackgroundColor(Color.WHITE);
+                    micAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                 }
                 if(!micRingmodSwitch.isChecked())
                 {
-                    micRingmodButton.setBackgroundColor(Color.WHITE);
+                    micRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
                 }
-                if(!micNoisegateSwitch.isChecked())
+                if(!micBassemulatorSwitch.isChecked())
                 {
-                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
                 }
 
 
                 if(!micReverbSwitch.isChecked())
                 {
-                    micReverbButton.setBackgroundColor(Color.WHITE);
+                    micReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
 
                 if(!micChorusSwitch.isChecked())
                 {
-                    micChorusButton.setBackgroundColor(Color.WHITE);
+                    micChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
                 if(!micCrusherSwitch.isChecked())
                 {
-                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                    micCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
                 if(!micPhaserSwitch.isChecked())
                 {
-                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                    micPhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
                 if(!micFlangerSwitch.isChecked())
                 {
-                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                    micFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
                 if(!micDelaySwitch.isChecked())
                 {
-                    micDelayButton.setBackgroundColor(Color.WHITE);
+                    micDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -1536,16 +1516,16 @@ public class EffectsFragment extends Fragment{
         micAtbSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    micAtbButton.setBackgroundColor(Color.GREEN);
+                    micAtbButton.setBackgroundResource(R.drawable.analog_tb_buttonpressed);
                 }
                 else {
                     if(micAtbBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micAtbSwitch.isChecked())
                     {
-                        micAtbButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micAtbButton.setBackgroundResource(R.drawable.analog_tb_buttoninbetween);
                     }
                     else
                     {
-                        micAtbButton.setBackgroundColor(Color.WHITE);
+                        micAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                     }
                 }
             }
@@ -1561,7 +1541,7 @@ public class EffectsFragment extends Fragment{
                 if(micRingmodBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
                     if(!micRingmodSwitch.isChecked())
                     {
-                        micRingmodButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micRingmodButton.setBackgroundResource(R.drawable.ringmodbuttoninbetween);
                     }
 
                     micRingmodBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -1580,56 +1560,57 @@ public class EffectsFragment extends Fragment{
                 }
                 else {
                     if(!micRingmodSwitch.isChecked()) {
-                        micRingmodButton.setBackgroundColor(Color.WHITE);
+                        micRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
                     }
                     micRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
+
                 if(!micAtbSwitch.isChecked())
                 {
-                    micAtbButton.setBackgroundColor(Color.WHITE);
+                    micAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!micTremoloSwitch.isChecked())
                 {
-                    micTremoloButton.setBackgroundColor(Color.WHITE);
+                    micTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                 }
                 if(!micAutowahSwitch.isChecked())
                 {
-                    micAutowahButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micBassemulatorSwitch.isChecked())
-                {
-                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
+                    micAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                 }
                 if(!micNoisegateSwitch.isChecked())
                 {
-                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                    micNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
                 }
 
 
                 if(!micReverbSwitch.isChecked())
                 {
-                    micReverbButton.setBackgroundColor(Color.WHITE);
+                    micReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
 
                 if(!micChorusSwitch.isChecked())
                 {
-                    micChorusButton.setBackgroundColor(Color.WHITE);
+                    micChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
                 if(!micCrusherSwitch.isChecked())
                 {
-                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                    micCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
                 if(!micPhaserSwitch.isChecked())
                 {
-                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                    micPhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
                 if(!micFlangerSwitch.isChecked())
                 {
-                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                    micFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
                 if(!micDelaySwitch.isChecked())
                 {
-                    micDelayButton.setBackgroundColor(Color.WHITE);
+                    micDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -1639,16 +1620,16 @@ public class EffectsFragment extends Fragment{
         micRingmodSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    micRingmodButton.setBackgroundColor(Color.GREEN);
+                    micRingmodButton.setBackgroundResource(R.drawable.ringmodbuttonpressed);
                 }
                 else {
                     if(micRingmodBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micRingmodSwitch.isChecked())
                     {
-                        micRingmodButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micRingmodButton.setBackgroundResource(R.drawable.ringmodbuttoninbetween);
                     }
                     else
                     {
-                        micRingmodButton.setBackgroundColor(Color.WHITE);
+                        micRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
                     }
                 }
             }
@@ -1664,7 +1645,7 @@ public class EffectsFragment extends Fragment{
                 if(micAutowahBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
                     if(!micAutowahSwitch.isChecked())
                     {
-                        micAutowahButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micAutowahButton.setBackgroundResource(R.drawable.autowahbuttoninbetween);
                     }
 
                     micAutowahBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -1683,56 +1664,57 @@ public class EffectsFragment extends Fragment{
                 }
                 else {
                     if(!micAutowahSwitch.isChecked()) {
-                        micAutowahButton.setBackgroundColor(Color.WHITE);
+                        micAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                     }
                     micAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
+
                 if(!micAtbSwitch.isChecked())
                 {
-                    micAtbButton.setBackgroundColor(Color.WHITE);
+                    micAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!micTremoloSwitch.isChecked())
                 {
-                    micTremoloButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micBassemulatorSwitch.isChecked())
-                {
-                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micRingmodSwitch.isChecked())
-                {
-                    micRingmodButton.setBackgroundColor(Color.WHITE);
+                    micTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                 }
                 if(!micNoisegateSwitch.isChecked())
                 {
-                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                    micNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
+                }
+                if(!micRingmodSwitch.isChecked())
+                {
+                    micRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
                 }
 
 
                 if(!micReverbSwitch.isChecked())
                 {
-                    micReverbButton.setBackgroundColor(Color.WHITE);
+                    micReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
 
                 if(!micChorusSwitch.isChecked())
                 {
-                    micChorusButton.setBackgroundColor(Color.WHITE);
+                    micChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
                 if(!micCrusherSwitch.isChecked())
                 {
-                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                    micCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
                 if(!micPhaserSwitch.isChecked())
                 {
-                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                    micPhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
                 if(!micFlangerSwitch.isChecked())
                 {
-                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                    micFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
                 if(!micDelaySwitch.isChecked())
                 {
-                    micDelayButton.setBackgroundColor(Color.WHITE);
+                    micDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -1742,16 +1724,16 @@ public class EffectsFragment extends Fragment{
         micAutowahSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    micAutowahButton.setBackgroundColor(Color.GREEN);
+                    micAutowahButton.setBackgroundResource(R.drawable.autowahbuttonpressed);
                 }
                 else {
                     if(micAutowahBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micAutowahSwitch.isChecked())
                     {
-                        micAutowahButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micAutowahButton.setBackgroundResource(R.drawable.autowahbuttoninbetween);
                     }
                     else
                     {
-                        micAutowahButton.setBackgroundColor(Color.WHITE);
+                        micAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                     }
                 }
             }
@@ -1767,7 +1749,7 @@ public class EffectsFragment extends Fragment{
                 if(micTremoloBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
                     if(!micTremoloSwitch.isChecked())
                     {
-                        micTremoloButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micTremoloButton.setBackgroundResource(R.drawable.tremolobuttoninbetween);
                     }
 
                     micTremoloBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -1786,56 +1768,57 @@ public class EffectsFragment extends Fragment{
                 }
                 else {
                     if(!micTremoloSwitch.isChecked()) {
-                        micTremoloButton.setBackgroundColor(Color.WHITE);
+                        micTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                     }
                     micTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
+
                 if(!micAtbSwitch.isChecked())
                 {
-                    micAtbButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micAutowahSwitch.isChecked())
-                {
-                    micAutowahButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micBassemulatorSwitch.isChecked())
-                {
-                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micRingmodSwitch.isChecked())
-                {
-                    micRingmodButton.setBackgroundColor(Color.WHITE);
+                    micAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!micNoisegateSwitch.isChecked())
                 {
-                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                    micNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
+                }
+                if(!micAutowahSwitch.isChecked())
+                {
+                    micAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
+                }
+                if(!micRingmodSwitch.isChecked())
+                {
+                    micRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
                 }
 
 
                 if(!micReverbSwitch.isChecked())
                 {
-                    micReverbButton.setBackgroundColor(Color.WHITE);
+                    micReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
 
                 if(!micChorusSwitch.isChecked())
                 {
-                    micChorusButton.setBackgroundColor(Color.WHITE);
+                    micChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
                 if(!micCrusherSwitch.isChecked())
                 {
-                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                    micCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
                 if(!micPhaserSwitch.isChecked())
                 {
-                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                    micPhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
                 if(!micFlangerSwitch.isChecked())
                 {
-                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                    micFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
                 if(!micDelaySwitch.isChecked())
                 {
-                    micDelayButton.setBackgroundColor(Color.WHITE);
+                    micDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -1845,16 +1828,16 @@ public class EffectsFragment extends Fragment{
         micTremoloSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    micTremoloButton.setBackgroundColor(Color.GREEN);
+                    micTremoloButton.setBackgroundResource(R.drawable.tremolobuttonpressed);
                 }
                 else {
                     if(micTremoloBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micTremoloSwitch.isChecked())
                     {
-                        micTremoloButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micTremoloButton.setBackgroundResource(R.drawable.tremolobuttoninbetween);
                     }
                     else
                     {
-                        micTremoloButton.setBackgroundColor(Color.WHITE);
+                        micTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                     }
                 }
             }
@@ -1870,7 +1853,7 @@ public class EffectsFragment extends Fragment{
                 if(micReverbBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
                     if(!micReverbSwitch.isChecked())
                     {
-                        micReverbButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micReverbButton.setBackgroundResource(R.drawable.reverbbuttoninbetween);
                     }
 
                     micReverbBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -1889,55 +1872,57 @@ public class EffectsFragment extends Fragment{
                 }
                 else {
                     if(!micReverbSwitch.isChecked()) {
-                        micReverbButton.setBackgroundColor(Color.WHITE);
+                        micReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                     }
                     micReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
                 if(!micAtbSwitch.isChecked())
                 {
-                    micAtbButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micAutowahSwitch.isChecked())
-                {
-                    micAutowahButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micBassemulatorSwitch.isChecked())
-                {
-                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micRingmodSwitch.isChecked())
-                {
-                    micRingmodButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micNoisegateSwitch.isChecked())
-                {
-                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                    micAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!micTremoloSwitch.isChecked())
                 {
-                    micTremoloButton.setBackgroundColor(Color.WHITE);
+                    micTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
+                }
+                if(!micAutowahSwitch.isChecked())
+                {
+                    micAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
+                }
+                if(!micRingmodSwitch.isChecked())
+                {
+                    micRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
+                }
+
+
+                if(!micNoisegateSwitch.isChecked())
+                {
+                    micNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                 }
 
                 if(!micChorusSwitch.isChecked())
                 {
-                    micChorusButton.setBackgroundColor(Color.WHITE);
+                    micChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
                 if(!micCrusherSwitch.isChecked())
                 {
-                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                    micCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
                 if(!micPhaserSwitch.isChecked())
                 {
-                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                    micPhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
                 if(!micFlangerSwitch.isChecked())
                 {
-                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                    micFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
                 if(!micDelaySwitch.isChecked())
                 {
-                    micDelayButton.setBackgroundColor(Color.WHITE);
+                    micDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -1947,16 +1932,16 @@ public class EffectsFragment extends Fragment{
         micReverbSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    micReverbButton.setBackgroundColor(Color.GREEN);
+                    micReverbButton.setBackgroundResource(R.drawable.reverbbuttonpressed);
                 }
                 else {
                     if(micReverbBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micReverbSwitch.isChecked())
                     {
-                        micReverbButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micReverbButton.setBackgroundResource(R.drawable.reverbbuttoninbetween);
                     }
                     else
                     {
-                        micReverbButton.setBackgroundColor(Color.WHITE);
+                        micReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                     }
                 }
             }
@@ -1976,7 +1961,7 @@ public class EffectsFragment extends Fragment{
 
                     if(!micChorusSwitch.isChecked())
                     {
-                        micChorusButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micChorusButton.setBackgroundResource(R.drawable.chorusbuttoninbetween);
                     }
 
                     micChorusBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -1995,55 +1980,57 @@ public class EffectsFragment extends Fragment{
                 }
                 else {
                     if(!micChorusSwitch.isChecked()) {
-                        micChorusButton.setBackgroundColor(Color.WHITE);
+                        micChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                     }
                     micChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
                 if(!micAtbSwitch.isChecked())
                 {
-                    micAtbButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micAutowahSwitch.isChecked())
-                {
-                    micAutowahButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micBassemulatorSwitch.isChecked())
-                {
-                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micRingmodSwitch.isChecked())
-                {
-                    micRingmodButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micNoisegateSwitch.isChecked())
-                {
-                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                    micAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!micTremoloSwitch.isChecked())
                 {
-                    micTremoloButton.setBackgroundColor(Color.WHITE);
+                    micTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                 }
+                if(!micAutowahSwitch.isChecked())
+                {
+                    micAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
+                }
+                if(!micRingmodSwitch.isChecked())
+                {
+                    micRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
+                }
+
 
                 if(!micReverbSwitch.isChecked())
                 {
-                    micReverbButton.setBackgroundColor(Color.WHITE);
+                    micReverbButton.setBackgroundResource(R.drawable.reverbbutton);
+                }
+
+                if(!micNoisegateSwitch.isChecked())
+                {
+                    micNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                 }
                 if(!micCrusherSwitch.isChecked())
                 {
-                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                    micCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
                 if(!micPhaserSwitch.isChecked())
                 {
-                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                    micPhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
                 if(!micFlangerSwitch.isChecked())
                 {
-                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                    micFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
                 if(!micDelaySwitch.isChecked())
                 {
-                    micDelayButton.setBackgroundColor(Color.WHITE);
+                    micDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -2051,16 +2038,16 @@ public class EffectsFragment extends Fragment{
         micChorusSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    micChorusButton.setBackgroundColor(Color.GREEN);
+                    micChorusButton.setBackgroundResource(R.drawable.chorusbuttonpressed);
                 }
                 else {
                     if(micChorusBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micChorusSwitch.isChecked())
                     {
-                        micChorusButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micChorusButton.setBackgroundResource(R.drawable.chorusbuttoninbetween);
                     }
                     else
                     {
-                        micChorusButton.setBackgroundColor(Color.WHITE);
+                        micChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                     }
                 }
             }
@@ -2076,7 +2063,7 @@ public class EffectsFragment extends Fragment{
 
                     if(!micCrusherSwitch.isChecked())
                     {
-                        micCrusherButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micCrusherButton.setBackgroundResource(R.drawable.bitcrusherbuttoninbetween);
                     }
 
 
@@ -2096,54 +2083,57 @@ public class EffectsFragment extends Fragment{
                 }
                 else {
                     if(!micCrusherSwitch.isChecked()) {
-                        micCrusherButton.setBackgroundColor(Color.WHITE);
+                        micCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                     }
                     micCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
                 if(!micAtbSwitch.isChecked())
                 {
-                    micAtbButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micAutowahSwitch.isChecked())
-                {
-                    micAutowahButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micBassemulatorSwitch.isChecked())
-                {
-                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micRingmodSwitch.isChecked())
-                {
-                    micRingmodButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micNoisegateSwitch.isChecked())
-                {
-                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                    micAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!micTremoloSwitch.isChecked())
                 {
-                    micTremoloButton.setBackgroundColor(Color.WHITE);
+                    micTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                 }
-                if(!micChorusSwitch.isChecked())
+                if(!micAutowahSwitch.isChecked())
                 {
-                    micChorusButton.setBackgroundColor(Color.WHITE);
+                    micAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                 }
+                if(!micRingmodSwitch.isChecked())
+                {
+                    micRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
+                }
+
+
                 if(!micReverbSwitch.isChecked())
                 {
-                    micReverbButton.setBackgroundColor(Color.WHITE);
+                    micReverbButton.setBackgroundResource(R.drawable.reverbbutton);
+                }
+
+                if(!micChorusSwitch.isChecked())
+                {
+                    micChorusButton.setBackgroundResource(R.drawable.chorusbutton);
+                }
+                if(!micNoisegateSwitch.isChecked())
+                {
+                    micNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                 }
                 if(!micPhaserSwitch.isChecked())
                 {
-                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                    micPhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
                 if(!micFlangerSwitch.isChecked())
                 {
-                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                    micFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
                 if(!micDelaySwitch.isChecked())
                 {
-                    micDelayButton.setBackgroundColor(Color.WHITE);
+                    micDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -2151,16 +2141,16 @@ public class EffectsFragment extends Fragment{
         micCrusherSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    micCrusherButton.setBackgroundColor(Color.GREEN);
+                    micCrusherButton.setBackgroundResource(R.drawable.bitcrusherbuttonpressed);
                 }
                 else {
                     if(micCrusherBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micCrusherSwitch.isChecked())
                     {
-                        micCrusherButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micCrusherButton.setBackgroundResource(R.drawable.bitcrusherbuttoninbetween);
                     }
                     else
                     {
-                        micCrusherButton.setBackgroundColor(Color.WHITE);
+                        micCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                     }
                 }
             }
@@ -2176,7 +2166,7 @@ public class EffectsFragment extends Fragment{
 
                     if(!micFlangerSwitch.isChecked())
                     {
-                        micFlangerButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micFlangerButton.setBackgroundResource(R.drawable.flangerbuttoninbetween);
                     }
 
                     micFlangerBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -2195,55 +2185,57 @@ public class EffectsFragment extends Fragment{
 
                 else {
                     if(!micFlangerSwitch.isChecked()) {
-                        micFlangerButton.setBackgroundColor(Color.WHITE);
+                        micFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                     }
                     micFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
                 if(!micAtbSwitch.isChecked())
                 {
-                    micAtbButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micAutowahSwitch.isChecked())
-                {
-                    micAutowahButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micBassemulatorSwitch.isChecked())
-                {
-                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micRingmodSwitch.isChecked())
-                {
-                    micRingmodButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micNoisegateSwitch.isChecked())
-                {
-                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                    micAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!micTremoloSwitch.isChecked())
                 {
-                    micTremoloButton.setBackgroundColor(Color.WHITE);
+                    micTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
+                }
+                if(!micAutowahSwitch.isChecked())
+                {
+                    micAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
+                }
+                if(!micRingmodSwitch.isChecked())
+                {
+                    micRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
+                }
+
+
+                if(!micReverbSwitch.isChecked())
+                {
+                    micReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
 
                 if(!micChorusSwitch.isChecked())
                 {
-                    micChorusButton.setBackgroundColor(Color.WHITE);
+                    micChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
                 if(!micCrusherSwitch.isChecked())
                 {
-                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                    micCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
                 if(!micPhaserSwitch.isChecked())
                 {
-                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                    micPhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
-                if(!micReverbSwitch.isChecked())
+                if(!micNoisegateSwitch.isChecked())
                 {
-                    micReverbButton.setBackgroundColor(Color.WHITE);
+                    micNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                 }
                 if(!micDelaySwitch.isChecked())
                 {
-                    micDelayButton.setBackgroundColor(Color.WHITE);
+                    micDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -2251,16 +2243,16 @@ public class EffectsFragment extends Fragment{
         micFlangerSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    micFlangerButton.setBackgroundColor(Color.GREEN);
+                    micFlangerButton.setBackgroundResource(R.drawable.flangerbuttonpressed);
                 }
                 else {
                     if(micFlangerBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micFlangerSwitch.isChecked())
                     {
-                        micFlangerButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micFlangerButton.setBackgroundResource(R.drawable.flangerbuttoninbetween);
                     }
                     else
                     {
-                        micFlangerButton.setBackgroundColor(Color.WHITE);
+                        micFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                     }
                 }
             }
@@ -2276,7 +2268,7 @@ public class EffectsFragment extends Fragment{
 
                     if(!micPhaserSwitch.isChecked())
                     {
-                        micPhaserButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micPhaserButton.setBackgroundResource(R.drawable.phaserbuttoninbetween);
                     }
 
                     micPhaserBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -2296,55 +2288,57 @@ public class EffectsFragment extends Fragment{
 
                 else {
                     if(!micPhaserSwitch.isChecked()) {
-                        micPhaserButton.setBackgroundColor(Color.WHITE);
+                        micPhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                     }
                     micPhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
                 if(!micAtbSwitch.isChecked())
                 {
-                    micAtbButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micAutowahSwitch.isChecked())
-                {
-                    micAutowahButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micBassemulatorSwitch.isChecked())
-                {
-                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micRingmodSwitch.isChecked())
-                {
-                    micRingmodButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micNoisegateSwitch.isChecked())
-                {
-                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                    micAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!micTremoloSwitch.isChecked())
                 {
-                    micTremoloButton.setBackgroundColor(Color.WHITE);
+                    micTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
+                }
+                if(!micAutowahSwitch.isChecked())
+                {
+                    micAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
+                }
+                if(!micRingmodSwitch.isChecked())
+                {
+                    micRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
+                }
+
+
+                if(!micReverbSwitch.isChecked())
+                {
+                    micReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
 
                 if(!micChorusSwitch.isChecked())
                 {
-                    micChorusButton.setBackgroundColor(Color.WHITE);
+                    micChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
                 if(!micCrusherSwitch.isChecked())
                 {
-                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                    micCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
-                if(!micReverbSwitch.isChecked())
+                if(!micNoisegateSwitch.isChecked())
                 {
-                    micReverbButton.setBackgroundColor(Color.WHITE);
+                    micNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                 }
                 if(!micFlangerSwitch.isChecked())
                 {
-                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                    micFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
                 if(!micDelaySwitch.isChecked())
                 {
-                    micDelayButton.setBackgroundColor(Color.WHITE);
+                    micDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
 
             }
@@ -2353,16 +2347,16 @@ public class EffectsFragment extends Fragment{
         micPhaserSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    micPhaserButton.setBackgroundColor(Color.GREEN);
+                    micPhaserButton.setBackgroundResource(R.drawable.phaserbuttonpressed);
                 }
                 else {
                     if(micPhaserBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micPhaserSwitch.isChecked())
                     {
-                        micPhaserButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micPhaserButton.setBackgroundResource(R.drawable.phaserbuttoninbetween);
                     }
                     else
                     {
-                        micPhaserButton.setBackgroundColor(Color.WHITE);
+                        micPhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                     }
                 }
             }
@@ -2378,7 +2372,7 @@ public class EffectsFragment extends Fragment{
 
                     if(!micDelaySwitch.isChecked())
                     {
-                        micDelayButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micDelayButton.setBackgroundResource(R.drawable.delaybuttoninbetween);
                     }
 
                     micDelayBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -2398,55 +2392,57 @@ public class EffectsFragment extends Fragment{
 
                 else {
                     if(!micDelaySwitch.isChecked()) {
-                        micDelayButton.setBackgroundColor(Color.WHITE);
+                        micDelayButton.setBackgroundResource(R.drawable.delaybutton);
                     }
                     micDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
                 if(!micAtbSwitch.isChecked())
                 {
-                    micAtbButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micAutowahSwitch.isChecked())
-                {
-                    micAutowahButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micBassemulatorSwitch.isChecked())
-                {
-                    micBassemulatorButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micRingmodSwitch.isChecked())
-                {
-                    micRingmodButton.setBackgroundColor(Color.WHITE);
-                }
-                if(!micNoisegateSwitch.isChecked())
-                {
-                    micNoisegateButton.setBackgroundColor(Color.WHITE);
+                    micAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!micTremoloSwitch.isChecked())
                 {
-                    micTremoloButton.setBackgroundColor(Color.WHITE);
+                    micTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
+                }
+                if(!micAutowahSwitch.isChecked())
+                {
+                    micAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
+                }
+                if(!micRingmodSwitch.isChecked())
+                {
+                    micRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
+                }
+                if(!micBassemulatorSwitch.isChecked())
+                {
+                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
+                }
+
+
+                if(!micReverbSwitch.isChecked())
+                {
+                    micReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
 
                 if(!micChorusSwitch.isChecked())
                 {
-                    micChorusButton.setBackgroundColor(Color.WHITE);
+                    micChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
                 if(!micCrusherSwitch.isChecked())
                 {
-                    micCrusherButton.setBackgroundColor(Color.WHITE);
+                    micCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
                 if(!micPhaserSwitch.isChecked())
                 {
-                    micPhaserButton.setBackgroundColor(Color.WHITE);
+                    micPhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
                 if(!micFlangerSwitch.isChecked())
                 {
-                    micFlangerButton.setBackgroundColor(Color.WHITE);
+                    micFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
-                if(!micReverbSwitch.isChecked())
+                if(!micNoisegateSwitch.isChecked())
                 {
-                    micReverbButton.setBackgroundColor(Color.WHITE);
+                    micNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                 }
             }
         });
@@ -2454,16 +2450,16 @@ public class EffectsFragment extends Fragment{
         micDelaySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    micDelayButton.setBackgroundColor(Color.GREEN);
+                    micDelayButton.setBackgroundResource(R.drawable.delaybuttonpressed);
                 }
                 else {
                     if(micDelayBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micDelaySwitch.isChecked())
                     {
-                        micDelayButton.setBackgroundColor(Color.parseColor("#82ffa4"));
+                        micDelayButton.setBackgroundResource(R.drawable.delaybuttoninbetween);
                     }
                     else
                     {
-                        micDelayButton.setBackgroundColor(Color.WHITE);
+                        micDelayButton.setBackgroundResource(R.drawable.delaybutton);
                     }
                 }
             }
