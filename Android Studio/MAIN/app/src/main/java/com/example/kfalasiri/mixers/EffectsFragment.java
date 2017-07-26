@@ -73,7 +73,7 @@ public class EffectsFragment extends Fragment{
                 if (lineTremoloBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
 
                     if (!lineTremoloSwitch.isChecked()) {
-//                        lineTremoloButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineTremoloButton.setBackgroundResource(R.drawable.tremolobuttoninbetween);
                     }
 
                     lineTremoloBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -90,48 +90,48 @@ public class EffectsFragment extends Fragment{
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 } else {
                     if(!lineTremoloSwitch.isChecked()) {
-//                        lineTremoloButton.setBackgroundColor(Color.WHITE);
+                        lineTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                     }
                     lineTremoloBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
                 if(!lineDistortionSwitch.isChecked())
                 {
-                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                    lineDistortionButton.setBackgroundResource(R.drawable.analogdistbutton);
                 }
                 if(!lineAtbSwitch.isChecked())
                 {
-                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                    lineAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!lineAutowahSwitch.isChecked())
                 {
-                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                    lineAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                 }
                 if(!lineRingmodSwitch.isChecked())
                 {
-                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                    lineRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
                 }
                 if(!lineNoisegateSwitch.isChecked())
                 {
-                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                    lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                 }
                 if (!lineReverbSwitch.isChecked()) {
-                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                    lineReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
                 if (!lineChorusSwitch.isChecked()) {
-                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                    lineChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
                 if (!lineCrusherSwitch.isChecked()) {
-                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                    lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
                 if (!linePhaserSwitch.isChecked()) {
-                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                    linePhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
                 if (!lineFlangerSwitch.isChecked()) {
-                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                    lineFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
                 if (!lineDelaySwitch.isChecked()) {
-                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                    lineDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -139,15 +139,15 @@ public class EffectsFragment extends Fragment{
         lineTremoloSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    lineTremoloButton.setBackgroundColor(Color.BLUE);
+                    lineTremoloButton.setBackgroundResource(R.drawable.tremolobuttonpressed);
                 } else {
                     if(lineTremoloBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineTremoloSwitch.isChecked())
                     {
-                        lineTremoloButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineTremoloButton.setBackgroundResource(R.drawable.tremolobuttoninbetween);
                     }
                     else
                     {
-                        lineTremoloButton.setBackgroundColor(Color.WHITE);
+                        lineTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                     }
                 }
             }
@@ -162,7 +162,7 @@ public class EffectsFragment extends Fragment{
                 if (lineAtbBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
 
                     if (!lineAtbSwitch.isChecked()) {
-                        lineAtbButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineAtbButton.setBackgroundResource(R.drawable.analog_tb_buttoninbetween);
                     }
 
                     lineAtbBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -179,48 +179,48 @@ public class EffectsFragment extends Fragment{
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 } else {
                     if(!lineAtbSwitch.isChecked()) {
-                        lineAtbButton.setBackgroundColor(Color.WHITE);
+                        lineAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                     }
                     lineAtbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
                 if(!lineDistortionSwitch.isChecked())
                 {
-                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                    lineDistortionButton.setBackgroundResource(R.drawable.analogdistbutton);
                 }
                 if(!lineTremoloSwitch.isChecked())
                 {
-                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                    lineTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                 }
                 if(!lineAutowahSwitch.isChecked())
                 {
-                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                    lineAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                 }
                 if(!lineRingmodSwitch.isChecked())
                 {
-                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                    lineRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
                 }
                 if(!lineNoisegateSwitch.isChecked())
                 {
-                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                    lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                 }
                 if (!lineReverbSwitch.isChecked()) {
-                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                    lineReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
                 if (!lineChorusSwitch.isChecked()) {
-                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                    lineChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
                 if (!lineCrusherSwitch.isChecked()) {
-                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                    lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
                 if (!linePhaserSwitch.isChecked()) {
-                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                    linePhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
                 if (!lineFlangerSwitch.isChecked()) {
-                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                    lineFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
                 if (!lineDelaySwitch.isChecked()) {
-                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                    lineDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -228,15 +228,15 @@ public class EffectsFragment extends Fragment{
         lineAtbSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    lineAtbButton.setBackgroundColor(Color.BLUE);
+                    lineAtbButton.setBackgroundResource(R.drawable.analog_tb_buttonpressed);
                 } else {
                     if(lineAtbBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineAtbSwitch.isChecked())
                     {
-                        lineAtbButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineAtbButton.setBackgroundResource(R.drawable.analog_tb_buttoninbetween);
                     }
                     else
                     {
-                        lineAtbButton.setBackgroundColor(Color.WHITE);
+                        lineAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                     }
                 }
             }
@@ -251,7 +251,7 @@ public class EffectsFragment extends Fragment{
                 if (lineRingmodBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
 
                     if (!lineRingmodSwitch.isChecked()) {
-                        lineRingmodButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineRingmodButton.setBackgroundResource(R.drawable.ringmodbuttoninbetween);
                     }
 
                     lineRingmodBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -268,48 +268,48 @@ public class EffectsFragment extends Fragment{
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 } else {
                     if(!lineRingmodSwitch.isChecked()) {
-                        lineRingmodButton.setBackgroundColor(Color.WHITE);
+                        lineRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
                     }
                     lineRingmodBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
                 if(!lineDistortionSwitch.isChecked())
                 {
-                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                    lineDistortionButton.setBackgroundResource(R.drawable.analogdistbutton);
                 }
                 if(!lineAtbSwitch.isChecked())
                 {
-                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                    lineAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!lineAutowahSwitch.isChecked())
                 {
-                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                    lineAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                 }
                 if(!lineTremoloSwitch.isChecked())
                 {
-                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                    lineTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                 }
                 if(!lineNoisegateSwitch.isChecked())
                 {
-                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                    lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                 }
                 if (!lineReverbSwitch.isChecked()) {
-                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                    lineReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
                 if (!lineChorusSwitch.isChecked()) {
-                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                    lineChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
                 if (!lineCrusherSwitch.isChecked()) {
-                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                    lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
                 if (!linePhaserSwitch.isChecked()) {
-                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                    linePhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
                 if (!lineFlangerSwitch.isChecked()) {
-                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                    lineFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
                 if (!lineDelaySwitch.isChecked()) {
-                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                    lineDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -317,15 +317,15 @@ public class EffectsFragment extends Fragment{
         lineRingmodSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    lineRingmodButton.setBackgroundColor(Color.BLUE);
+                    lineRingmodButton.setBackgroundResource(R.drawable.ringmodbuttonpressed);
                 } else {
                     if(lineRingmodBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineRingmodSwitch.isChecked())
                     {
-                        lineRingmodButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineRingmodButton.setBackgroundResource(R.drawable.ringmodbuttoninbetween);
                     }
                     else
                     {
-                        lineRingmodButton.setBackgroundColor(Color.WHITE);
+                        lineRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
                     }
                 }
             }
@@ -340,7 +340,7 @@ public class EffectsFragment extends Fragment{
                 if (lineDistortionBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
 
                     if (!lineDistortionSwitch.isChecked()) {
-                        lineDistortionButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineDistortionButton.setBackgroundResource(R.drawable.analogdistbuttoninbetween);
                     }
 
                     lineDistortionBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -357,48 +357,48 @@ public class EffectsFragment extends Fragment{
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 } else {
                     if(!lineDistortionSwitch.isChecked()) {
-                        lineDistortionButton.setBackgroundColor(Color.WHITE);
+                        lineDistortionButton.setBackgroundResource(R.drawable.analogdistbutton);
                     }
                     lineDistortionBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
                 if(!lineTremoloSwitch.isChecked())
                 {
-                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                    lineTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                 }
                 if(!lineAtbSwitch.isChecked())
                 {
-                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                    lineAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!lineAutowahSwitch.isChecked())
                 {
-                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                    lineAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                 }
                 if(!lineRingmodSwitch.isChecked())
                 {
-                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                    lineRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
                 }
                 if(!lineNoisegateSwitch.isChecked())
                 {
-                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                    lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                 }
                 if (!lineReverbSwitch.isChecked()) {
-                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                    lineReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
                 if (!lineChorusSwitch.isChecked()) {
-                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                    lineChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
                 if (!lineCrusherSwitch.isChecked()) {
-                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                    lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
                 if (!linePhaserSwitch.isChecked()) {
-                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                    linePhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
                 if (!lineFlangerSwitch.isChecked()) {
-                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                    lineFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
                 if (!lineDelaySwitch.isChecked()) {
-                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                    lineDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -406,15 +406,15 @@ public class EffectsFragment extends Fragment{
         lineDistortionSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    lineDistortionButton.setBackgroundColor(Color.BLUE);
+                    lineDistortionButton.setBackgroundResource(R.drawable.analogdistbuttonpressed);
                 } else {
                     if(lineDistortionBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineDistortionSwitch.isChecked())
                     {
-                        lineDistortionButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineDistortionButton.setBackgroundResource(R.drawable.analogdistbuttoninbetween);
                     }
                     else
                     {
-                        lineDistortionButton.setBackgroundColor(Color.WHITE);
+                        lineDistortionButton.setBackgroundResource(R.drawable.analogdistbutton);
                     }
                 }
             }
@@ -430,7 +430,7 @@ public class EffectsFragment extends Fragment{
                 if (lineNoisegateBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
 
                     if (!lineNoisegateSwitch.isChecked()) {
-                        lineNoisegateButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebuttoninbetween);
                     }
 
                     lineNoisegateBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -447,48 +447,48 @@ public class EffectsFragment extends Fragment{
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 } else {
                     if(!lineNoisegateSwitch.isChecked()) {
-                        lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                        lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                     }
                     lineNoisegateBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
-                if(!lineDistortionSwitch.isChecked())
+                if(!lineTremoloSwitch.isChecked())
                 {
-                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                    lineTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                 }
                 if(!lineAtbSwitch.isChecked())
                 {
-                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                    lineAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!lineAutowahSwitch.isChecked())
                 {
-                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                    lineAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                 }
                 if(!lineRingmodSwitch.isChecked())
                 {
-                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                    lineRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
                 }
-                if(!lineTremoloSwitch.isChecked())
+                if(!lineDistortionSwitch.isChecked())
                 {
-                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                    lineDistortionButton.setBackgroundResource(R.drawable.analogdistbutton);
                 }
                 if (!lineReverbSwitch.isChecked()) {
-                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                    lineReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
                 if (!lineChorusSwitch.isChecked()) {
-                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                    lineChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
                 if (!lineCrusherSwitch.isChecked()) {
-                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                    lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
                 if (!linePhaserSwitch.isChecked()) {
-                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                    linePhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
                 if (!lineFlangerSwitch.isChecked()) {
-                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                    lineFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
                 if (!lineDelaySwitch.isChecked()) {
-                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                    lineDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -496,15 +496,15 @@ public class EffectsFragment extends Fragment{
         lineNoisegateSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    lineNoisegateButton.setBackgroundColor(Color.BLUE);
+                    lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebuttonpressed);
                 } else {
                     if(lineNoisegateBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineNoisegateSwitch.isChecked())
                     {
-                        lineNoisegateButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebuttoninbetween);
                     }
                     else
                     {
-                        lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                        lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                     }
                 }
             }
@@ -519,7 +519,7 @@ public class EffectsFragment extends Fragment{
                 if (lineAutowahBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
 
                     if (!lineAutowahSwitch.isChecked()) {
-                        lineAutowahButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineAutowahButton.setBackgroundResource(R.drawable.autowahbuttoninbetween);
                     }
 
                     lineAutowahBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -536,48 +536,48 @@ public class EffectsFragment extends Fragment{
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 } else {
                     if(!lineAutowahSwitch.isChecked()) {
-                        lineAutowahButton.setBackgroundColor(Color.WHITE);
+                        lineAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                     }
                     lineAutowahBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
-                if(!lineDistortionSwitch.isChecked())
+                if(!lineTremoloSwitch.isChecked())
                 {
-                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                    lineTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                 }
                 if(!lineAtbSwitch.isChecked())
                 {
-                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                    lineAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
-                if(!lineTremoloSwitch.isChecked())
+                if(!lineDistortionSwitch.isChecked())
                 {
-                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                    lineDistortionButton.setBackgroundResource(R.drawable.analogdistbutton);
                 }
                 if(!lineRingmodSwitch.isChecked())
                 {
-                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                    lineRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
                 }
                 if(!lineNoisegateSwitch.isChecked())
                 {
-                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                    lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                 }
                 if (!lineReverbSwitch.isChecked()) {
-                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                    lineReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
                 if (!lineChorusSwitch.isChecked()) {
-                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                    lineChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
                 if (!lineCrusherSwitch.isChecked()) {
-                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                    lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
                 if (!linePhaserSwitch.isChecked()) {
-                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                    linePhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
                 if (!lineFlangerSwitch.isChecked()) {
-                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                    lineFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
                 if (!lineDelaySwitch.isChecked()) {
-                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                    lineDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -585,15 +585,15 @@ public class EffectsFragment extends Fragment{
         lineAutowahSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    lineAutowahButton.setBackgroundColor(Color.BLUE);
+                    lineAutowahButton.setBackgroundResource(R.drawable.autowahbuttonpressed);
                 } else {
                     if(lineAutowahBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineAutowahSwitch.isChecked())
                     {
-                        lineAutowahButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineAutowahButton.setBackgroundResource(R.drawable.autowahbuttoninbetween);
                     }
                     else
                     {
-                        lineAutowahButton.setBackgroundColor(Color.WHITE);
+                        lineAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                     }
                 }
             }
@@ -611,7 +611,7 @@ public class EffectsFragment extends Fragment{
 
                     if(!lineReverbSwitch.isChecked())
                     {
-                        lineReverbButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineReverbButton.setBackgroundResource(R.drawable.reverbbuttoninbetween);
                     }
 
                     lineReverbBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -629,55 +629,49 @@ public class EffectsFragment extends Fragment{
                 }
                 else {
                     if(!lineReverbSwitch.isChecked()) {
-                        lineReverbButton.setBackgroundColor(Color.WHITE);
+                        lineReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                     }
                     lineReverbBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
 
-                if(!lineDistortionSwitch.isChecked())
+                if(!lineTremoloSwitch.isChecked())
                 {
-                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                    lineTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                 }
                 if(!lineAtbSwitch.isChecked())
                 {
-                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                    lineAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!lineAutowahSwitch.isChecked())
                 {
-                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                    lineAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                 }
                 if(!lineRingmodSwitch.isChecked())
                 {
-                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                    lineRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
                 }
                 if(!lineNoisegateSwitch.isChecked())
                 {
-                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                    lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                 }
-                if(!lineTremoloSwitch.isChecked())
-                {
-                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                if (!lineDistortionSwitch.isChecked()) {
+                    lineDistortionButton.setBackgroundResource(R.drawable.analogdistbutton);
                 }
-                if(!lineChorusSwitch.isChecked())
-                {
-                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                if (!lineChorusSwitch.isChecked()) {
+                    lineChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
-                if(!lineCrusherSwitch.isChecked())
-                {
-                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                if (!lineCrusherSwitch.isChecked()) {
+                    lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
-                if(!linePhaserSwitch.isChecked())
-                {
-                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                if (!linePhaserSwitch.isChecked()) {
+                    linePhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
-                if(!lineFlangerSwitch.isChecked())
-                {
-                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                if (!lineFlangerSwitch.isChecked()) {
+                    lineFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
-                if(!lineDelaySwitch.isChecked())
-                {
-                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                if (!lineDelaySwitch.isChecked()) {
+                    lineDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -685,15 +679,15 @@ public class EffectsFragment extends Fragment{
         lineReverbSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    lineReverbButton.setBackgroundColor(Color.BLUE);
+                    lineReverbButton.setBackgroundResource(R.drawable.reverbbuttonpressed);
                 } else {
                     if(lineReverbBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineReverbSwitch.isChecked())
                     {
-                        lineReverbButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineReverbButton.setBackgroundResource(R.drawable.reverbbuttoninbetween);
                     }
                     else
                     {
-                        lineReverbButton.setBackgroundColor(Color.WHITE);
+                        lineReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                     }
                 }
             }
@@ -710,7 +704,7 @@ public class EffectsFragment extends Fragment{
 
                     if(!lineChorusSwitch.isChecked())
                     {
-                        lineChorusButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineChorusButton.setBackgroundResource(R.drawable.chorusbuttoninbetween);
                     }
 
                     lineChorusBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -728,54 +722,48 @@ public class EffectsFragment extends Fragment{
                 }
                 else {
                     if(!lineChorusSwitch.isChecked()) {
-                        lineChorusButton.setBackgroundColor(Color.WHITE);
+                        lineChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                     }
                     lineChorusBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
-                if(!lineDistortionSwitch.isChecked())
+                if(!lineTremoloSwitch.isChecked())
                 {
-                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                    lineTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                 }
                 if(!lineAtbSwitch.isChecked())
                 {
-                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                    lineAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!lineAutowahSwitch.isChecked())
                 {
-                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                    lineAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                 }
                 if(!lineRingmodSwitch.isChecked())
                 {
-                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                    lineRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
                 }
                 if(!lineNoisegateSwitch.isChecked())
                 {
-                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                    lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                 }
-                if(!lineTremoloSwitch.isChecked())
-                {
-                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                if (!lineReverbSwitch.isChecked()) {
+                    lineReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
-                if(!lineReverbSwitch.isChecked())
-                {
-                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                if (!lineDistortionSwitch.isChecked()) {
+                    lineDistortionButton.setBackgroundResource(R.drawable.analogdistbutton);
                 }
-                if(!lineCrusherSwitch.isChecked())
-                {
-                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                if (!lineCrusherSwitch.isChecked()) {
+                    lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
-                if(!linePhaserSwitch.isChecked())
-                {
-                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                if (!linePhaserSwitch.isChecked()) {
+                    linePhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
-                if(!lineFlangerSwitch.isChecked())
-                {
-                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                if (!lineFlangerSwitch.isChecked()) {
+                    lineFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
-                if(!lineDelaySwitch.isChecked())
-                {
-                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                if (!lineDelaySwitch.isChecked()) {
+                    lineDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -783,15 +771,15 @@ public class EffectsFragment extends Fragment{
         lineChorusSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    lineChorusButton.setBackgroundColor(Color.BLUE);
+                    lineChorusButton.setBackgroundResource(R.drawable.chorusbuttonpressed);
                 } else {
                     if(lineChorusBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineChorusSwitch.isChecked())
                     {
-                        lineChorusButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineChorusButton.setBackgroundResource(R.drawable.chorusbuttoninbetween);
                     }
                     else
                     {
-                        lineChorusButton.setBackgroundColor(Color.WHITE);
+                        lineChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                     }
                 }
             }
@@ -807,7 +795,7 @@ public class EffectsFragment extends Fragment{
 
                     if(!lineCrusherSwitch.isChecked())
                     {
-                        lineCrusherButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbuttoninbetween);
                     }
 
                     lineCrusherBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -825,54 +813,48 @@ public class EffectsFragment extends Fragment{
                 }
                 else {
                     if(!lineCrusherSwitch.isChecked()) {
-                        lineCrusherButton.setBackgroundColor(Color.WHITE);
+                        lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                     }
                     lineCrusherBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
-                if(!lineDistortionSwitch.isChecked())
+                if(!lineTremoloSwitch.isChecked())
                 {
-                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                    lineTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                 }
                 if(!lineAtbSwitch.isChecked())
                 {
-                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                    lineAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!lineAutowahSwitch.isChecked())
                 {
-                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                    lineAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                 }
                 if(!lineRingmodSwitch.isChecked())
                 {
-                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                    lineRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
                 }
                 if(!lineNoisegateSwitch.isChecked())
                 {
-                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                    lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                 }
-                if(!lineTremoloSwitch.isChecked())
-                {
-                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                if (!lineReverbSwitch.isChecked()) {
+                    lineReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
-                if(!lineReverbSwitch.isChecked())
-                {
-                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                if (!lineChorusSwitch.isChecked()) {
+                    lineChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
-                if(!lineChorusSwitch.isChecked())
-                {
-                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                if (!lineDistortionSwitch.isChecked()) {
+                    lineDistortionButton.setBackgroundResource(R.drawable.analogdistbutton);
                 }
-                if(!linePhaserSwitch.isChecked())
-                {
-                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                if (!linePhaserSwitch.isChecked()) {
+                    linePhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
-                if(!lineFlangerSwitch.isChecked())
-                {
-                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                if (!lineFlangerSwitch.isChecked()) {
+                    lineFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
-                if(!lineDelaySwitch.isChecked())
-                {
-                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                if (!lineDelaySwitch.isChecked()) {
+                    lineDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -881,15 +863,15 @@ public class EffectsFragment extends Fragment{
         lineCrusherSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    lineCrusherButton.setBackgroundColor(Color.BLUE);
+                    lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbuttonpressed);
                 } else {
                     if(lineCrusherBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineCrusherSwitch.isChecked())
                     {
-                        lineCrusherButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbuttoninbetween);
                     }
                     else
                     {
-                        lineCrusherButton.setBackgroundColor(Color.WHITE);
+                        lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                     }
                 }
             }
@@ -905,7 +887,7 @@ public class EffectsFragment extends Fragment{
 
                     if(!lineFlangerSwitch.isChecked())
                     {
-                        lineFlangerButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineFlangerButton.setBackgroundResource(R.drawable.flangerbuttoninbetween);
                     }
 
                     lineFlangerBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -923,54 +905,48 @@ public class EffectsFragment extends Fragment{
                 }
                 else {
                     if(!lineFlangerSwitch.isChecked()) {
-                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                    lineFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
                     lineFlangerBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
-                if(!lineDistortionSwitch.isChecked())
+                if(!lineTremoloSwitch.isChecked())
                 {
-                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                    lineTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                 }
                 if(!lineAtbSwitch.isChecked())
                 {
-                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                    lineAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!lineAutowahSwitch.isChecked())
                 {
-                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                    lineAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                 }
                 if(!lineRingmodSwitch.isChecked())
                 {
-                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                    lineRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
                 }
                 if(!lineNoisegateSwitch.isChecked())
                 {
-                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                    lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                 }
-                if(!lineTremoloSwitch.isChecked())
-                {
-                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                if (!lineReverbSwitch.isChecked()) {
+                    lineReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
-                if(!lineReverbSwitch.isChecked())
-                {
-                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                if (!lineChorusSwitch.isChecked()) {
+                    lineChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
-                if(!lineChorusSwitch.isChecked())
-                {
-                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                if (!lineCrusherSwitch.isChecked()) {
+                    lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
-                if(!linePhaserSwitch.isChecked())
-                {
-                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                if (!linePhaserSwitch.isChecked()) {
+                    linePhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                 }
-                if(!lineCrusherSwitch.isChecked())
-                {
-                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                if (!lineDistortionSwitch.isChecked()) {
+                    lineDistortionButton.setBackgroundResource(R.drawable.analogdistbutton);
                 }
-                if(!lineDelaySwitch.isChecked())
-                {
-                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                if (!lineDelaySwitch.isChecked()) {
+                    lineDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -978,15 +954,15 @@ public class EffectsFragment extends Fragment{
         lineFlangerSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    lineFlangerButton.setBackgroundColor(Color.BLUE);
+                    lineFlangerButton.setBackgroundResource(R.drawable.flangerbuttonpressed);
                 } else {
                     if(lineFlangerBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineFlangerSwitch.isChecked())
                     {
-                        lineFlangerButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineFlangerButton.setBackgroundResource(R.drawable.flangerbuttoninbetween);
                     }
                     else
                     {
-                        lineFlangerButton.setBackgroundColor(Color.WHITE);
+                        lineFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                     }
                 }
             }
@@ -1002,7 +978,7 @@ public class EffectsFragment extends Fragment{
 
                     if(!linePhaserSwitch.isChecked())
                     {
-                        linePhaserButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        linePhaserButton.setBackgroundResource(R.drawable.phaserbuttoninbetween);
                     }
 
                     linePhaserBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -1020,54 +996,48 @@ public class EffectsFragment extends Fragment{
                 }
                 else {
                     if(!linePhaserSwitch.isChecked()) {
-                        linePhaserButton.setBackgroundColor(Color.WHITE);
+                        linePhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                     }
                     linePhaserBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
-                if(!lineDistortionSwitch.isChecked())
+                if(!lineTremoloSwitch.isChecked())
                 {
-                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                    lineTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                 }
                 if(!lineAtbSwitch.isChecked())
                 {
-                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                    lineAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!lineAutowahSwitch.isChecked())
                 {
-                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                    lineAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                 }
                 if(!lineRingmodSwitch.isChecked())
                 {
-                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                    lineRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
                 }
                 if(!lineNoisegateSwitch.isChecked())
                 {
-                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                    lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                 }
-                if(!lineTremoloSwitch.isChecked())
-                {
-                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                if (!lineReverbSwitch.isChecked()) {
+                    lineReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
-                if(!lineReverbSwitch.isChecked())
-                {
-                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                if (!lineChorusSwitch.isChecked()) {
+                    lineChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
-                if(!lineChorusSwitch.isChecked())
-                {
-                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                if (!lineCrusherSwitch.isChecked()) {
+                    lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
-                if(!lineCrusherSwitch.isChecked())
-                {
-                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                if (!lineDistortionSwitch.isChecked()) {
+                    lineDistortionButton.setBackgroundResource(R.drawable.analogdistbutton);
                 }
-                if(!lineFlangerSwitch.isChecked())
-                {
-                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                if (!lineFlangerSwitch.isChecked()) {
+                    lineFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
-                if(!lineDelaySwitch.isChecked())
-                {
-                    lineDelayButton.setBackgroundColor(Color.WHITE);
+                if (!lineDelaySwitch.isChecked()) {
+                    lineDelayButton.setBackgroundResource(R.drawable.delaybutton);
                 }
             }
         });
@@ -1075,15 +1045,15 @@ public class EffectsFragment extends Fragment{
         linePhaserSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    linePhaserButton.setBackgroundColor(Color.BLUE);
+                    linePhaserButton.setBackgroundResource(R.drawable.phaserbuttonpressed);
                 } else {
                     if(linePhaserBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !linePhaserSwitch.isChecked())
                     {
-                        linePhaserButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        linePhaserButton.setBackgroundResource(R.drawable.phaserbuttoninbetween);
                     }
                     else
                     {
-                        linePhaserButton.setBackgroundColor(Color.WHITE);
+                        linePhaserButton.setBackgroundResource(R.drawable.phaserbutton);
                     }
                 }
             }
@@ -1099,7 +1069,7 @@ public class EffectsFragment extends Fragment{
 
                     if(!lineDelaySwitch.isChecked())
                     {
-                        lineDelayButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineDelayButton.setBackgroundResource(R.drawable.delaybuttoninbetween);
                     }
 
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -1117,69 +1087,65 @@ public class EffectsFragment extends Fragment{
                 }
                 else {
                     if(!lineDelaySwitch.isChecked()) {
-                        lineDelayButton.setBackgroundColor(Color.WHITE);
+                        lineDelayButton.setBackgroundResource(R.drawable.delaybutton);
                     }
                     lineDelayBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
 
-                if(!lineDistortionSwitch.isChecked())
+                if(!lineTremoloSwitch.isChecked())
                 {
-                    lineDistortionButton.setBackgroundColor(Color.WHITE);
+                    lineTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
                 }
                 if(!lineAtbSwitch.isChecked())
                 {
-                    lineAtbButton.setBackgroundColor(Color.WHITE);
+                    lineAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
                 }
                 if(!lineAutowahSwitch.isChecked())
                 {
-                    lineAutowahButton.setBackgroundColor(Color.WHITE);
+                    lineAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
                 }
                 if(!lineRingmodSwitch.isChecked())
                 {
-                    lineRingmodButton.setBackgroundColor(Color.WHITE);
+                    lineRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
                 }
                 if(!lineNoisegateSwitch.isChecked())
                 {
-                    lineNoisegateButton.setBackgroundColor(Color.WHITE);
+                    lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
                 }
-                if(!lineTremoloSwitch.isChecked())
-                {
-                    lineTremoloButton.setBackgroundColor(Color.WHITE);
+                if (!lineReverbSwitch.isChecked()) {
+                    lineReverbButton.setBackgroundResource(R.drawable.reverbbutton);
                 }
-                if(!lineReverbSwitch.isChecked())
-                {
-                    lineReverbButton.setBackgroundColor(Color.WHITE);
+                if (!lineChorusSwitch.isChecked()) {
+                    lineChorusButton.setBackgroundResource(R.drawable.chorusbutton);
                 }
-                if(!lineChorusSwitch.isChecked())
-                {
-                    lineChorusButton.setBackgroundColor(Color.WHITE);
+                if (!lineCrusherSwitch.isChecked()) {
+                    lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
                 }
-                if(!lineCrusherSwitch.isChecked())
-                {
-                    lineCrusherButton.setBackgroundColor(Color.WHITE);
+                if (!lineDistortionSwitch.isChecked()) {
+                    lineDistortionButton.setBackgroundResource(R.drawable.analogdistbutton);
                 }
-                if(!lineFlangerSwitch.isChecked())
-                {
-                    lineFlangerButton.setBackgroundColor(Color.WHITE);
+                if (!lineFlangerSwitch.isChecked()) {
+                    lineFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
                 }
-                if(!linePhaserSwitch.isChecked())
-                {
-                    linePhaserButton.setBackgroundColor(Color.WHITE);
+                if (!lineDistortionSwitch.isChecked()) {
+                    lineDistortionButton.setBackgroundResource(R.drawable.analogdistbutton);
                 }
+
+
             }
         });
         lineDelaySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    lineDelayButton.setBackgroundColor(Color.BLUE);
+                    lineDelayButton.setBackgroundResource(R.drawable.delaybuttonpressed);
                 } else {
                     if(lineDelayBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineDelaySwitch.isChecked())
                     {
-                        lineDelayButton.setBackgroundColor(Color.parseColor("#82dcff"));
+                        lineDelayButton.setBackgroundResource(R.drawable.delaybuttoninbetween);
                     }
                     else
                     {
-                        lineDelayButton.setBackgroundColor(Color.WHITE);
+                        lineDelayButton.setBackgroundResource(R.drawable.delaybutton);
                     }
                 }
             }
@@ -1230,7 +1196,7 @@ public class EffectsFragment extends Fragment{
                 if(micBassemulatorBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
                     if(!micBassemulatorSwitch.isChecked())
                     {
-                        micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbuttoninbetween);
+                        micBassemulatorButton.setBackgroundResource(R.drawable.bassemulator_button_inbetween);
                     }
 
                     micBassemulatorBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -1313,7 +1279,7 @@ public class EffectsFragment extends Fragment{
                 else {
                     if(micBassemulatorBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micBassemulatorSwitch.isChecked())
                     {
-                        micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbuttoninbetween);
+                        micBassemulatorButton.setBackgroundResource(R.drawable.bassemulator_button_inbetween);
                     }
                     else
                     {
