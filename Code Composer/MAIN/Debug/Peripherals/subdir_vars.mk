@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Peripherals/Sram.c \
+../Peripherals/USARTinit.c \
 ../Peripherals/analogToDigitalConverter.c \
 ../Peripherals/audioCntrl.c \
 ../Peripherals/digitalToAnalogConverter.c \
@@ -12,6 +13,7 @@ C_SRCS += \
 
 C_DEPS += \
 ./Peripherals/Sram.d \
+./Peripherals/USARTinit.d \
 ./Peripherals/analogToDigitalConverter.d \
 ./Peripherals/audioCntrl.d \
 ./Peripherals/digitalToAnalogConverter.d \
@@ -19,6 +21,7 @@ C_DEPS += \
 
 OBJS += \
 ./Peripherals/Sram.obj \
+./Peripherals/USARTinit.obj \
 ./Peripherals/analogToDigitalConverter.obj \
 ./Peripherals/audioCntrl.obj \
 ./Peripherals/digitalToAnalogConverter.obj \
@@ -26,6 +29,7 @@ OBJS += \
 
 OBJS__QUOTED += \
 "Peripherals/Sram.obj" \
+"Peripherals/USARTinit.obj" \
 "Peripherals/analogToDigitalConverter.obj" \
 "Peripherals/audioCntrl.obj" \
 "Peripherals/digitalToAnalogConverter.obj" \
@@ -33,6 +37,7 @@ OBJS__QUOTED += \
 
 C_DEPS__QUOTED += \
 "Peripherals/Sram.d" \
+"Peripherals/USARTinit.d" \
 "Peripherals/analogToDigitalConverter.d" \
 "Peripherals/audioCntrl.d" \
 "Peripherals/digitalToAnalogConverter.d" \
@@ -40,6 +45,7 @@ C_DEPS__QUOTED += \
 
 C_SRCS__QUOTED += \
 "../Peripherals/Sram.c" \
+"../Peripherals/USARTinit.c" \
 "../Peripherals/analogToDigitalConverter.c" \
 "../Peripherals/audioCntrl.c" \
 "../Peripherals/digitalToAnalogConverter.c" \

@@ -18,6 +18,7 @@
 #include "Effects/ringmod.h"
 #include "Effects/noise_gate.h"
 #include "Effects/tremolo.h"
+#include "Peripherals/USARTinit.h"
 
 
 /*******************************************************PRAGMAS*******************************************************/
@@ -54,7 +55,7 @@ volatile Uint32 garbage= 0x7BADB015;    //Used to write to the MCBSP B to read i
 volatile Uint16 program_state = 0;  //Used to mark whether in ping pong state 0 or 1
 volatile Uint16 ready = 1;          //1 when the main is not finished processing data, 0 if is finished
 volatile char rxBuffer[100];            //Receive buffer: used to collect information from USART
-Uint16 rxBufferIndex = 0;           //Index for receive buffer
+Uint16 rxBufferIndex;           //Index for receive buffer
 
 /////////////////////////////////////TAPS//////////////////////////////////
 Uint32 tapsIndex = 0;//(the number of samples between each tap)
