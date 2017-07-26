@@ -18,6 +18,7 @@
 #include "Effects/ringmod.h"
 #include "Effects/noise_gate.h"
 #include "Effects/tremolo.h"
+#include "Peripherals/USARTinit.h"
 
 
 /*******************************************************PRAGMAS*******************************************************/
@@ -54,7 +55,7 @@ volatile Uint32 garbage= 0x7BADB015;    //Used to write to the MCBSP B to read i
 volatile Uint16 program_state = 0;  //Used to mark whether in ping pong state 0 or 1
 volatile Uint16 ready = 1;          //1 when the main is not finished processing data, 0 if is finished
 volatile char rxBuffer[100];            //Receive buffer: used to collect information from USART
-Uint16 rxBufferIndex = 0;           //Index for receive buffer
+Uint16 rxBufferIndex;           //Index for receive buffer
 
 /////////////////////////////////////TAPS//////////////////////////////////
 Uint32 tapsIndex = 0;//(the number of samples between each tap)
@@ -82,7 +83,7 @@ Uint16 noiseGate_sample_counter,
 /******************************************************PROTOTYPES*****************************************************/
 void mainEffectsAndLoop(volatile Uint32 in[256], volatile Uint16 out[256]);
 void init_ButtonInterrupt(void);
-void Init_Timer1(void);
+void initSampleRateTimer(void);
 void Init_DMA(void);
 void init_ButtonInterrupt(void);
 
@@ -90,10 +91,10 @@ void init_ButtonInterrupt(void);
 /****************************************************INTERRUPTS*******************************************************/
 
 /**************************************************************
-* Name:     Timer1_ISR
+* Name:     sampleRate_ISR
 * Purpose:  Timer 1 runs at samples rate. Toggles LED
 **************************************************************/
-interrupt void Timer1_ISR(void){
+interrupt void sampleRate_ISR(void){
     EALLOW;
     GpioDataRegs.GPADAT.bit.GPIO0 ^= 1;
 }
@@ -153,21 +154,21 @@ interrupt void MRB_ISR (void){
 }
 
 /**************************************************************
-* Name:     DMA_CH3
+* Name:     DMAch3_ISR
 * Purpose:  Acknowledge the output of the appropriate ping/pong buffer to MCBSP A (DAC)
 **************************************************************/
-interrupt void DMA_CH3 (void){
+interrupt void DMAch3_ISR (void){
     EALLOW;
     PieCtrlRegs.PIEACK.all = PIEACK_GROUP7;
 }
 
 /**************************************************************
-* Name:     DMA_CH2
+* Name:     DMAch2_ISR
 * Purpose:  Depending on program state, transfers samples from MCBSPB to
 *           ping_1 and ping_2 to MCBSPA or MCBSPB to pong_1 and pong_2 to MCBSPA.
 *           Triggered when transfer is complete from ADC to MCBSPB and MCBSPA to DAC.
 **************************************************************/
-interrupt void DMA_CH2(void){
+interrupt void DMAch2_ISR(void){
     if(ready){
         if(program_state == 0){
             DMACH2AddrConfig( (volatile Uint16*) &ping_1[0] + 1 , (volatile Uint16*) &McbspbRegs.DRR2.all );
@@ -194,21 +195,18 @@ __interrupt void taps_ISR (void){
 	EALLOW;
 	GpioDataRegs.GPATOGGLE.bit.GPIO7=1; // interrupt LED
 
-	taps++;
-
-// 	???? improvment
-// 	interrupt
-// 	tapsFirst = tapsSecond;
-// 	tapsSecond = tapsIndex;
-// 	delaySizeInSamples = tapsSecond - tapsFirst;
+	//if not first click and less than 5 seconds passed between clicks
+ 	if(tapsIndex != 0 && tapsIndex < 225000)
+ 		delaySizeInSamples = tapsIndex;
+ 	tapsIndex = 0;
 
 	////////////////////Looping index handling////////////////////
-	if(taps == 1)//If you pressed loop 1 once (first record)...
-		tapsIndex = 0;//Start the loopIndex at 0
-	if(taps == 2){//If you pressed the loop 1 twice (clicks = 3)
-		delaySizeInSamples = tapsIndex;//mark the loop length
-		taps = 0;
-	}
+//	if(taps == 1)//If you pressed loop 1 once (first record)...
+//		tapsIndex = 0;//Start the loopIndex at 0
+//	if(taps == 2){//If you pressed the loop 1 twice (clicks = 3)
+//		delaySizeInSamples = tapsIndex;//mark the loop length
+//		taps = 0;
+//	}
 
 	PieCtrlRegs.PIEACK.all = PIEACK_GROUP1; //acknowledges the interrupt
 	EINT;
@@ -235,7 +233,7 @@ int main(void){
     useGpio();//Init LED and switche
     //startUSART();
     Init_DMA();//Init the DMA
-    Init_Timer1();//Init timer 1 (run at sample rate)
+    initSampleRateTimer();//Init timer 1 (run at sample rate)
     init_ButtonInterrupt();//Init the loop1 button interrupt
 
     //outWord("enter a number ");
@@ -308,19 +306,21 @@ void mainEffectsAndLoop(volatile Uint32 in[256], volatile Uint16 out[256]){
     		if(loopIndex >= loopLength)
     			loopIndex = 0;
 
-    		tapsIndex++;//increment the number of samples between taps
+    		//only increment tap variable if less than 225000
+    		if(tapsIndex < 225000)
+    			tapsIndex++;//increment the number of samples between taps
 	}
 }
 
 /**************************************************************
-* Name:     Init_Timer1
+* Name:     initSampleRateTimer
 * Purpose:  Initialize the timer to run at the sample rate
 **************************************************************/
-void Init_Timer1(void){
+void initSampleRateTimer(void){
     EALLOW;
     InitCpuTimers();//config timers
     ConfigCpuTimer( &CpuTimer1 , 150 , 22);//set the sample rate
-    PieVectTable.XINT13 = Timer1_ISR;//map the ISR
+    PieVectTable.XINT13 = sampleRate_ISR;//map the ISR
     PieCtrlRegs.PIECTRL.bit.ENPIE = 1;
     IER |= M_INT13;
     EINT;
@@ -416,8 +416,8 @@ void Init_DMA(void){
     PieCtrlRegs.PIEIER6.bit.INTx3 = 1; //enable McBSPB RRDY int
     PieCtrlRegs.PIEIFR6.bit.INTx3 = 1; //enable return pie
     PieVectTable.MRINTB  = MRB_ISR;
-    PieVectTable.DINTCH2 = DMA_CH2;
-    PieVectTable.DINTCH3 = DMA_CH3;
+    PieVectTable.DINTCH2 = DMAch2_ISR;
+    PieVectTable.DINTCH3 = DMAch3_ISR;
     IER |= M_INT6;   //enable McBSPB RRDY interrupt
     IER |= M_INT7;  //enable "buffer full" interrupt DMACH2
     //Start the DMA channels

@@ -40,3 +40,4 @@ MAIN.obj: ../Effects/squares.h
 MAIN.obj: ../Effects/ringmod.h
 MAIN.obj: ../Effects/noise_gate.h
 MAIN.obj: ../Effects/tremolo.h
+MAIN.obj: ../Peripherals/USARTinit.h

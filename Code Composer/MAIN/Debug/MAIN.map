@@ -1,10 +1,10 @@
 ******************************************************************************
              TMS320C2000 Linker Unix v15.12.3                  
 ******************************************************************************
->> Linked Tue Jul 25 14:24:43 2017
+>> Linked Wed Jul 26 14:37:45 2017
 
 OUTPUT FILE NAME:   <MAIN.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 00009d6f
+ENTRY POINT SYMBOL: "_c_int00"  address: 00009d75
 
 
 MEMORY CONFIGURATION
@@ -14,8 +14,8 @@ MEMORY CONFIGURATION
 PAGE 0:
   BEGIN                 00000000   00000002  00000000  00000002  RWIX
   RAMM0                 00000050   000003b0  00000000  000003b0  RWIX
-  RAML0                 00008000   00001000  000000cc  00000f34  RWIX
-  RAML1                 00009000   00001000  00000efe  00000102  RWIX
+  RAML0                 00008000   00001000  00000120  00000ee0  RWIX
+  RAML1                 00009000   00001000  00000f2e  000000d2  RWIX
   RAML2                 0000a000   00001000  00000000  00001000  RWIX
   RAML3                 0000b000   00001000  00000000  00001000  RWIX
   ZONE7A                00200000   0000fc00  00000000  0000fc00  RWIX
@@ -79,7 +79,7 @@ PAGE 1:
   SCIB                  00007750   00000010  00000010  00000000  RWIX
   SCIC                  00007770   00000010  00000010  00000000  RWIX
   I2CA                  00007900   00000040  00000022  0000001e  RWIX
-  RAML4                 0000c000   00001000  000004d6  00000b2a  RWIX
+  RAML4                 0000c000   00001000  0000050e  00000af2  RWIX
   RAML5                 0000d000   00001000  00000240  00000dc0  RWIX
   RAML6                 0000e000   00001000  00000000  00001000  RWIX
   RAML7                 0000f000   00001000  00000000  00001000  RWIX
@@ -94,41 +94,43 @@ SECTION ALLOCATION MAP
  output                                  attributes/
 section   page    origin      length       input sections
 --------  ----  ----------  ----------   ----------------
-.cinit     0    00008000    000000c8     
+.cinit     0    00008000    0000011c     
                   00008000    00000080     MAIN.obj (.cinit)
-                  00008080    00000026     timer.obj (.cinit)
-                  000080a6    0000000e     rts2800_fpu32.lib : exit.obj (.cinit)
-                  000080b4    00000008     audioCntrl.obj (.cinit)
-                  000080bc    00000005     rts2800_fpu32.lib : _lock.obj (.cinit:__lock)
-                  000080c1    00000005                       : _lock.obj (.cinit:__unlock)
-                  000080c6    00000002     --HOLE-- [fill = 0]
+                  00008080    00000054     oldPhaser.obj (.cinit)
+                  000080d4    00000026     timer.obj (.cinit)
+                  000080fa    0000000e     rts2800_fpu32.lib : exit.obj (.cinit)
+                  00008108    00000008     audioCntrl.obj (.cinit)
+                  00008110    00000005     rts2800_fpu32.lib : _lock.obj (.cinit:__lock)
+                  00008115    00000005                       : _lock.obj (.cinit:__unlock)
+                  0000811a    00000002     --HOLE-- [fill = 0]
 
-ramfuncs   0    000080c8    00000004     
-                  000080c8    00000004     DSP2833x_usDelay.obj (ramfuncs)
+ramfuncs   0    0000811c    00000004     
+                  0000811c    00000004     DSP2833x_usDelay.obj (ramfuncs)
 
-.text      0    00009000    00000efe     
+.text      0    00009000    00000f2e     
                   00009000    000003e9     DSP2833x_DMA.obj (.text)
                   000093e9    00000316     DSP2833x_DefaultIsr.obj (.text:retain)
-                  000096ff    0000022b     MAIN.obj (.text)
-                  0000992a    00000124     MAIN.obj (.text:retain)
-                  00009a4e    000000f8     DSP2833x_SysCtrl.obj (.text)
-                  00009b46    00000088     rts2800_fpu32.lib : fs_div.obj (.text)
-                  00009bce    00000079     analogToDigitalConverter.obj (.text)
-                  00009c47    00000073     DSP2833x_CpuTimers.obj (.text)
-                  00009cba    0000005d     digitalToAnalogConverter.obj (.text)
-                  00009d17    00000058     rts2800_fpu32.lib : s_sinf.obj (.text)
-                  00009d6f    00000056                       : boot.obj (.text)
-                  00009dc5    00000046                       : cpy_tbl.obj (.text)
-                  00009e0b    00000035     Sram.obj (.text)
-                  00009e40    00000032     tremolo.obj (.text)
-                  00009e72    00000029     rts2800_fpu32.lib : exit.obj (.text)
-                  00009e9b    0000001c     timer.obj (.text:retain)
-                  00009eb7    0000001a     rts2800_fpu32.lib : cpy_utils.obj (.text)
-                  00009ed1    00000019                       : args_main.obj (.text)
-                  00009eea    00000009                       : _lock.obj (.text)
-                  00009ef3    00000008     audioCntrl.obj (.text)
-                  00009efb    00000002     rts2800_fpu32.lib : pre_init.obj (.text)
-                  00009efd    00000001                       : startup.obj (.text)
+                  000096ff    00000230     MAIN.obj (.text)
+                  0000992f    00000125     MAIN.obj (.text:retain)
+                  00009a54    000000f8     DSP2833x_SysCtrl.obj (.text)
+                  00009b4c    00000088     rts2800_fpu32.lib : fs_div.obj (.text)
+                  00009bd4    00000079     analogToDigitalConverter.obj (.text)
+                  00009c4d    00000073     DSP2833x_CpuTimers.obj (.text)
+                  00009cc0    0000005d     digitalToAnalogConverter.obj (.text)
+                  00009d1d    00000058     rts2800_fpu32.lib : s_sinf.obj (.text)
+                  00009d75    00000056                       : boot.obj (.text)
+                  00009dcb    00000046                       : cpy_tbl.obj (.text)
+                  00009e11    00000035     Sram.obj (.text)
+                  00009e46    00000032     tremolo.obj (.text)
+                  00009e78    0000002a     USARTinit.obj (.text:retain)
+                  00009ea2    00000029     rts2800_fpu32.lib : exit.obj (.text)
+                  00009ecb    0000001c     timer.obj (.text:retain)
+                  00009ee7    0000001a     rts2800_fpu32.lib : cpy_utils.obj (.text)
+                  00009f01    00000019                       : args_main.obj (.text)
+                  00009f1a    00000009                       : _lock.obj (.text)
+                  00009f23    00000008     audioCntrl.obj (.text)
+                  00009f2b    00000002     rts2800_fpu32.lib : pre_init.obj (.text)
+                  00009f2d    00000001                       : startup.obj (.text)
 
 .pinit     0    00008000    00000000     UNINITIALIZED
 
@@ -187,14 +189,16 @@ ECanbMOTORegsFile
 *          1    000062c0    00000040     UNINITIALIZED
                   000062c0    00000040     DSP2833x_GlobalVariableDefs.obj (ECanbMOTORegsFile)
 
-.ebss      1    0000c400    000000d6     UNINITIALIZED
+.ebss      1    0000c400    0000010e     UNINITIALIZED
                   0000c400    000000a4     MAIN.obj (.ebss)
                   0000c4a4    00000018     DSP2833x_CpuTimers.obj (.ebss)
                   0000c4bc    00000002     rts2800_fpu32.lib : _lock.obj (.ebss:__lock)
                   0000c4be    00000002                       : _lock.obj (.ebss:__unlock)
-                  0000c4c0    0000000e     timer.obj (.ebss)
-                  0000c4ce    00000006     rts2800_fpu32.lib : exit.obj (.ebss)
-                  0000c4d4    00000002     audioCntrl.obj (.ebss)
+                  0000c4c0    00000034     oldPhaser.obj (.ebss)
+                  0000c4f4    00000006     rts2800_fpu32.lib : exit.obj (.ebss)
+                  0000c4fa    00000002     audioCntrl.obj (.ebss)
+                  0000c4fc    00000004     --HOLE--
+                  0000c500    0000000e     timer.obj (.ebss)
 
 .memory    1    00100000    0008d000     UNINITIALIZED
                   00100000    0008d000     MAIN.obj (.memory)
@@ -369,9 +373,9 @@ MODULE SUMMARY
        Module                            code   ro data   rw data
        ------                            ----   -------   -------
     ./
-       MAIN.obj                          847    0         579428 
+       MAIN.obj                          853    0         579428 
     +--+---------------------------------+------+---------+---------+
-       Total:                            847    0         579428 
+       Total:                            853    0         579428 
                                                                  
     ./Common/
        DSP2833x_DMA.obj                  1001   0         0      
@@ -384,9 +388,10 @@ MODULE SUMMARY
        Total:                            2165   0         24     
                                                                  
     ./Effects/
+       oldPhaser.obj                     0      0         136    
        tremolo.obj                       50     0         0      
     +--+---------------------------------+------+---------+---------+
-       Total:                            50     0         0      
+       Total:                            50     0         136    
                                                                  
     ./Headers/
        DSP2833x_GlobalVariableDefs.obj   0      0         2679   
@@ -398,9 +403,10 @@ MODULE SUMMARY
        digitalToAnalogConverter.obj      93     0         0      
        timer.obj                         28     0         52     
        Sram.obj                          53     0         0      
+       USARTinit.obj                     42     0         0      
        audioCntrl.obj                    8      0         10     
     +--+---------------------------------+------+---------+---------+
-       Total:                            303    0         62     
+       Total:                            345    0         62     
                                                                  
     /Applications/ti/ccsv6/tools/compiler/c2000_15.12.3.LTS/lib/rts2800_fpu32.lib
        fs_div.obj                        136    0         0      
@@ -418,7 +424,7 @@ MODULE SUMMARY
                                                                  
        Stack:                            0      0         768    
     +--+---------------------------------+------+---------+---------+
-       Grand Total:                      3849   0         582995 
+       Grand Total:                      3897   0         583131 
 
 
 GLOBAL DATA SYMBOLS: SORTED BY DATA PAGE
@@ -518,23 +524,23 @@ address     data page           name
 0000c200     308 (0000c200)     _ping_1
 
 0000c400     310 (0000c400)     _recording1
-0000c401     310 (0000c400)     _ringModRate
-0000c402     310 (0000c400)     _ringModCounter
-0000c403     310 (0000c400)     _tremolo_time
-0000c404     310 (0000c400)     _recording2
-0000c405     310 (0000c400)     _noiseGate_release_time_b
-0000c406     310 (0000c400)     _noiseGate_release_time_a
-0000c407     310 (0000c400)     _noiseGate_sample_counter
-0000c408     310 (0000c400)     _tremolo_counter
-0000c409     310 (0000c400)     _noiseGate_threshold
-0000c40a     310 (0000c400)     _loop1Clicks
-0000c40b     310 (0000c400)     _taps
+0000c401     310 (0000c400)     _loop1Clicks
+0000c402     310 (0000c400)     _recording2
+0000c403     310 (0000c400)     _program_state
+0000c404     310 (0000c400)     _noiseGate_threshold
+0000c405     310 (0000c400)     _tremolo_counter
+0000c406     310 (0000c400)     _ringModCounter
+0000c407     310 (0000c400)     _ringModRate
+0000c408     310 (0000c400)     _tremolo_time
+0000c409     310 (0000c400)     _noiseGate_release_time_b
+0000c40a     310 (0000c400)     _noiseGate_release_time_a
+0000c40b     310 (0000c400)     _rxBufferIndex
 0000c40c     310 (0000c400)     _ready
-0000c40d     310 (0000c400)     _rxBufferIndex
-0000c40e     310 (0000c400)     _program_state
-0000c410     310 (0000c400)     _loopIndex
-0000c412     310 (0000c400)     _loopLength
-0000c414     310 (0000c400)     _var
+0000c40d     310 (0000c400)     _noiseGate_sample_counter
+0000c40e     310 (0000c400)     _taps
+0000c410     310 (0000c400)     _loopLength
+0000c412     310 (0000c400)     _var
+0000c414     310 (0000c400)     _loopIndex
 0000c416     310 (0000c400)     _delaySizeInSamples
 0000c418     310 (0000c400)     _tapsIndex
 0000c41a     310 (0000c400)     _delayBufferCurr
@@ -550,25 +556,52 @@ address     data page           name
 0000c4bc     312 (0000c480)     __lock
 0000c4be     312 (0000c480)     __unlock
 
-0000c4c0     313 (0000c4c0)     _startAgain
-0000c4c1     313 (0000c4c0)     _temp
-0000c4c2     313 (0000c4c0)     _l
-0000c4c4     313 (0000c4c0)     _i
-0000c4c6     313 (0000c4c0)     _interruptTimerFlag
-0000c4c8     313 (0000c4c0)     _p
-0000c4ca     313 (0000c4c0)     _mixedSample
-0000c4cc     313 (0000c4c0)     _t
-0000c4ce     313 (0000c4c0)     ___TI_enable_exit_profile_output
-0000c4d0     313 (0000c4c0)     ___TI_cleanup_ptr
-0000c4d2     313 (0000c4c0)     ___TI_dtors_ptr
-0000c4d4     313 (0000c4c0)     _stateFlag
-0000c4d5     313 (0000c4c0)     _reset
+0000c4c0     313 (0000c4c0)     _phaserCounter
+0000c4c2     313 (0000c4c0)     _Ho
+0000c4c4     313 (0000c4c0)     _Vo
+0000c4c6     313 (0000c4c0)     _y1b
+0000c4c8     313 (0000c4c0)     _Y_H
+0000c4ca     313 (0000c4c0)     _ac
+0000c4cc     313 (0000c4c0)     _c
+0000c4ce     313 (0000c4c0)     _y1l
+0000c4d0     313 (0000c4c0)     _Y_h
+0000c4d2     313 (0000c4c0)     _Y_l
+0000c4d4     313 (0000c4c0)     _M_PI
+0000c4d6     313 (0000c4c0)     _notch
+0000c4d8     313 (0000c4c0)     _Y_L
+0000c4da     313 (0000c4c0)     _d
+0000c4dc     313 (0000c4c0)     _Y_N
+0000c4de     313 (0000c4c0)     _Y_B
+0000c4e0     313 (0000c4c0)     _fs
+0000c4e2     313 (0000c4c0)     _fc
+0000c4e4     313 (0000c4c0)     _y1bdelay
+0000c4e6     313 (0000c4c0)     _inputdelay2
+0000c4e8     313 (0000c4c0)     _y1ldelay
+0000c4ea     313 (0000c4c0)     _y1bdelay2
+0000c4ec     313 (0000c4c0)     _Y_Ldelay
+0000c4ee     313 (0000c4c0)     _F1
+0000c4f0     313 (0000c4c0)     _inputdelay
+0000c4f2     313 (0000c4c0)     _Y_Bdelay
+0000c4f4     313 (0000c4c0)     ___TI_enable_exit_profile_output
+0000c4f6     313 (0000c4c0)     ___TI_cleanup_ptr
+0000c4f8     313 (0000c4c0)     ___TI_dtors_ptr
+0000c4fa     313 (0000c4c0)     _stateFlag
+0000c4fb     313 (0000c4c0)     _reset
+
+0000c500     314 (0000c500)     _startAgain
+0000c501     314 (0000c500)     _temp
+0000c502     314 (0000c500)     _l
+0000c504     314 (0000c500)     _i
+0000c506     314 (0000c500)     _interruptTimerFlag
+0000c508     314 (0000c500)     _p
+0000c50a     314 (0000c500)     _mixedSample
+0000c50c     314 (0000c500)     _t
 
 0000d000     340 (0000d000)     _garbage
 
-0000d040     341 (0000d040)     _pong_2
+0000d040     341 (0000d040)     _ping_2
 
-0000d140     345 (0000d140)     _ping_2
+0000d140     345 (0000d140)     _pong_2
 
 00100000    4000 (00100000)     _inputBuffer
 
@@ -586,13 +619,13 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 page  address   name                            
 ----  -------   ----                            
 0     00009000  .text                           
-0     00009e72  C$$EXIT                         
-0     00009b46  FS$$DIV                         
+0     00009ea2  C$$EXIT                         
+0     00009b4c  FS$$DIV                         
 0     000094cf  _ADCINT_ISR                     
 0     00380080  _ADC_cal                        
 1     00000b00  _AdcMirror                      
 1     00007100  _AdcRegs                        
-0     00009c80  _ConfigCpuTimer                 
+0     00009c86  _ConfigCpuTimer                 
 1     0000c4b4  _CpuTimer0                      
 1     00000c00  _CpuTimer0Regs                  
 1     0000c4a4  _CpuTimer1                      
@@ -601,7 +634,7 @@ page  address   name
 1     00000c10  _CpuTimer2Regs                  
 1     0033fff8  _CsmPwl                         
 1     00000ae0  _CsmRegs                        
-0     00009b15  _CsmUnlock                      
+0     00009b1b  _CsmUnlock                      
 0     000093fd  _DATALOG_ISR                    
 0     000095f1  _DINTCH1_ISR                    
 0     000095fb  _DINTCH2_ISR                    
@@ -640,11 +673,11 @@ page  address   name
 0     00009364  _DMACH6TransferConfig           
 0     00009374  _DMACH6WrapConfig               
 0     00009000  _DMAInitialize                  
-0     000099c3  _DMA_CH2                        
-0     000099b0  _DMA_CH3                        
-0     000080c8  _DSP28x_usDelay                 
+0     000099c8  _DMAch2_ISR                     
+0     000099b5  _DMAch3_ISR                     
+0     0000811c  _DSP28x_usDelay                 
 1     00000880  _DevEmuRegs                     
-0     00009a61  _DisableDog                     
+0     00009a67  _DisableDog                     
 1     00001000  _DmaRegs                        
 0     0000967d  _ECAN0INTA_ISR                  
 0     00009691  _ECAN0INTB_ISR                  
@@ -695,29 +728,31 @@ page  address   name
 0     000095ab  _EQEP2_INT_ISR                  
 1     00006b00  _EQep1Regs                      
 1     00006b40  _EQep2Regs                      
+1     0000c4ee  _F1                             
 1     00000a80  _FlashRegs                      
 1     00006f80  _GpioCtrlRegs                   
 1     00006fc0  _GpioDataRegs                   
 1     00006fe0  _GpioIntRegs                    
+1     0000c4c2  _Ho                             
 0     0000962d  _I2CINT1A_ISR                   
 0     00009637  _I2CINT2A_ISR                   
 1     00007900  _I2caRegs                       
 0     00009425  _ILLEGAL_ISR                    
 0     000093e9  _INT13_ISR                      
 0     000093f3  _INT14_ISR                      
-0     00009c47  _InitCpuTimers                  
-0     00009aba  _InitPeripheralClocks           
-0     00009a69  _InitPll                        
-0     00009a4e  _InitSysCtrl                    
-0     0000988e  _Init_DMA                       
-0     00009827  _Init_Timer1                    
+0     00009c4d  _InitCpuTimers                  
+0     00009ac0  _InitPeripheralClocks           
+0     00009a6f  _InitPll                        
+0     00009a54  _InitSysCtrl                    
+0     00009893  _Init_DMA                       
 0     000096e1  _LUF_ISR                        
 0     000096d7  _LVF_ISR                        
-0     00009991  _MRB_ISR                        
+0     00009996  _MRB_ISR                        
 0     000095dd  _MRINTA_ISR                     
 0     000095c9  _MRINTB_ISR                     
 0     000095e7  _MXINTA_ISR                     
 0     000095d3  _MXINTB_ISR                     
+1     0000c4d4  _M_PI                           
 1     00005000  _McbspaRegs                     
 1     00005040  _McbspbRegs                     
 0     0000941b  _NMI_ISR                        
@@ -739,9 +774,9 @@ page  address   name
 1     00007050  _SciaRegs                       
 1     00007750  _ScibRegs                       
 1     00007770  _ScicRegs                       
-0     00009a57  _ServiceDog                     
+0     00009a5d  _ServiceDog                     
 1     00007040  _SpiaRegs                       
-0     00009e0b  _Sram_init                      
+0     00009e11  _Sram_init                      
 0     000090a8  _StartDMACH1                    
 0     0000914d  _StartDMACH2                    
 0     000091f2  _StartDMACH3                    
@@ -750,7 +785,6 @@ page  address   name
 0     000093e1  _StartDMACH6                    
 1     00007010  _SysCtrlRegs                    
 0     000094d9  _TINT0_ISR                      
-0     0000992a  _Timer1_ISR                     
 0     00009489  _USER10_ISR                     
 0     00009493  _USER11_ISR                     
 0     0000949d  _USER12_ISR                     
@@ -763,6 +797,7 @@ page  address   name
 0     0000946b  _USER7_ISR                      
 0     00009475  _USER8_ISR                      
 0     0000947f  _USER9_ISR                      
+1     0000c4c4  _Vo                             
 0     000094e3  _WAKEINT_ISR                    
 0     000094bb  _XINT1_ISR                      
 0     000094c5  _XINT2_ISR                      
@@ -773,99 +808,124 @@ page  address   name
 0     000096cd  _XINT7_ISR                      
 1     00007070  _XIntruptRegs                   
 1     00000b20  _XintfRegs                      
+1     0000c4de  _Y_B                            
+1     0000c4f2  _Y_Bdelay                       
+1     0000c4c8  _Y_H                            
+1     0000c4d8  _Y_L                            
+1     0000c4ec  _Y_Ldelay                       
+1     0000c4dc  _Y_N                            
+1     0000c4d0  _Y_h                            
+1     0000c4d2  _Y_l                            
 1     00000700  __STACK_END                     
 abs   00000300  __STACK_SIZE                    
-1     0000c4d0  ___TI_cleanup_ptr               
-1     0000c4d2  ___TI_dtors_ptr                 
-1     0000c4ce  ___TI_enable_exit_profile_output
+1     0000c4f6  ___TI_cleanup_ptr               
+1     0000c4f8  ___TI_dtors_ptr                 
+1     0000c4f4  ___TI_enable_exit_profile_output
 abs   ffffffff  ___TI_pprof_out_hndl            
 abs   ffffffff  ___TI_prof_data_size            
 abs   ffffffff  ___TI_prof_data_start           
 abs   ffffffff  ___binit__                      
 abs   ffffffff  ___c_args__                     
 0     00008000  ___cinit__                      
-0     00009efe  ___etext__                      
+0     00009f2e  ___etext__                      
 abs   ffffffff  ___pinit__                      
 0     00009000  ___text__                       
-0     00009ed1  __args_main                     
+0     00009f01  __args_main                     
 1     0000c4bc  __lock                          
-0     00009ef2  __nop                           
-0     00009eee  __register_lock                 
-0     00009eea  __register_unlock               
+0     00009f22  __nop                           
+0     00009f1e  __register_lock                 
+0     00009f1a  __register_unlock               
 1     00000400  __stack                         
-0     00009efd  __system_post_cinit             
-0     00009efb  __system_pre_init               
+0     00009f2d  __system_post_cinit             
+0     00009f2b  __system_pre_init               
 1     0000c4be  __unlock                        
-0     00009e72  _abort                          
-0     00009bce  _analogToDigitalConverter_init  
-0     00009c27  _analogToDigitalConverter_send  
-0     00009d6f  _c_int00                        
-0     00009dc5  _copy_in                        
-0     00009eb7  _ddcopy                         
+0     00009ea2  _abort                          
+1     0000c4ca  _ac                             
+0     00009bd4  _analogToDigitalConverter_init  
+0     00009c2d  _analogToDigitalConverter_send  
+1     0000c4cc  _c                              
+0     00009d75  _c_int00                        
+0     00009dcb  _copy_in                        
+1     0000c4da  _d                              
+0     00009ee7  _ddcopy                         
 1     0000c41a  _delayBufferCurr                
 1     0000c420  _delayBufferPrev                
 1     0000c416  _delaySizeInSamples             
-0     00009cba  _digitalToAnalogConverter_init  
-0     00009d0d  _digitalToAnalogConverter_send  
-0     00009eb7  _dpcopy                         
-0     00009e74  _exit                           
+0     00009cc0  _digitalToAnalogConverter_init  
+0     00009d13  _digitalToAnalogConverter_send  
+0     00009ee7  _dpcopy                         
+0     00009ea4  _exit                           
+1     0000c4e2  _fc                             
+1     0000c4e0  _fs                             
 1     0000d000  _garbage                        
-1     0000c4c4  _i                              
-0     00009845  _init_ButtonInterrupt           
+1     0000c504  _i                              
+0     00009e78  _inCharISR                      
+0     0000982c  _initSampleRateTimer            
+0     0000984a  _init_ButtonInterrupt           
 1     00100000  _inputBuffer                    
-1     0000c4c6  _interruptTimerFlag             
-1     0000c4c2  _l                              
+1     0000c4f0  _inputdelay                     
+1     0000c4e6  _inputdelay2                    
+1     0000c506  _interruptTimerFlag             
+1     0000c502  _l                              
 1     00110000  _loop1                          
-0     00009943  _loop1Click_ISR                 
-1     0000c40a  _loop1Clicks                    
+0     00009948  _loop1Click_ISR                 
+1     0000c401  _loop1Clicks                    
 1     0014e800  _loop2                          
-0     0000996a  _loop2Click_ISR                 
-1     0000c410  _loopIndex                      
-1     0000c412  _loopLength                     
+0     0000996f  _loop2Click_ISR                 
+1     0000c414  _loopIndex                      
+1     0000c410  _loopLength                     
 0     000096ff  _main                           
 0     00009779  _mainEffectsAndLoop             
-1     0000c4ca  _mixedSample                    
-1     0000c406  _noiseGate_release_time_a       
-1     0000c405  _noiseGate_release_time_b       
-1     0000c407  _noiseGate_sample_counter       
-1     0000c409  _noiseGate_threshold            
-1     0000c4c8  _p                              
-0     00009eb7  _pdcopy                         
+1     0000c50a  _mixedSample                    
+1     0000c40a  _noiseGate_release_time_a       
+1     0000c409  _noiseGate_release_time_b       
+1     0000c40d  _noiseGate_sample_counter       
+1     0000c404  _noiseGate_threshold            
+1     0000c4d6  _notch                          
+1     0000c508  _p                              
+0     00009ee7  _pdcopy                         
+1     0000c4c0  _phaserCounter                  
 1     0000c200  _ping_1                         
-1     0000d140  _ping_2                         
+1     0000d040  _ping_2                         
 1     0000c000  _pong_1                         
-1     0000d040  _pong_2                         
-0     00009eb7  _ppcopy                         
-1     0000c40e  _program_state                  
+1     0000d140  _pong_2                         
+0     00009ee7  _ppcopy                         
+1     0000c403  _program_state                  
 1     0000c40c  _ready                          
 1     0000c400  _recording1                     
-1     0000c404  _recording2                     
-1     0000c4d5  _reset                          
+1     0000c402  _recording2                     
+1     0000c4fb  _reset                          
 1     0000c41e  _ringModBias                    
-1     0000c402  _ringModCounter                 
+1     0000c406  _ringModCounter                 
 1     0000c41c  _ringModDepth                   
-1     0000c401  _ringModRate                    
+1     0000c407  _ringModRate                    
 0     000096f5  _rsvd_ISR                       
 1     0000c440  _rxBuffer                       
-1     0000c40d  _rxBufferIndex                  
-0     00009e9b  _setFlag                        
-0     00009d17  _sin                            
-0     00009d17  _sinf                           
-1     0000c4c0  _startAgain                     
-1     0000c4d4  _stateFlag                      
-1     0000c4cc  _t                              
-1     0000c40b  _taps                           
+1     0000c40b  _rxBufferIndex                  
+0     0000992f  _sampleRate_ISR                 
+0     00009ecb  _setFlag                        
+0     00009d1d  _sin                            
+0     00009d1d  _sinf                           
+1     0000c500  _startAgain                     
+1     0000c4fa  _stateFlag                      
+1     0000c50c  _t                              
+1     0000c40e  _taps                           
 1     0000c418  _tapsIndex                      
-0     00009a28  _taps_ISR                       
-1     0000c4c1  _temp                           
-0     00009e40  _tremolo                        
-1     0000c408  _tremolo_counter                
-1     0000c403  _tremolo_time                   
-0     00009ef3  _useGpio                        
-1     0000c414  _var                            
+0     00009a2d  _taps_ISR                       
+1     0000c501  _temp                           
+0     00009e46  _tremolo                        
+1     0000c405  _tremolo_counter                
+1     0000c408  _tremolo_time                   
+0     00009f23  _useGpio                        
+1     0000c412  _var                            
+1     0000c4c6  _y1b                            
+1     0000c4e4  _y1bdelay                       
+1     0000c4ea  _y1bdelay2                      
+1     0000c4ce  _y1l                            
+1     0000c4e8  _y1ldelay                       
 abs   ffffffff  binit                           
 0     00008000  cinit                           
-0     00009efe  etext                           
+0     00009f2e  etext                           
 abs   ffffffff  pinit                           
 
 
@@ -875,7 +935,7 @@ page  address   name
 ----  -------   ----                            
 0     00008000  ___cinit__                      
 0     00008000  cinit                           
-0     000080c8  _DSP28x_usDelay                 
+0     0000811c  _DSP28x_usDelay                 
 0     00009000  .text                           
 0     00009000  _DMAInitialize                  
 0     00009000  ___text__                       
@@ -996,52 +1056,53 @@ page  address   name
 0     000096f5  _rsvd_ISR                       
 0     000096ff  _main                           
 0     00009779  _mainEffectsAndLoop             
-0     00009827  _Init_Timer1                    
-0     00009845  _init_ButtonInterrupt           
-0     0000988e  _Init_DMA                       
-0     0000992a  _Timer1_ISR                     
-0     00009943  _loop1Click_ISR                 
-0     0000996a  _loop2Click_ISR                 
-0     00009991  _MRB_ISR                        
-0     000099b0  _DMA_CH3                        
-0     000099c3  _DMA_CH2                        
-0     00009a28  _taps_ISR                       
-0     00009a4e  _InitSysCtrl                    
-0     00009a57  _ServiceDog                     
-0     00009a61  _DisableDog                     
-0     00009a69  _InitPll                        
-0     00009aba  _InitPeripheralClocks           
-0     00009b15  _CsmUnlock                      
-0     00009b46  FS$$DIV                         
-0     00009bce  _analogToDigitalConverter_init  
-0     00009c27  _analogToDigitalConverter_send  
-0     00009c47  _InitCpuTimers                  
-0     00009c80  _ConfigCpuTimer                 
-0     00009cba  _digitalToAnalogConverter_init  
-0     00009d0d  _digitalToAnalogConverter_send  
-0     00009d17  _sin                            
-0     00009d17  _sinf                           
-0     00009d6f  _c_int00                        
-0     00009dc5  _copy_in                        
-0     00009e0b  _Sram_init                      
-0     00009e40  _tremolo                        
-0     00009e72  C$$EXIT                         
-0     00009e72  _abort                          
-0     00009e74  _exit                           
-0     00009e9b  _setFlag                        
-0     00009eb7  _ddcopy                         
-0     00009eb7  _dpcopy                         
-0     00009eb7  _pdcopy                         
-0     00009eb7  _ppcopy                         
-0     00009ed1  __args_main                     
-0     00009eea  __register_unlock               
-0     00009eee  __register_lock                 
-0     00009ef2  __nop                           
-0     00009ef3  _useGpio                        
-0     00009efb  __system_pre_init               
-0     00009efd  __system_post_cinit             
-0     00009efe  ___etext__                      
-0     00009efe  etext                           
+0     0000982c  _initSampleRateTimer            
+0     0000984a  _init_ButtonInterrupt           
+0     00009893  _Init_DMA                       
+0     0000992f  _sampleRate_ISR                 
+0     00009948  _loop1Click_ISR                 
+0     0000996f  _loop2Click_ISR                 
+0     00009996  _MRB_ISR                        
+0     000099b5  _DMAch3_ISR                     
+0     000099c8  _DMAch2_ISR                     
+0     00009a2d  _taps_ISR                       
+0     00009a54  _InitSysCtrl                    
+0     00009a5d  _ServiceDog                     
+0     00009a67  _DisableDog                     
+0     00009a6f  _InitPll                        
+0     00009ac0  _InitPeripheralClocks           
+0     00009b1b  _CsmUnlock                      
+0     00009b4c  FS$$DIV                         
+0     00009bd4  _analogToDigitalConverter_init  
+0     00009c2d  _analogToDigitalConverter_send  
+0     00009c4d  _InitCpuTimers                  
+0     00009c86  _ConfigCpuTimer                 
+0     00009cc0  _digitalToAnalogConverter_init  
+0     00009d13  _digitalToAnalogConverter_send  
+0     00009d1d  _sin                            
+0     00009d1d  _sinf                           
+0     00009d75  _c_int00                        
+0     00009dcb  _copy_in                        
+0     00009e11  _Sram_init                      
+0     00009e46  _tremolo                        
+0     00009e78  _inCharISR                      
+0     00009ea2  C$$EXIT                         
+0     00009ea2  _abort                          
+0     00009ea4  _exit                           
+0     00009ecb  _setFlag                        
+0     00009ee7  _ddcopy                         
+0     00009ee7  _dpcopy                         
+0     00009ee7  _pdcopy                         
+0     00009ee7  _ppcopy                         
+0     00009f01  __args_main                     
+0     00009f1a  __register_unlock               
+0     00009f1e  __register_lock                 
+0     00009f22  __nop                           
+0     00009f23  _useGpio                        
+0     00009f2b  __system_pre_init               
+0     00009f2d  __system_post_cinit             
+0     00009f2e  ___etext__                      
+0     00009f2e  etext                           
 0     00380080  _ADC_cal                        
 1     00000400  __stack                         
 1     00000700  __STACK_END                     
@@ -1096,23 +1157,23 @@ page  address   name
 1     0000c000  _pong_1                         
 1     0000c200  _ping_1                         
 1     0000c400  _recording1                     
-1     0000c401  _ringModRate                    
-1     0000c402  _ringModCounter                 
-1     0000c403  _tremolo_time                   
-1     0000c404  _recording2                     
-1     0000c405  _noiseGate_release_time_b       
-1     0000c406  _noiseGate_release_time_a       
-1     0000c407  _noiseGate_sample_counter       
-1     0000c408  _tremolo_counter                
-1     0000c409  _noiseGate_threshold            
-1     0000c40a  _loop1Clicks                    
-1     0000c40b  _taps                           
+1     0000c401  _loop1Clicks                    
+1     0000c402  _recording2                     
+1     0000c403  _program_state                  
+1     0000c404  _noiseGate_threshold            
+1     0000c405  _tremolo_counter                
+1     0000c406  _ringModCounter                 
+1     0000c407  _ringModRate                    
+1     0000c408  _tremolo_time                   
+1     0000c409  _noiseGate_release_time_b       
+1     0000c40a  _noiseGate_release_time_a       
+1     0000c40b  _rxBufferIndex                  
 1     0000c40c  _ready                          
-1     0000c40d  _rxBufferIndex                  
-1     0000c40e  _program_state                  
-1     0000c410  _loopIndex                      
-1     0000c412  _loopLength                     
-1     0000c414  _var                            
+1     0000c40d  _noiseGate_sample_counter       
+1     0000c40e  _taps                           
+1     0000c410  _loopLength                     
+1     0000c412  _var                            
+1     0000c414  _loopIndex                      
 1     0000c416  _delaySizeInSamples             
 1     0000c418  _tapsIndex                      
 1     0000c41a  _delayBufferCurr                
@@ -1125,22 +1186,48 @@ page  address   name
 1     0000c4b4  _CpuTimer0                      
 1     0000c4bc  __lock                          
 1     0000c4be  __unlock                        
-1     0000c4c0  _startAgain                     
-1     0000c4c1  _temp                           
-1     0000c4c2  _l                              
-1     0000c4c4  _i                              
-1     0000c4c6  _interruptTimerFlag             
-1     0000c4c8  _p                              
-1     0000c4ca  _mixedSample                    
-1     0000c4cc  _t                              
-1     0000c4ce  ___TI_enable_exit_profile_output
-1     0000c4d0  ___TI_cleanup_ptr               
-1     0000c4d2  ___TI_dtors_ptr                 
-1     0000c4d4  _stateFlag                      
-1     0000c4d5  _reset                          
+1     0000c4c0  _phaserCounter                  
+1     0000c4c2  _Ho                             
+1     0000c4c4  _Vo                             
+1     0000c4c6  _y1b                            
+1     0000c4c8  _Y_H                            
+1     0000c4ca  _ac                             
+1     0000c4cc  _c                              
+1     0000c4ce  _y1l                            
+1     0000c4d0  _Y_h                            
+1     0000c4d2  _Y_l                            
+1     0000c4d4  _M_PI                           
+1     0000c4d6  _notch                          
+1     0000c4d8  _Y_L                            
+1     0000c4da  _d                              
+1     0000c4dc  _Y_N                            
+1     0000c4de  _Y_B                            
+1     0000c4e0  _fs                             
+1     0000c4e2  _fc                             
+1     0000c4e4  _y1bdelay                       
+1     0000c4e6  _inputdelay2                    
+1     0000c4e8  _y1ldelay                       
+1     0000c4ea  _y1bdelay2                      
+1     0000c4ec  _Y_Ldelay                       
+1     0000c4ee  _F1                             
+1     0000c4f0  _inputdelay                     
+1     0000c4f2  _Y_Bdelay                       
+1     0000c4f4  ___TI_enable_exit_profile_output
+1     0000c4f6  ___TI_cleanup_ptr               
+1     0000c4f8  ___TI_dtors_ptr                 
+1     0000c4fa  _stateFlag                      
+1     0000c4fb  _reset                          
+1     0000c500  _startAgain                     
+1     0000c501  _temp                           
+1     0000c502  _l                              
+1     0000c504  _i                              
+1     0000c506  _interruptTimerFlag             
+1     0000c508  _p                              
+1     0000c50a  _mixedSample                    
+1     0000c50c  _t                              
 1     0000d000  _garbage                        
-1     0000d040  _pong_2                         
-1     0000d140  _ping_2                         
+1     0000d040  _ping_2                         
+1     0000d140  _pong_2                         
 1     00100000  _inputBuffer                    
 1     00110000  _loop1                          
 1     0014e800  _loop2                          
@@ -1156,4 +1243,4 @@ abs   ffffffff  ___pinit__
 abs   ffffffff  binit                           
 abs   ffffffff  pinit                           
 
-[282 symbols]
+[309 symbols]
