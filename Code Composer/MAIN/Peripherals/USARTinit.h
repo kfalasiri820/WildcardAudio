@@ -5,6 +5,7 @@
 
 extern volatile char rxBuffer[100];
 extern Uint16 rxBufferIndex = 0;
+extern Uint16 main_volume;
 
 __interrupt void inCharISR();
 

@@ -14,7 +14,7 @@
   parameters required: set these as global in the main
 */
 extern float phaserQ;           // Can be manually varied between .3 <--> .8  "Resonance"
-extern Uint16 phaserRate;   // Can be manually varied between 11,000 <--> 44,100 "Rate"
+extern float phaserRate;   // Can be manually varied between 11,000 <--> 44,100 "Rate"
 extern float phaserCenterFreq; // Can be manually varied between 1000 - 3000 "Tone"
 extern float phaserRange;      // Fixed at 3200
 

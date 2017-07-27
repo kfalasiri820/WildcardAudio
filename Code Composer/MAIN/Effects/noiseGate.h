@@ -1,5 +1,5 @@
-#ifndef NOISE_GATE_H_
-#define NOISE_GATE_H_
+#ifndef NOISEGATE_H_
+#define NOISEGATE_H_
 
 extern Uint16 noiseGate_sample_counter = 0,
                noiseGate_release_time_a = 44,

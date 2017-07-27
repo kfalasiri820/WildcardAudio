@@ -3,6 +3,7 @@
 
 extern volatile char rxBuffer[100];
 extern Uint16 rxBufferIndex;
+extern Uint16 main_volume;
 
 /***********************************INTERRUPTS********************************/
 __interrupt void inCharISR(){
@@ -11,6 +12,7 @@ __interrupt void inCharISR(){
 
   //Do code here
   rxBuffer[rxBufferIndex] = ScibRegs.SCIRXBUF.bit.RXDT;
+  main_volume = rxBuffer[rxBufferIndex];
   rxBufferIndex++;
 
   PieCtrlRegs.PIEACK.all|=0x100; //a wild interrupt appeared!

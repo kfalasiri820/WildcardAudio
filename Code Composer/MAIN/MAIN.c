@@ -1,30 +1,31 @@
-/*******************************************************INCLUDES*******************************************************/
+/////////////////////////////////////////////////////////INCLUDES/////////////////////////////////////////////////////////
 #include <DSP28x_Project.h>
 #include <DSP2833x_Xintf.h>
 #include <DSP2833x_XIntrupt.h>
-#include "Peripherals/timer.h"
-#include "Peripherals/analogToDigitalConverter.h"
-#include "Peripherals/digitalToAnalogConverter.h"
 #include <DSP2833x_CpuTimers.h>
 #include <DSP2833x_SysCtrl.h>
-#include "Peripherals/audioCntrl.h"
-#include "Peripherals/Sram.h"
-#include "Peripherals/digitalToAnalogConverter.h"
 #include <DSP2833x_GlobalPrototypes.h>
 #include <math.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include "Effects/squares.h"
 #include "Effects/ringmod.h"
-#include "Effects/noise_gate.h"
+#include "Effects/noiseGate.h"
 #include "Effects/tremolo.h"
+#include "Effects/phaser.h"
 #include "Peripherals/USARTinit.h"
+#include "Peripherals/audioCntrl.h"
+#include "Peripherals/Sram.h"
+#include "Peripherals/digitalToAnalogConverter.h"
+#include "Peripherals/timer.h"
+#include "Peripherals/analogToDigitalConverter.h"
+#include "Peripherals/digitalToAnalogConverter.h"
 
 
-/*******************************************************PRAGMAS*******************************************************/
-#pragma DATA_SECTION(loop1, ".memory")
-#pragma DATA_SECTION(loop2, ".memory")
-#pragma DATA_SECTION(inputBuffer, ".memory")
+/////////////////////////////////////////////////////////PRAGMAS/////////////////////////////////////////////////////////
+#pragma DATA_SECTION( loop1, ".memory")
+#pragma DATA_SECTION( loop2, ".memory")
+#pragma DATA_SECTION( delayBuffer, ".memory")
 #pragma DATA_SECTION( ping_1  , "DMARAML4" )
 #pragma DATA_SECTION( pong_1  , "DMARAML4" )
 #pragma DATA_SECTION( ping_2  , "DMARAML5" )
@@ -32,64 +33,79 @@
 #pragma DATA_SECTION( garbage , "DMARAML5" )
 
 
-/*************************************************DEFINES/GLOBALS*****************************************************/
-//////////////////////////////////DEFINE////////////////////////////
-#define SRAM_BUFFER 256000  //The maximum size of the loop buffer (in SRAM)
-#define INPUT_BUFFER_SIZE 65536
-#define BUFFER_SIZE 256 //The general size of the ping and pong buffer
+/////////////////////////////////////////////////////////DEFINES/GLOBALS/////////////////////////////////////////////////////////
+/********************************DEFINE********************************/
+#define LOOP_BUFFER_SIZE 256000  //The maximum size of the loop buffer (in SRAM)
+#define DELAY_BUFFER_SIZE 65536
+#define PING_PONG_BUFFER_SIZE 256 //The general size of the ping and pong buffer
 
-/////////////////////////////////LOOPING BUFFERS////////////////////////////
-Uint32 var  = 0;
-Uint16 loop1[SRAM_BUFFER];      //The loop one buffer (in SRAM)
+/********************************VOLUME********************************/
+Uint16 main_volume = 1;
+
+/********************************LOOPING********************************/
+/*****All loops*****/
+Uint32 var = 0;
+Uint32 loopLength = LOOP_BUFFER_SIZE;    //The universal length of the loop (starts out as max length)
 Uint32 loopIndex = 0;          //Index used to traverse through loop1
-Uint32 loopLength = SRAM_BUFFER;    //The universal length of the loop (starts out as max length)
-Uint16 loop1Clicks = 0;             //The number of loop pedal clicks for loop 1
+/*****Loop 1*****/
+Uint16 loop1[LOOP_BUFFER_SIZE];      //The loop one buffer (in SRAM)
 Uint16 recording1 = 0;          //1 if you are recording1, 0 if you are not
-Uint16 loop2[SRAM_BUFFER];      //The loop one buffer (in SRAM)
+Uint16 loop1Clicks = 0;             //The number of loop pedal clicks for loop 1
+/*****Loop 2*****/
+Uint16 loop2[LOOP_BUFFER_SIZE];      //The loop one buffer (in SRAM)
 Uint16 recording2 = 0;          //1 if you are recording1, 0 if you are not
-volatile Uint32 ping_1[BUFFER_SIZE] = {0};
-volatile Uint32 pong_1[BUFFER_SIZE] = {0};
-volatile Uint16 ping_2[BUFFER_SIZE] = {0};
-volatile Uint16 pong_2[BUFFER_SIZE] = {0};
+
+/********************************PING/PONG********************************/
+volatile Uint32 ping_1[PING_PONG_BUFFER_SIZE] = {0};
+volatile Uint32 pong_1[PING_PONG_BUFFER_SIZE] = {0};
+volatile Uint16 ping_2[PING_PONG_BUFFER_SIZE] = {0};
+volatile Uint16 pong_2[PING_PONG_BUFFER_SIZE] = {0};
 volatile Uint32 garbage= 0x7BADB015;    //Used to write to the MCBSP B to read in inputs
 volatile Uint16 program_state = 0;  //Used to mark whether in ping pong state 0 or 1
 volatile Uint16 ready = 1;          //1 when the main is not finished processing data, 0 if is finished
+
+/********************************USART VARIABLES********************************/
 volatile char rxBuffer[100];            //Receive buffer: used to collect information from USART
 Uint16 rxBufferIndex;           //Index for receive buffer
 
-/////////////////////////////////////TAPS//////////////////////////////////
+/********************************TAPS********************************/
 Uint32 tapsIndex = 0;//(the number of samples between each tap)
 Uint16 taps = 0;//keeps track of number of taps (0, 1, or 2)
 
-/////////////////////////////////////DELAY/////////////////////////////////
-Uint16 inputBuffer[INPUT_BUFFER_SIZE];
+/********************************DELAY********************************/
+Uint16 delayBuffer[DELAY_BUFFER_SIZE];
 Uint32 delaySizeInSamples = 10000;
-Uint32 delayBufferPrev = INPUT_BUFFER_SIZE - 10000;	//The delayed sample
+Uint32 delayBufferPrev = DELAY_BUFFER_SIZE - 10000;	//The delayed sample
 Uint32 delayBufferCurr = 0;							//Used to write the sample
 
-/////////////////////////////////////RING MOD//////////////////////////////
-extern Uint16 ringModCounter;
-extern Uint16 ringModRate;
-extern float ringModDepth;
-extern float ringModBias;
+/********************************RING MOD********************************/
+Uint16 ringModCounter;
+Uint16 ringModRate;
+float ringModDepth;
+float ringModBias;
 
-/////////////////////////////////////NOISE GATE//////////////////////////////
+/********************************NOISE GATE********************************/
 Uint16 noiseGate_sample_counter,
-               noiseGate_release_time_a,
-               noiseGate_release_time_b,
-               noiseGate_threshold;
+	   noiseGate_release_time_a,
+	   noiseGate_release_time_b,
+	   noiseGate_threshold;
+
+/********************************PHASER********************************/
+float phaserQ;           // Can be manually varied between .3 <--> .8  "Resonance"
+float phaserRate;   // Can be manually varied between 11,000 <--> 44,100 "Rate"
+float phaserCenterFreq; // Can be manually varied between 1000 - 3000 "Tone"
+float phaserRange;      // Fixed at 3200
 
 
-/******************************************************PROTOTYPES*****************************************************/
+/////////////////////////////////////////////////////////PROTOTYPES////////////////////////////////////////////////////
 void mainEffectsAndLoop(volatile Uint32 in[256], volatile Uint16 out[256]);
-void init_ButtonInterrupt(void);
+void initLoopButtonInterrupt(void);
 void initSampleRateTimer(void);
-void Init_DMA(void);
-void init_ButtonInterrupt(void);
+void initDMA(void);
+void initLoopButtonInterrupt(void);
 
 
-/****************************************************INTERRUPTS*******************************************************/
-
+/////////////////////////////////////////////////////////INTERRUPTS/////////////////////////////////////////////////////////
 /**************************************************************
 * Name:     sampleRate_ISR
 * Purpose:  Timer 1 runs at samples rate. Toggles LED
@@ -120,25 +136,6 @@ __interrupt void loop1Click_ISR(void){
 		loopLength = loopIndex;//mark the loop length
 
     recording1 ^= 1;
-    PieCtrlRegs.PIEACK.all = PIEACK_GROUP1; //acknowledges the int
-    EINT;
-}
-
-/**************************************************************
-* Name:     loop2Click_ISR
-* Purpose:  Same as loop1Click_ISR
-**************************************************************/
-__interrupt void loop2Click_ISR(void){
-    EALLOW;
-    GpioDataRegs.GPATOGGLE.bit.GPIO6=1; // interrupt LED
-
-    loop1Clicks++;
-
-    if(loop1Clicks == 1)//If you pressed loop 1 once (first record)...
-		loopIndex = 0;//Start the loopIndex at 0
-	if(loop1Clicks == 2)//If you pressed the loop 1 twice (clicks = 3)
-		loopLength = loopIndex;//mark the loop length
-    recording2 ^= 1;
     PieCtrlRegs.PIEACK.all = PIEACK_GROUP1; //acknowledges the int
     EINT;
 }
@@ -221,20 +218,25 @@ int main(void){
     Sram_init();//Initialize the SRAM to save loop information
 
     //Writing buffers to zero
-    for ( var  = 0;  var  < SRAM_BUFFER; var++ ){
+    for ( var  = 0;  var  < LOOP_BUFFER_SIZE; var++ ){
     		loop1[var] = 0x0000;
     		loop2[var] = 0x0000;
     }
-	for ( var  = 0;  var  < 100; var++ )
+	for ( var  = 0;  var  < 100; var++ ){
 		  rxBuffer[var] = 0x0000;
+	}
 
     analogToDigitalConverter_init();//Init MCBSP B (ADC)
     digitalToAnalogConverter_init();//Init MCBSP A (DAC)
-    useGpio();//Init LED and switche
+
+    useGpio();//Init LED and switches
+
     //startUSART();
-    Init_DMA();//Init the DMA
+
+    initDMA();//Init the DMA
+
     initSampleRateTimer();//Init timer 1 (run at sample rate)
-    init_ButtonInterrupt();//Init the loop1 button interrupt
+    initLoopButtonInterrupt();//Init the loop1 button interrupt
 
     //outWord("enter a number ");
 
@@ -258,8 +260,8 @@ int main(void){
     }
 }
 
-/****************************************************FUNCTIONS*******************************************************/
 
+///////////////////////////////////////////////////////////////FUNCTIONS///////////////////////////////////////////////////////////////
 /**************************************************************
 * Name:     mainEffectsAndLoop
 * Purpose:  Output live + loop/effects to the DAC
@@ -267,40 +269,47 @@ int main(void){
 * Output:
 **************************************************************/
 void mainEffectsAndLoop(volatile Uint32 in[256], volatile Uint16 out[256]){
-	for(int i = 0; i < BUFFER_SIZE; i++){//Batch process through 256 samples
+	for(int i = 0; i < PING_PONG_BUFFER_SIZE; i++){//Batch process through 256 samples
 
 		///////////////////////////////////LIVE SIGNAL//////////////////////////////////
-		//NOTE: ping_1 is the input, ping_2 is the output
 		Uint16 live = (Uint16)((in[i] >> 2) & 0xFFFF);//define the live signal
-        Uint16 effectedSample = live;//the sample to be effected
+		Uint16 effectedSample = live;//the sample to be effected
 
 
-		//////////////////////////////////////Effects//////////////////////////////////
-            //effectedSample = effectFunction(effectedSample);
-    		/*********************************SQUARES*****************************/
+        /////////////////////////////////////////Effects/////////////////////////////////////
+        //FORMAT: 		effectedSample = effectFunction(effectedSample);
+//		effectedSample = ringModulation((float)effectedSample);
+//		effectedSample = squares(effectedSample);
+//		effectedSample = tremolo(effectedSample);
+//		effectedSample = phaser((float)effectedSample);
 
-//            effectedSample = ringModulation((float)effectedSample);
+		/**************Outlive live signal and effected Sample**************/
+    		out[i] =  (Uint16)
+    						((main_volume/50.0) * //main_volume is from 0 to 100, so /50 is 0 to 2
+							(
+								/*(0.5 * (float) live +*/
+								(0.5 * (float) effectedSample)
+							)
+						);//Always output the live signal
 
-//            effectedSample = squares(effectedSample);
 
-            effectedSample = tremolo(effectedSample);
-
-
-            /**************Outlive live signal and effected Sample**************/
-    		out[i] =  (Uint16)/*(0.5 * (float) live +*/ (0.5 * (float) effectedSample);//Always output the live signal
-
-
-		////////////////////////////Loop/Overdub implementation////////////////////////////
+    		////////////////////////////Loop/Overdub implementation////////////////////////////
     		//if you aren't muted, add the loop to the live signal
     		//if(!muteLoop)
     			out[i] += (Uint16)(0.2 * (float)loop1[loopIndex]) + (Uint16)(0.2 * (float)loop2[loopIndex]);
 
     		//if you are recording, OVERWRITE the live to the loop
-    		if (recording1)
-    			loop1[loopIndex] = (Uint16)(0.5 * (float) live) + (Uint16)(0.5 * (float)loop1[loopIndex]);
-    		if (recording2)
-    			loop2[loopIndex] = (Uint16)(0.5 * (float) live) + (Uint16)(0.5 * (float)loop2[loopIndex]);
+    		if (recording1){
+    			loop1[loopIndex] = 	(Uint16)(0.5 * (float) live) + //live
+								(Uint16)(0.5 * (float)loop1[loopIndex]); //loop 1
+    		}
+    		if (recording2){
+    			loop2[loopIndex] = 	(Uint16)(0.5 * (float) live) + //live
+								(Uint16)(0.5 * (float)loop2[loopIndex]);//loop 2
+    		}
 
+
+    		///////////////////////////////Incrementing Indexes///////////////////////////////
     		//loopIndex and check for overflow
     		loopIndex++;
     		if(loopIndex >= loopLength)
@@ -328,10 +337,10 @@ void initSampleRateTimer(void){
 }
 
 /**************************************************************
-* Name:     init_ButtonInterrupt
+* Name:     initLoopButtonInterrupt
 * Purpose:  Initialize the buttons used for loop recording
 **************************************************************/
-void init_ButtonInterrupt(void) {
+void initLoopButtonInterrupt(void) {
     // led to check
     EALLOW;
     //GpioCtrlRegs.GPAMUX1.bit.GPIO7 = 0;
@@ -377,14 +386,15 @@ void init_ButtonInterrupt(void) {
 }
 
 /**************************************************************
-* Name:     Init_DMA
+* Name:     initDMA
 * Purpose:  Initialize DMA ch1, ch2, ch3 to transfer sound data throughout program
 **************************************************************/
-void Init_DMA(void){
+void initDMA(void){
     EALLOW;
     SysCtrlRegs.HISPCP.all = 0;                 //Hi-Speed Clk = SYSCLK
     SysCtrlRegs.PCLKCR3.bit.DMAENCLK = 1;       // DMA Clock
     DMAInitialize();
+
     //setup DMA1 (triggered on Timer1 overflow)
     //garbage to MCBSPB
     DMACH1AddrConfig( (volatile Uint16*) &McbspbRegs.DXR2 , (volatile Uint16*) &garbage + 1 );
@@ -392,20 +402,23 @@ void Init_DMA(void){
     DMACH1TransferConfig( 0, 0, 0 );
     DMACH1WrapConfig( 0, 0, 0, 0 );
     DMACH1ModeConfig( DMA_TINT1, 1, 0, 1, 0, 0, 0, 0, 0, 0 );
+
     //setup DMA2 (triggered on McBSPB RRDY flag)
     //MCBSPB to pong_1
     DMACH2AddrConfig( (volatile Uint16*) &pong_1[0] + 1 , (volatile Uint16*) &McbspbRegs.DRR2);
     DMACH2BurstConfig( 1, 1, -1 ); //send 2 words per burst, increment source address, decrement destination address by 1 (32 bits little endian)
-    DMACH2TransferConfig( BUFFER_SIZE - 1, 0, 3 );  //get N = BUFFER_SIZE ADC values, wrap to same McBSP values, increment Destination by 3
-    DMACH2WrapConfig( 0, 0, BUFFER_SIZE - 1, 0 );
+    DMACH2TransferConfig( PING_PONG_BUFFER_SIZE - 1, 0, 3 );  //get N = PING_PONG_BUFFER_SIZE ADC values, wrap to same McBSP values, increment Destination by 3
+    DMACH2WrapConfig( 0, 0, PING_PONG_BUFFER_SIZE - 1, 0 );
     DMACH2ModeConfig(DMA_MREVTB, 1, 0, 1, 0, 0, 0, 0, 1, 1 );
+
     //setup DMA3 (triggered on Timer1 overflow)
     //pong_2 to MCBSPA
     DMACH3AddrConfig( (volatile Uint16*) &McbspaRegs.DXR1, (volatile Uint16*) &pong_2[0] );
     DMACH3BurstConfig( 0, 0, 0 );
-    DMACH3TransferConfig( BUFFER_SIZE - 1, 1, 0 );
+    DMACH3TransferConfig( PING_PONG_BUFFER_SIZE - 1, 1, 0 );
     DMACH3WrapConfig( 0xFFFF, 0, 0, 0 );
     DMACH3ModeConfig( DMA_TINT1, 1, 0, 1, 0, 0, 0, 0, 1, 1 );
+
     /*
      *  assign the interrupt levels to the CPU interrupts
      */
@@ -420,6 +433,7 @@ void Init_DMA(void){
     PieVectTable.DINTCH3 = DMAch3_ISR;
     IER |= M_INT6;   //enable McBSPB RRDY interrupt
     IER |= M_INT7;  //enable "buffer full" interrupt DMACH2
+
     //Start the DMA channels
     StartDMACH1();
     StartDMACH2();

@@ -23,8 +23,8 @@ ORDERED_OBJS += \
 "./Common/DSP2833x_SysCtrl.obj" \
 "./Common/DSP2833x_Xintf.obj" \
 "./Common/DSP2833x_usDelay.obj" \
-"./Effects/noise_gate.obj" \
-"./Effects/oldPhaser.obj" \
+"./Effects/noiseGate.obj" \
+"./Effects/phaser.obj" \
 "./Effects/ringmod.obj" \
 "./Effects/squares.obj" \
 "./Effects/tremolo.obj" \
@@ -185,8 +185,8 @@ MAIN.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "MAIN.obj" "Common/DSP2833x_ADC_cal.obj" "Common/DSP2833x_CpuTimers.obj" "Common/DSP2833x_DMA.obj" "Common/DSP2833x_DefaultIsr.obj" "Common/DSP2833x_I2C.obj" "Common/DSP2833x_Mcbsp.obj" "Common/DSP2833x_MemCopy.obj" "Common/DSP2833x_PieCtrl.obj" "Common/DSP2833x_PieVect.obj" "Common/DSP2833x_Sci.obj" "Common/DSP2833x_Spi.obj" "Common/DSP2833x_SysCtrl.obj" "Common/DSP2833x_Xintf.obj" "Common/DSP2833x_usDelay.obj" "Effects/noise_gate.obj" "Effects/oldPhaser.obj" "Effects/ringmod.obj" "Effects/squares.obj" "Effects/tremolo.obj" "Headers/DSP2833x_GlobalVariableDefs.obj" "Peripherals/Sram.obj" "Peripherals/USARTinit.obj" "Peripherals/analogToDigitalConverter.obj" "Peripherals/audioCntrl.obj" "Peripherals/digitalToAnalogConverter.obj" "Peripherals/timer.obj" 
-	-$(RM) "MAIN.d" "Common/DSP2833x_CpuTimers.d" "Common/DSP2833x_DMA.d" "Common/DSP2833x_DefaultIsr.d" "Common/DSP2833x_I2C.d" "Common/DSP2833x_Mcbsp.d" "Common/DSP2833x_MemCopy.d" "Common/DSP2833x_PieCtrl.d" "Common/DSP2833x_PieVect.d" "Common/DSP2833x_Sci.d" "Common/DSP2833x_Spi.d" "Common/DSP2833x_SysCtrl.d" "Common/DSP2833x_Xintf.d" "Effects/noise_gate.d" "Effects/oldPhaser.d" "Effects/ringmod.d" "Effects/squares.d" "Effects/tremolo.d" "Headers/DSP2833x_GlobalVariableDefs.d" "Peripherals/Sram.d" "Peripherals/USARTinit.d" "Peripherals/analogToDigitalConverter.d" "Peripherals/audioCntrl.d" "Peripherals/digitalToAnalogConverter.d" "Peripherals/timer.d" 
+	-$(RM) "MAIN.obj" "Common/DSP2833x_ADC_cal.obj" "Common/DSP2833x_CpuTimers.obj" "Common/DSP2833x_DMA.obj" "Common/DSP2833x_DefaultIsr.obj" "Common/DSP2833x_I2C.obj" "Common/DSP2833x_Mcbsp.obj" "Common/DSP2833x_MemCopy.obj" "Common/DSP2833x_PieCtrl.obj" "Common/DSP2833x_PieVect.obj" "Common/DSP2833x_Sci.obj" "Common/DSP2833x_Spi.obj" "Common/DSP2833x_SysCtrl.obj" "Common/DSP2833x_Xintf.obj" "Common/DSP2833x_usDelay.obj" "Effects/noiseGate.obj" "Effects/phaser.obj" "Effects/ringmod.obj" "Effects/squares.obj" "Effects/tremolo.obj" "Headers/DSP2833x_GlobalVariableDefs.obj" "Peripherals/Sram.obj" "Peripherals/USARTinit.obj" "Peripherals/analogToDigitalConverter.obj" "Peripherals/audioCntrl.obj" "Peripherals/digitalToAnalogConverter.obj" "Peripherals/timer.obj" 
+	-$(RM) "MAIN.d" "Common/DSP2833x_CpuTimers.d" "Common/DSP2833x_DMA.d" "Common/DSP2833x_DefaultIsr.d" "Common/DSP2833x_I2C.d" "Common/DSP2833x_Mcbsp.d" "Common/DSP2833x_MemCopy.d" "Common/DSP2833x_PieCtrl.d" "Common/DSP2833x_PieVect.d" "Common/DSP2833x_Sci.d" "Common/DSP2833x_Spi.d" "Common/DSP2833x_SysCtrl.d" "Common/DSP2833x_Xintf.d" "Effects/noiseGate.d" "Effects/phaser.d" "Effects/ringmod.d" "Effects/squares.d" "Effects/tremolo.d" "Headers/DSP2833x_GlobalVariableDefs.d" "Peripherals/Sram.d" "Peripherals/USARTinit.d" "Peripherals/analogToDigitalConverter.d" "Peripherals/audioCntrl.d" "Peripherals/digitalToAnalogConverter.d" "Peripherals/timer.d" 
 	-$(RM) "Common/DSP2833x_ADC_cal.d" "Common/DSP2833x_usDelay.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
