@@ -249,7 +249,7 @@
         android:id="@+id/sliderFiveSolo"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:background="@drawable/solobutton"
+        android:background="@drawable/solobutton2"
         app:layout_constraintBottom_toBottomOf="@+id/sliderFourSolo"
         app:layout_constraintLeft_toLeftOf="@+id/sliderFiveMute"
         app:layout_constraintRight_toRightOf="@+id/sliderFiveMute"
@@ -261,7 +261,7 @@
     <ImageButton
         android:id="@+id/sliderFiveMute"
         android:layout_width="48dp"
-        android:background="@drawable/mutebutton"
+        android:background="@drawable/mutebutton2"
         android:layout_height="48dp"
         android:layout_marginBottom="26dp"
         android:layout_marginEnd="214dp"
@@ -274,7 +274,7 @@
 
     <ImageButton
         android:id="@+id/sliderFourSolo"
-        android:background="@drawable/solobutton"
+        android:background="@drawable/solobutton2"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginEnd="164dp"
@@ -297,7 +297,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginBottom="26dp"
-        android:background="@drawable/mutebutton"
+        android:background="@drawable/mutebutton2"
         android:text="Mute"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -310,7 +310,7 @@
 
     <ImageButton
         android:id="@+id/sliderThreeSolo"
-        android:background="@drawable/solobutton"
+        android:background="@drawable/solobutton2"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginEnd="14dp"
@@ -332,7 +332,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginBottom="26dp"
-        android:background="@drawable/mutebutton"
+        android:background="@drawable/mutebutton2"
         android:text="Mute"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -345,7 +345,7 @@
 
     <ImageButton
         android:id="@+id/sliderTwoSolo"
-        android:background="@drawable/solobutton"
+        android:background="@drawable/solobutton2"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginEnd="49dp"
@@ -365,7 +365,7 @@
 
     <ImageButton
         android:id="@+id/sliderTwoMute"
-        android:background="@drawable/mutebutton"
+        android:background="@drawable/mutebutton2"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginBottom="26dp"
@@ -381,7 +381,7 @@
 
     <ImageButton
         android:id="@+id/sliderOneSolo"
-        android:background="@drawable/solobutton"
+        android:background="@drawable/solobutton2"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginEnd="16dp"
@@ -398,7 +398,7 @@
 
     <ImageButton
         android:id="@+id/sliderOneMute"
-        android:background="@drawable/mutebutton"
+        android:background="@drawable/mutebutton2"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginBottom="26dp"
@@ -415,7 +415,7 @@
 
     <ImageButton
         android:id="@+id/sliderSixMute"
-        android:background="@drawable/mutebutton"
+        android:background="@drawable/mutebutton2"
         android:layout_width="48dp"
         android:layout_height="48dp"
         app:layout_constraintLeft_toRightOf="@+id/sliderFiveMute"
@@ -425,7 +425,7 @@
 
     <ImageButton
         android:id="@+id/sliderSixSolo"
-        android:background="@drawable/solobutton"
+        android:background="@drawable/solobutton2"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginEnd="16dp"
@@ -444,6 +444,8 @@
 
     <SeekBar
         android:id="@+id/seekBar"
+        android:max="100"
+        android:progress="50"
         android:layout_width="133dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="32dp"
@@ -454,6 +456,8 @@
 
     <SeekBar
         android:id="@+id/seekBar2"
+        android:max="100"
+        android:progress="50"
         android:layout_width="133dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="32dp"
@@ -464,6 +468,8 @@
 
     <SeekBar
         android:id="@+id/seekBar3"
+        android:max="100"
+        android:progress="50"
         android:layout_width="133dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="43dp"
@@ -474,6 +480,8 @@
 
     <SeekBar
         android:id="@+id/seekBar4"
+        android:max="100"
+        android:progress="50"
         android:layout_width="133dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="37dp"
@@ -484,6 +492,8 @@
 
     <SeekBar
         android:id="@+id/seekBar5"
+        android:max="100"
+        android:progress="50"
         android:layout_width="133dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="37dp"
@@ -494,6 +504,8 @@
 
     <SeekBar
         android:id="@+id/seekBar6"
+        android:max="100"
+        android:progress="50"
         android:layout_width="133dp"
         android:layout_height="wrap_content"
         android:thumb="@drawable/thumb_image2"

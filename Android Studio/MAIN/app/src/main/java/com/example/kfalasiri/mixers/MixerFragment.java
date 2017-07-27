@@ -57,10 +57,10 @@ public class MixerFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (isPlay) {
-                    mutebutton1.setBackgroundResource(R.drawable.mutebuttonpressed);
+                    mutebutton1.setBackgroundResource(R.drawable.mutebuttonpressed2);
                 }
                 else {
-                    mutebutton1.setBackgroundResource(R.drawable.mutebutton);
+                    mutebutton1.setBackgroundResource(R.drawable.mutebutton2);
                 }
 
                 isPlay = !isPlay;
@@ -72,10 +72,10 @@ public class MixerFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (isPlay2) {
-                    mutebutton2.setBackgroundResource(R.drawable.mutebuttonpressed);
+                    mutebutton2.setBackgroundResource(R.drawable.mutebuttonpressed2);
                 }
                 else {
-                    mutebutton2.setBackgroundResource(R.drawable.mutebutton);
+                    mutebutton2.setBackgroundResource(R.drawable.mutebutton2);
                 }
                 isPlay2 = !isPlay2;
             }
@@ -88,10 +88,10 @@ public class MixerFragment extends Fragment {
             public void onClick(View view) {
 
                 if (isPlay3) {
-                    mutebutton3.setBackgroundResource(R.drawable.mutebuttonpressed);
+                    mutebutton3.setBackgroundResource(R.drawable.mutebuttonpressed2);
                 }
                 else {
-                    mutebutton3.setBackgroundResource(R.drawable.mutebutton);
+                    mutebutton3.setBackgroundResource(R.drawable.mutebutton2);
                 }
                 isPlay3 = !isPlay3;
             }
@@ -104,10 +104,10 @@ public class MixerFragment extends Fragment {
             public void onClick(View view) {
 
                 if (isPlay4) {
-                    mutebutton4.setBackgroundResource(R.drawable.mutebuttonpressed);
+                    mutebutton4.setBackgroundResource(R.drawable.mutebuttonpressed2);
                 }
                 else {
-                    mutebutton4.setBackgroundResource(R.drawable.mutebutton);
+                    mutebutton4.setBackgroundResource(R.drawable.mutebutton2);
                 }
 
                 isPlay4 = !isPlay4;
@@ -121,10 +121,10 @@ public class MixerFragment extends Fragment {
             public void onClick(View view) {
 
                 if (isPlay5) {
-                    mutebutton5.setBackgroundResource(R.drawable.mutebuttonpressed);
+                    mutebutton5.setBackgroundResource(R.drawable.mutebuttonpressed2);
                 }
                 else {
-                    mutebutton5.setBackgroundResource(R.drawable.mutebutton);
+                    mutebutton5.setBackgroundResource(R.drawable.mutebutton2);
                 }
 
                 isPlay5 = !isPlay5;
@@ -137,10 +137,10 @@ public class MixerFragment extends Fragment {
             public void onClick(View view) {
 
                 if (isPlay6) {
-                    mutebutton6.setBackgroundResource(R.drawable.mutebuttonpressed);
+                    mutebutton6.setBackgroundResource(R.drawable.mutebuttonpressed2);
                 }
                 else {
-                    mutebutton6.setBackgroundResource(R.drawable.mutebutton);
+                    mutebutton6.setBackgroundResource(R.drawable.mutebutton2);
                 }
 
                 isPlay6 = !isPlay6;
@@ -153,10 +153,10 @@ public class MixerFragment extends Fragment {
             public void onClick(View view) {
 
                 if (isPlay7) {
-                    solobutton1.setBackgroundResource(R.drawable.solobuttonpressed);
+                    solobutton1.setBackgroundResource(R.drawable.solobuttonpressed2);
                 }
                 else {
-                    solobutton1.setBackgroundResource(R.drawable.solobutton);
+                    solobutton1.setBackgroundResource(R.drawable.solobutton2);
                 }
 
                 isPlay7 = !isPlay7;
@@ -169,10 +169,10 @@ public class MixerFragment extends Fragment {
             public void onClick(View view) {
 
                 if (isPlay8) {
-                    solobutton2.setBackgroundResource(R.drawable.solobuttonpressed);
+                    solobutton2.setBackgroundResource(R.drawable.solobuttonpressed2);
                 }
                 else {
-                    solobutton2.setBackgroundResource(R.drawable.solobutton);
+                    solobutton2.setBackgroundResource(R.drawable.solobutton2);
                 }
 
                 isPlay8 = !isPlay8;
@@ -185,10 +185,10 @@ public class MixerFragment extends Fragment {
             public void onClick(View view) {
 
                 if (isPlay9) {
-                    solobutton3.setBackgroundResource(R.drawable.solobuttonpressed);
+                    solobutton3.setBackgroundResource(R.drawable.solobuttonpressed2);
                 }
                 else {
-                    solobutton3.setBackgroundResource(R.drawable.solobutton);
+                    solobutton3.setBackgroundResource(R.drawable.solobutton2);
                 }
 
                 isPlay9 = !isPlay9;
@@ -201,10 +201,10 @@ public class MixerFragment extends Fragment {
             public void onClick(View view) {
 
                 if (isPlay10) {
-                    solobutton4.setBackgroundResource(R.drawable.solobuttonpressed);
+                    solobutton4.setBackgroundResource(R.drawable.solobuttonpressed2);
                 }
                 else {
-                    solobutton4.setBackgroundResource(R.drawable.solobutton);
+                    solobutton4.setBackgroundResource(R.drawable.solobutton2);
                 }
 
                 isPlay10 = !isPlay10;
@@ -218,10 +218,10 @@ public class MixerFragment extends Fragment {
             public void onClick(View view) {
 
                 if (isPlay11) {
-                    solobutton5.setBackgroundResource(R.drawable.solobuttonpressed);
+                    solobutton5.setBackgroundResource(R.drawable.solobuttonpressed2);
                 }
                 else {
-                    solobutton5.setBackgroundResource(R.drawable.solobutton);
+                    solobutton5.setBackgroundResource(R.drawable.solobutton2);
                 }
 
                 isPlay11 = !isPlay11;
@@ -235,10 +235,10 @@ public class MixerFragment extends Fragment {
             public void onClick(View view) {
 
                 if (isPlay12) {
-                    solobutton6.setBackgroundResource(R.drawable.solobuttonpressed);
+                    solobutton6.setBackgroundResource(R.drawable.solobuttonpressed2);
                 }
                 else {
-                    solobutton6.setBackgroundResource(R.drawable.solobutton);
+                    solobutton6.setBackgroundResource(R.drawable.solobutton2);
                 }
 
                 isPlay12 = !isPlay12;
