@@ -13,6 +13,8 @@
 #include "Effects/noiseGate.h"
 #include "Effects/tremolo.h"
 #include "Effects/phaser.h"
+#include "Effects/delay.h"
+#include "Effects/autoWah.h"
 #include "Peripherals/USARTinit.h"
 #include "Peripherals/audioCntrl.h"
 #include "Peripherals/Sram.h"
@@ -40,7 +42,7 @@
 #define PING_PONG_BUFFER_SIZE 256 //The general size of the ping and pong buffer
 
 /********************************VOLUME********************************/
-Uint16 main_volume = 1;
+Uint16 main_volume = 50;
 
 /********************************LOOPING********************************/
 /*****All loops*****/
@@ -65,40 +67,46 @@ volatile Uint16 program_state = 0;  //Used to mark whether in ping pong state 0 
 volatile Uint16 ready = 1;          //1 when the main is not finished processing data, 0 if is finished
 
 /********************************USART VARIABLES********************************/
-volatile char rxBuffer[100];            //Receive buffer: used to collect information from USART
-Uint16 rxBufferIndex;           //Index for receive buffer
+volatile char rxBuffer[100];   	//Receive buffer: used to collect information from USART
+Uint16 rxBufferIndex = 0;           //Index for receive buffer
 
 /********************************TAPS********************************/
 Uint32 tapsIndex = 0;//(the number of samples between each tap)
 Uint16 taps = 0;//keeps track of number of taps (0, 1, or 2)
 
 /********************************DELAY********************************/
-Uint16 delayBuffer[DELAY_BUFFER_SIZE];
-Uint32 delaySizeInSamples = 10000;
+Uint16 delayBuffer[DELAY_BUFFER_SIZE] = {0};
+Uint32 delayTimeInSamples = 10000;
 Uint32 delayBufferPrev = DELAY_BUFFER_SIZE - 10000;	//The delayed sample
 Uint32 delayBufferCurr = 0;							//Used to write the sample
+float delayDryWet = 0.5,
+	 delayFeedback = 0.5;
 
 /********************************RING MOD********************************/
-Uint16 ringModCounter;
-Uint16 ringModRate;
-float ringModDepth;
-float ringModBias;
+Uint16 ringModCounter = 0;
+Uint16 ringModRate = 600;
+float ringModDepth = 1;
+float ringModBias = 0;
 
 /********************************NOISE GATE********************************/
-Uint16 noiseGate_sample_counter,
-	   noiseGate_release_time_a,
-	   noiseGate_release_time_b,
-	   noiseGate_threshold;
+Uint16 noiseGate_sample_counter = 0,
+	   noiseGate_release_time_a = 44,
+	   noiseGate_release_time_b = 100,
+	   noiseGate_threshold = 4000;
 
 /********************************PHASER********************************/
-float phaserQ;           // Can be manually varied between .3 <--> .8  "Resonance"
-float phaserRate;   // Can be manually varied between 11,000 <--> 44,100 "Rate"
-float phaserCenterFreq; // Can be manually varied between 1000 - 3000 "Tone"
-float phaserRange;      // Fixed at 3200
+float phaserRate = 16000;   // Can be manually varied between 11,000 <--> 44,100 "Rate"
+float phaserCenterFreq = 1800; // Must be greater than 1600. Can be manually varied between 1000 - 3000 "Tone"
+float phaserRange = 2900;      // Fixed at 1600
+
+/********************************AUTO-WAH********************************/
+float autoWahRate = 14000;   // Can be manually varied between 11,000 <--> 44,100 "Rate"
+float autoWahCenterFreq = 1900; // Must be greater than 1600. Can be manually varied between 1000 - 3000 "Tone"
+float autoWahRange = 3200;      // Fixed at 1600
 
 
 /////////////////////////////////////////////////////////PROTOTYPES////////////////////////////////////////////////////
-void mainEffectsAndLoop(volatile Uint32 in[256], volatile Uint16 out[256]);
+void mainEffectsAndLoop(volatile Uint32 in[PING_PONG_BUFFER_SIZE], volatile Uint16 out[PING_PONG_BUFFER_SIZE]);
 void initLoopButtonInterrupt(void);
 void initSampleRateTimer(void);
 void initDMA(void);
@@ -194,7 +202,7 @@ __interrupt void taps_ISR (void){
 
 	//if not first click and less than 5 seconds passed between clicks
  	if(tapsIndex != 0 && tapsIndex < 225000)
- 		delaySizeInSamples = tapsIndex;
+ 		delayTimeInSamples = tapsIndex;
  	tapsIndex = 0;
 
 	////////////////////Looping index handling////////////////////
@@ -268,7 +276,7 @@ int main(void){
 * Inputs: in[256], out[256]
 * Output:
 **************************************************************/
-void mainEffectsAndLoop(volatile Uint32 in[256], volatile Uint16 out[256]){
+void mainEffectsAndLoop(volatile Uint32 in[PING_PONG_BUFFER_SIZE], volatile Uint16 out[PING_PONG_BUFFER_SIZE]){
 	for(int i = 0; i < PING_PONG_BUFFER_SIZE; i++){//Batch process through 256 samples
 
 		///////////////////////////////////LIVE SIGNAL//////////////////////////////////
@@ -282,10 +290,13 @@ void mainEffectsAndLoop(volatile Uint32 in[256], volatile Uint16 out[256]){
 //		effectedSample = squares(effectedSample);
 //		effectedSample = tremolo(effectedSample);
 //		effectedSample = phaser((float)effectedSample);
+//		effectedSample = delay(effectedSample);
+//		effectedSample = autoWah((float)effectedSample);
+//		effectedSample = noiseGate(effectedSample);
 
 		/**************Outlive live signal and effected Sample**************/
     		out[i] =  (Uint16)
-    						((main_volume/50.0) * //main_volume is from 0 to 100, so /50 is 0 to 2
+    						(//(main_volume/50.0) * //main_volume is from 0 to 100, so /50 is 0 to 2
 							(
 								/*(0.5 * (float) live +*/
 								(0.5 * (float) effectedSample)

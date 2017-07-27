@@ -11,14 +11,15 @@ __interrupt void inCharISR(){
   while(ScibRegs.SCIRXST.bit.RXRDY != 1);//wait until ready
 
   //Do code here
-  rxBuffer[rxBufferIndex] = ScibRegs.SCIRXBUF.bit.RXDT;
-  main_volume = rxBuffer[rxBufferIndex];
+  rxBuffer[rxBufferIndex] = (char) ScibRegs.SCIRXBUF.bit.RXDT;
+  main_volume = (Uint16) rxBuffer[rxBufferIndex];
   rxBufferIndex++;
 
   PieCtrlRegs.PIEACK.all|=0x100; //a wild interrupt appeared!
 }
 
 /***********************************INITS*************************************/
+
 //void interruptInit(){
 //  //Sampling interrupt init
 //  EALLOW;

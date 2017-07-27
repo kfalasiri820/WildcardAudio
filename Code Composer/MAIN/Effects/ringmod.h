@@ -8,10 +8,10 @@
 #ifndef RING_MODULATION_H_
 #define RING_MODULATION_H_
 
-extern Uint16 ringModCounter = 0;
-extern Uint16 ringModRate = 600;
-extern float ringModDepth = 1;
-extern float ringModBias = 0;
+extern Uint16 ringModCounter;
+extern Uint16 ringModRate;
+extern float ringModDepth;
+extern float ringModBias;
 
 Uint16 ringModulation(float sample);
 

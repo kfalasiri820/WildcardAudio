@@ -38,6 +38,8 @@ MAIN.obj: ../Effects/ringmod.h
 MAIN.obj: ../Effects/noiseGate.h
 MAIN.obj: ../Effects/tremolo.h
 MAIN.obj: ../Effects/phaser.h
+MAIN.obj: ../Effects/delay.h
+MAIN.obj: ../Effects/autoWah.h
 MAIN.obj: ../Peripherals/USARTinit.h
 MAIN.obj: ../Peripherals/audioCntrl.h
 MAIN.obj: ../Peripherals/Sram.h
@@ -83,6 +85,8 @@ MAIN.obj: ../Peripherals/analogToDigitalConverter.h
 ../Effects/noiseGate.h: 
 ../Effects/tremolo.h: 
 ../Effects/phaser.h: 
+../Effects/delay.h: 
+../Effects/autoWah.h: 
 ../Peripherals/USARTinit.h: 
 ../Peripherals/audioCntrl.h: 
 ../Peripherals/Sram.h: 
