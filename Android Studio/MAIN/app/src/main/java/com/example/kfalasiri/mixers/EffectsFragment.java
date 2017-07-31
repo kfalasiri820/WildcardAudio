@@ -1,8 +1,11 @@
 package com.example.kfalasiri.mixers;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.PaintDrawable;
+import android.hardware.usb.UsbDeviceConnection;
+import android.hardware.usb.UsbManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetBehavior;
@@ -14,10 +17,20 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ToggleButton;
+import com.example.kfalasiri.mixers.MixerFragment;
+import com.hoho.android.usbserial.driver.UsbSerialDriver;
+import com.hoho.android.usbserial.driver.UsbSerialPort;
+import com.hoho.android.usbserial.driver.UsbSerialProber;
+
+import java.io.IOException;
+import java.util.List;
+
+import static android.R.attr.port;
 
 public class EffectsFragment extends Fragment{
     ////////////////////////////////////////////GLOBALS////////////////////////////////////////////
     private static final String TAG = "EffectsMicFragment";
+    public UsbSerialPort port = null;
     View view;
 
 
@@ -30,6 +43,47 @@ public class EffectsFragment extends Fragment{
         bottomMicEffectsInit();
         return view;
     }
+
+
+    private void serialInit(){
+        UsbManager manager = (UsbManager) getActivity().getSystemService(Context.USB_SERVICE);
+
+        List<UsbSerialDriver> availableDrivers = UsbSerialProber.getDefaultProber().findAllDrivers(manager);
+        if (availableDrivers.isEmpty()) {
+            return;
+        }
+
+        // Open a connection to the first available driver.
+        UsbSerialDriver driver = availableDrivers.get(0);
+
+        //manager.requestPermission(driver.getDevice(), );
+        UsbDeviceConnection connection = manager.openDevice(driver.getDevice());
+        if (connection == null) {
+            return;
+            // You probably need to call UsbManager.requestPermission(driver.getDevice(), ..)
+        }
+
+        // Read some data! Most have just one port (port 0).
+        port = driver.getPorts().get(0);
+
+        try {
+            port.open(connection);
+            port.setParameters(9600, 8, UsbSerialPort.STOPBITS_1, UsbSerialPort.PARITY_NONE);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void sendserial(byte outBuffer[]) {
+        try {
+            port.write(outBuffer, 1000);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     BottomSheetBehavior lineReverbBehavior, lineChorusBehavior, lineCrusherBehavior,
             lineFlangerBehavior, linePhaserBehavior, lineDelayBehavior, lineTremoloBehavior, lineBehaviorBottom,
@@ -1165,7 +1219,7 @@ public class EffectsFragment extends Fragment{
         final ImageButton micCrusherButton = (ImageButton) view.findViewById(R.id.mic_bitcrusher_button);
         final ImageButton micTremoloButton = (ImageButton) view.findViewById(R.id.mic_tremolo_button);
         final ImageButton micAutowahButton = (ImageButton) view.findViewById(R.id.mic_autowah_button);
-        final ImageButton micBassemulatorButton = (ImageButton) view.findViewById(R.id.mic_bassemulator_button);
+        final ImageButton micBassemulatorButton = (ImageButton) view.findViewById(R.id.mic_digitalfuzz_button);
         final ImageButton micRingmodButton = (ImageButton) view.findViewById(R.id.mic_ringmod_button);
         final ImageButton micNoisegateButton = (ImageButton) view.findViewById(R.id.mic_noisegate_button);
         final ImageButton micAtbButton = (ImageButton) view.findViewById(R.id.mic_atb_button);
@@ -1196,7 +1250,7 @@ public class EffectsFragment extends Fragment{
                 if(micBassemulatorBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
                     if(!micBassemulatorSwitch.isChecked())
                     {
-                        micBassemulatorButton.setBackgroundResource(R.drawable.bassemulator_button_inbetween);
+                        micBassemulatorButton.setBackgroundResource(R.drawable.digitalfuzzbuttoninbetweenpng);
                     }
 
                     micBassemulatorBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -1215,7 +1269,7 @@ public class EffectsFragment extends Fragment{
                 }
                 else {
                     if(!micBassemulatorSwitch.isChecked()) {
-                        micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
+                        micBassemulatorButton.setBackgroundResource(R.drawable.digitalfuzzbutton);
                     }
                     micBassemulatorBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 }
@@ -1274,16 +1328,16 @@ public class EffectsFragment extends Fragment{
         micBassemulatorSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbuttonpressed);
+                    micBassemulatorButton.setBackgroundResource(R.drawable.digitalfuzzbuttonpressed);
                 }
                 else {
                     if(micBassemulatorBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micBassemulatorSwitch.isChecked())
                     {
-                        micBassemulatorButton.setBackgroundResource(R.drawable.bassemulator_button_inbetween);
+                        micBassemulatorButton.setBackgroundResource(R.drawable.digitalfuzzbuttoninbetweenpng);
                     }
                     else
                     {
-                        micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
+                        micBassemulatorButton.setBackgroundResource(R.drawable.digitalfuzzbutton);
                     }
                 }
             }
@@ -1341,7 +1395,7 @@ public class EffectsFragment extends Fragment{
                 }
                 if(!micBassemulatorSwitch.isChecked())
                 {
-                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
+                    micBassemulatorButton.setBackgroundResource(R.drawable.digitalfuzzbutton);
                 }
 
 
@@ -1445,7 +1499,7 @@ public class EffectsFragment extends Fragment{
                 }
                 if(!micBassemulatorSwitch.isChecked())
                 {
-                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
+                    micBassemulatorButton.setBackgroundResource(R.drawable.digitalfuzzbutton);
                 }
 
 
@@ -1483,6 +1537,10 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micAtbButton.setBackgroundResource(R.drawable.analog_tb_buttonpressed);
+                    byte outBuffer[] = {(byte) 0b01010101};
+                    sendserial(outBuffer);
+
+
                 }
                 else {
                     if(micAtbBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micAtbSwitch.isChecked())
@@ -1549,7 +1607,7 @@ public class EffectsFragment extends Fragment{
                 }
                 if(!micBassemulatorSwitch.isChecked())
                 {
-                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
+                    micBassemulatorButton.setBackgroundResource(R.drawable.digitalfuzzbutton);
                 }
 
 
@@ -1653,7 +1711,7 @@ public class EffectsFragment extends Fragment{
                 }
                 if(!micBassemulatorSwitch.isChecked())
                 {
-                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
+                    micBassemulatorButton.setBackgroundResource(R.drawable.digitalfuzzbutton);
                 }
 
 
@@ -1757,7 +1815,7 @@ public class EffectsFragment extends Fragment{
                 }
                 if(!micBassemulatorSwitch.isChecked())
                 {
-                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
+                    micBassemulatorButton.setBackgroundResource(R.drawable.digitalfuzzbutton);
                 }
 
 
@@ -1861,7 +1919,7 @@ public class EffectsFragment extends Fragment{
                 }
                 if(!micBassemulatorSwitch.isChecked())
                 {
-                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
+                    micBassemulatorButton.setBackgroundResource(R.drawable.digitalfuzzbutton);
                 }
 
 
@@ -1969,7 +2027,7 @@ public class EffectsFragment extends Fragment{
                 }
                 if(!micBassemulatorSwitch.isChecked())
                 {
-                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
+                    micBassemulatorButton.setBackgroundResource(R.drawable.digitalfuzzbutton);
                 }
 
 
@@ -2072,7 +2130,7 @@ public class EffectsFragment extends Fragment{
                 }
                 if(!micBassemulatorSwitch.isChecked())
                 {
-                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
+                    micBassemulatorButton.setBackgroundResource(R.drawable.digitalfuzzbutton);
                 }
 
 
@@ -2174,7 +2232,7 @@ public class EffectsFragment extends Fragment{
                 }
                 if(!micBassemulatorSwitch.isChecked())
                 {
-                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
+                    micBassemulatorButton.setBackgroundResource(R.drawable.digitalfuzzbutton);
                 }
 
 
@@ -2277,7 +2335,7 @@ public class EffectsFragment extends Fragment{
                 }
                 if(!micBassemulatorSwitch.isChecked())
                 {
-                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
+                    micBassemulatorButton.setBackgroundResource(R.drawable.digitalfuzzbutton);
                 }
 
 
@@ -2381,7 +2439,7 @@ public class EffectsFragment extends Fragment{
                 }
                 if(!micBassemulatorSwitch.isChecked())
                 {
-                    micBassemulatorButton.setBackgroundResource(R.drawable.bassemulatorbutton);
+                    micBassemulatorButton.setBackgroundResource(R.drawable.digitalfuzzbutton);
                 }
 
 

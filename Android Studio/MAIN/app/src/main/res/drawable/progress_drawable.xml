@@ -17,7 +17,7 @@
             <shape android:shape="rectangle" >
                 <corners android:radius="5dp" />
 
-                <stroke android:width="10dp"
+                <stroke android:width="3dp"
                      />
 
                 <gradient
@@ -32,7 +32,7 @@
             <shape android:shape="rectangle" >
                 <corners android:radius="5dp" />
 
-                <stroke android:width="10dp"
+                <stroke android:width="3dp"
                      />
                 <gradient
                     android:angle="180"
