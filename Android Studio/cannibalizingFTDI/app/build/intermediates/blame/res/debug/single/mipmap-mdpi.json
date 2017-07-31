@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Android Studio/cannibalizingFTDI/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
+        "source": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Android Studio/cannibalizingFTDI/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Android Studio/cannibalizingFTDI/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher_round.png",
+        "source": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Android Studio/cannibalizingFTDI/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    }
+]

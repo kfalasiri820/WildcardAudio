@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Android Studio/cannibalizingFTDI/app/build/intermediates/res/merged/debug/color-v23/abc_tint_default.xml",
+        "source": "/Users/jamessafko/.android/build-cache/1cc82cd5b1db354e4da3c8ed2a6c85412e996388/output/res/color-v23/abc_tint_default.xml"
+    },
+    {
+        "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Android Studio/cannibalizingFTDI/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
+        "source": "/Users/jamessafko/.android/build-cache/1cc82cd5b1db354e4da3c8ed2a6c85412e996388/output/res/color-v23/abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Android Studio/cannibalizingFTDI/app/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml",
+        "source": "/Users/jamessafko/.android/build-cache/1cc82cd5b1db354e4da3c8ed2a6c85412e996388/output/res/color-v23/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Android Studio/cannibalizingFTDI/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml",
+        "source": "/Users/jamessafko/.android/build-cache/1cc82cd5b1db354e4da3c8ed2a6c85412e996388/output/res/color-v23/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Android Studio/cannibalizingFTDI/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
+        "source": "/Users/jamessafko/.android/build-cache/1cc82cd5b1db354e4da3c8ed2a6c85412e996388/output/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Android Studio/cannibalizingFTDI/app/build/intermediates/res/merged/debug/color-v23/abc_tint_spinner.xml",
+        "source": "/Users/jamessafko/.android/build-cache/1cc82cd5b1db354e4da3c8ed2a6c85412e996388/output/res/color-v23/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Android Studio/cannibalizingFTDI/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_thumb.xml",
+        "source": "/Users/jamessafko/.android/build-cache/1cc82cd5b1db354e4da3c8ed2a6c85412e996388/output/res/color-v23/abc_tint_switch_thumb.xml"
+    },
+    {
+        "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Android Studio/cannibalizingFTDI/app/build/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml",
+        "source": "/Users/jamessafko/.android/build-cache/1cc82cd5b1db354e4da3c8ed2a6c85412e996388/output/res/color-v23/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Android Studio/cannibalizingFTDI/app/build/intermediates/res/merged/debug/color-v23/abc_tint_btn_checkable.xml",
+        "source": "/Users/jamessafko/.android/build-cache/1cc82cd5b1db354e4da3c8ed2a6c85412e996388/output/res/color-v23/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/Users/jamessafko/Documents/workspace2/WildcardAudio/Android Studio/cannibalizingFTDI/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_text_material.xml",
+        "source": "/Users/jamessafko/.android/build-cache/1cc82cd5b1db354e4da3c8ed2a6c85412e996388/output/res/color-v23/abc_btn_colored_text_material.xml"
+    }
+]
