@@ -318,7 +318,7 @@ public class MixerFragment extends Fragment {
     private void serialSliderInit() {
         try {
             volumeSeekbar = (SeekBar) view.findViewById(R.id.volume);
-            volumeSeekbar.setMax(100);
+            volumeSeekbar.setMax(50);
 
             volumeSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 @Override
@@ -333,7 +333,7 @@ public class MixerFragment extends Fragment {
                 public void onProgressChanged(SeekBar arg0, int progress, boolean arg2) {
                     byte value = (byte) (volumeSeekbar.getProgress() & 0xFF);
                     byte outBuffer[] = {value};
-                    myText.setText("Value is " + value + "\n");
+                    myText.setText("Value is " + value * 2 + "%\n");
 
                     if(port == null)
                         myText.append("null :(\n");

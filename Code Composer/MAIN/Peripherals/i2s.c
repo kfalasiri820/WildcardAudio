@@ -20,7 +20,7 @@ void InitMcbspaI2S(void);
 
 void main(){
 	DisableDog();
-	InitPll(0,3);
+	InitPll(10,2);
 	InitPeripheralClocks();
 	InitMcbspaGpio();
 	InitMcbspaI2S();
@@ -132,7 +132,7 @@ void InitMcbspaI2S(void){
 	//interrupts and enables
 	McbspaRegs.MFFINT.bit.XINT = 1; // Enable Transmit Interrupt
 	McbspaRegs.XCR2.bit.XFIG = 1; //Ignore unexpected frame sync
-	McbspaRegs.SPCR2.all |=0x00C0; // Frame sync & sample rate generators pulled out of reset
+//	McbspaRegs.SPCR2.all |= 0x00C0; // Frame sync & sample rate generators pulled out of reset
 	delay_loop();
 	McbspaRegs.SPCR2.bit.GRST   = 1;
 	delay_loop();
