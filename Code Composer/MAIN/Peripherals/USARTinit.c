@@ -1,21 +1,64 @@
 #include <DSP28x_Project.h>
 #include <math.h>
 
+#define NUMBER_OF_EFFECTS 18
+
 extern volatile char rxBuffer[100];
 extern Uint16 rxBufferIndex;
 extern Uint16 main_volume;
+extern Uint16 effects[NUMBER_OF_EFFECTS];
+extern Uint16 effectSelected;
 
 /***********************************INTERRUPTS********************************/
 __interrupt void inCharISR(){
-  ScibRegs.SCICTL1.bit.SLEEP = 0;
-  while(ScibRegs.SCIRXST.bit.RXRDY != 1);//wait until ready
+	ScibRegs.SCICTL1.bit.SLEEP = 0;
+	while(ScibRegs.SCIRXST.bit.RXRDY != 1);//wait until ready
 
-  //Do code here
-  rxBuffer[rxBufferIndex] = (char) ScibRegs.SCIRXBUF.bit.RXDT;
-  main_volume = (Uint16) rxBuffer[rxBufferIndex];
-  rxBufferIndex++;
+	//Do code here
+	rxBuffer[rxBufferIndex] = (char) ScibRegs.SCIRXBUF.bit.RXDT;
+	main_volume = (Uint16) rxBuffer[rxBufferIndex];
+	rxBufferIndex++;
 
-  PieCtrlRegs.PIEACK.all|=0x100; //a wild interrupt appeared!
+
+
+	/*************************UPDATING EFFECTS PARAMETERS***********************/
+	//Read the buffer
+	char input = (char) ScibRegs.SCIRXBUF.bit.RXDT;
+	Uint16 effectID = (Uint16)(input & 0b00011111);
+
+	//SELECTED
+	if((input & 0b01000000) >> 7){//If effect selected
+		effects[effectID-1] |= 0x4000; //(0100)000
+		effectSelected = effectID;
+	}
+	else//If effect is not selected
+		effects[effectID-1] &= 0xBFFF; //(1011)FFF
+
+	//ON/OFF
+	if((input & 0b00100000) >> 6){//if effect is on
+		effects[effectID-1] |= 0x8000;//turn effect on
+
+		//Read new parameter values
+		Uint16 param1 = 0; //ADC READ IN;
+		Uint16 param2 = 0; //ADC READ IN;
+		Uint16 param3 = 0; //ADC READ IN;
+
+		//Update parameters in effects Array
+		effects[effectID-1] |=
+				(Uint32)(
+					(Uint32)(param3 & 0xFFFF) &
+					((Uint32)(param2 & 0xFFFF) << 8) &
+					((Uint32)(param1 & 0xFFFF) << 16)
+				);
+	}
+	else//if effect is off
+		effects[effectID-1] &= 0x7FFF;//turn effect off
+
+
+
+
+
+	PieCtrlRegs.PIEACK.all|=0x100; //a wild interrupt appeared!
 }
 
 /***********************************INITS*************************************/
@@ -59,8 +102,8 @@ void startUSART() {
 	//SCITXDB - SCI-B transmit (O)
 	//SCIRXDB - SCI-B receive (I/O)
 
-	GpioCtrlRegs.GPAMUX2.bit.GPIO22 = 0x3;
-	GpioCtrlRegs.GPAMUX2.bit.GPIO23 = 0x3;
+	GpioCtrlRegs.GPAMUX1.bit.GPIO9 = 0x2;
+	GpioCtrlRegs.GPAMUX1.bit.GPIO11 = 0x2;
 
 	SysCtrlRegs.PCLKCR0.bit.SCIBENCLK = 0x1;
 

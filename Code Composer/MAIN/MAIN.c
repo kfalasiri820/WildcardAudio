@@ -40,6 +40,7 @@
 #define LOOP_BUFFER_SIZE 256000  //The maximum size of the loop buffer (in SRAM)
 #define DELAY_BUFFER_SIZE 65536
 #define PING_PONG_BUFFER_SIZE 256 //The general size of the ping and pong buffer
+#define NUMBER_OF_EFFECTS 18
 
 /********************************VOLUME********************************/
 Uint16 main_volume = 50;
@@ -56,6 +57,20 @@ Uint16 loop1Clicks = 0;             //The number of loop pedal clicks for loop 1
 /*****Loop 2*****/
 Uint16 loop2[LOOP_BUFFER_SIZE];      //The loop one buffer (in SRAM)
 Uint16 recording2 = 0;          //1 if you are recording1, 0 if you are not
+
+/********************************EFFECT GLOBALS********************************/
+Uint32 effects[NUMBER_OF_EFFECTS] = {0};
+// * Each index is a different effect.
+char analogTBIndex = 0;
+ /*
+ * Each element is 32 bits describing each effect.
+ * 31 on/off
+ * 30 selected
+ * 29 - 20 parameter 1
+ * 19 - 10 parameter 2
+ * 9 - 0 parameter 3
+ */
+Uint16 effectSelected = 0;
 
 /********************************PING/PONG********************************/
 volatile Uint32 ping_1[PING_PONG_BUFFER_SIZE] = {0};
@@ -221,7 +236,7 @@ __interrupt void taps_ISR (void){
 ///////////////////////////////////////////////////////////////MAIN///////////////////////////////////////////////////////////////
 int main(void){
     DisableDog();//Disable the watchdog
-    InitPll(10,3);//Set up some stuff
+    InitPll(10,2);//Set up some stuff
     InitSysCtrl();//wtf... check what clocks we actually need
     Sram_init();//Initialize the SRAM to save loop information
 
@@ -392,6 +407,7 @@ void initLoopButtonInterrupt(void) {
     //GPIO10 is XINT1
     IER |= M_INT1; // Enable CPU int1
     IER |= M_INT2; // Enable CPU int2
+    __asm(" RPT #7 || NOP ");
     EINT; // Enable Global Interrupts
     EDIS;
 }
