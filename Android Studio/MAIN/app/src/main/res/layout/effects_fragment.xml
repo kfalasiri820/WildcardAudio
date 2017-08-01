@@ -542,13 +542,16 @@
                 android:layout_width="123dp"
                 android:layout_height="76dp"
                 android:background="@drawable/tremolobutton"
-                android:layout_marginTop="-8dp"
-                app:layout_constraintTop_toBottomOf="parent"
-                android:layout_marginLeft="60dp"
-                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginBottom="215dp"
-                app:layout_constraintVertical_bias="1.0" />
+                android:layout_marginBottom="8dp"
+                app:layout_constraintVertical_bias="0.592"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_bias="0.139" />
 
             <ImageButton
                 android:id="@+id/mic_delay_button"
@@ -1074,8 +1077,8 @@
                 android:layout_width="123dp"
                 android:layout_height="76dp"
                 android:background="@drawable/chorusbutton"
-                app:layout_constraintRight_toLeftOf="@+id/line_flanger_button"
-                android:layout_marginRight="0dp"
+                android:layout_marginLeft="195dp"
+                app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -1104,7 +1107,10 @@
                 android:layout_height="76dp"
                 android:background="@drawable/ringmodbutton"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="233dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintVertical_bias="0.442"
                 android:layout_marginLeft="195dp"
                 app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -1113,20 +1119,26 @@
                 android:layout_width="123dp"
                 android:layout_height="76dp"
                 android:background="@drawable/autowahbutton"
-                android:layout_marginRight="71dp"
-                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="233dp" />
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintVertical_bias="0.442"
+                app:layout_constraintLeft_toRightOf="@+id/line_ringmod_button"
+                android:layout_marginLeft="-18dp" />
 
             <ImageButton
                 android:id="@+id/line_flanger_button"
                 android:layout_width="123dp"
                 android:layout_height="76dp"
                 android:background="@drawable/flangerbutton"
-                android:layout_marginRight="71dp"
-                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginBottom="367dp" />
+                android:layout_marginBottom="8dp"
+                app:layout_constraintVertical_bias="0.282"
+                app:layout_constraintLeft_toRightOf="@+id/line_chorus_button"
+                android:layout_marginLeft="-26dp" />
 
             <ImageButton
                 android:id="@+id/line_bitcrusher_button"
@@ -1151,44 +1163,42 @@
                 android:background="@drawable/tremolobutton"
                 android:layout_below="@id/line_flanger_button"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="16dp"
-                app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="309dp"
-                app:layout_constraintRight_toLeftOf="@+id/line_delay_button"
-                android:layout_marginRight="8dp"
-                app:layout_constraintHorizontal_bias="1.0"
+                android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginBottom="8dp"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.592"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_bias="0.171" />
 
             <ImageButton
                 android:id="@+id/line_delay_button"
                 android:layout_width="123dp"
                 android:layout_height="76dp"
                 android:background="@drawable/delaybutton"
-                tools:layout_editor_absoluteX="195dp"
-                android:layout_marginTop="8dp"
                 app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginBottom="8dp"
-                app:layout_constraintVertical_bias="0.592" />
+                app:layout_constraintVertical_bias="0.592"
+                android:layout_marginLeft="195dp"
+                app:layout_constraintLeft_toLeftOf="parent" />
 
             <ImageButton
                 android:id="@+id/line_reverb_button"
                 android:layout_width="123dp"
                 android:layout_height="76dp"
                 android:background="@drawable/reverbbutton"
-                app:layout_constraintLeft_toRightOf="@+id/line_delay_button"
-                android:layout_marginLeft="0dp"
-                android:layout_marginRight="8dp"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginBottom="8dp"
-                app:layout_constraintVertical_bias="0.592" />
+                app:layout_constraintVertical_bias="0.592"
+                app:layout_constraintLeft_toRightOf="@+id/line_delay_button"
+                android:layout_marginLeft="-30dp" />
 
             <ImageButton
                 android:id="@+id/line_atb_button"
@@ -1213,12 +1223,14 @@
                 android:layout_height="76dp"
                 android:background="@drawable/analogdistbutton"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="81dp"
-                app:layout_constraintRight_toLeftOf="@+id/line_noisegate_button"
-                android:layout_marginRight="-18dp"
+                android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginBottom="8dp"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.143"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
 
             <ImageButton
                 android:id="@+id/line_noisegate_button"
@@ -1230,8 +1242,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintVertical_bias="0.143"
-                android:layout_marginRight="71dp"
-                app:layout_constraintRight_toRightOf="parent" />
+                app:layout_constraintLeft_toRightOf="@+id/line_distortion_button"
+                android:layout_marginLeft="-34dp" />
 
             <TextView
                 android:id="@+id/textView6"
