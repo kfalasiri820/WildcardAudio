@@ -41,6 +41,7 @@ public class EffectsFragment extends Fragment{
         view = inflater.inflate(R.layout.effects_fragment, container, false);
         bottomLineEffectsInit();
         bottomMicEffectsInit();
+        serialInit();
         return view;
     }
 
@@ -372,6 +373,8 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     lineRingmodButton.setBackgroundResource(R.drawable.ringmodbuttonpressed);
+                    byte outBuffer[] = {(byte) 0b01101001};
+                    sendserial(outBuffer);
                 } else {
                     if(lineRingmodBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineRingmodSwitch.isChecked())
                     {
@@ -380,6 +383,8 @@ public class EffectsFragment extends Fragment{
                     else
                     {
                         lineRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
+                        byte outBuffer[] = {(byte) 0b01001001};
+                        sendserial(outBuffer);
                     }
                 }
             }
@@ -551,6 +556,9 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebuttonpressed);
+                    byte outBuffer[] = {(byte) 0b01100100};
+                    sendserial(outBuffer);
+
                 } else {
                     if(lineNoisegateBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineNoisegateSwitch.isChecked())
                     {
@@ -559,6 +567,8 @@ public class EffectsFragment extends Fragment{
                     else
                     {
                         lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
+                        byte outBuffer[] = {(byte) 0b01000100};
+                        sendserial(outBuffer);
                     }
                 }
             }
@@ -640,6 +650,9 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     lineAutowahButton.setBackgroundResource(R.drawable.autowahbuttonpressed);
+                    byte outBuffer[] = {(byte) 0b01101010};
+                    sendserial(outBuffer);
+
                 } else {
                     if(lineAutowahBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineAutowahSwitch.isChecked())
                     {
@@ -648,6 +661,8 @@ public class EffectsFragment extends Fragment{
                     else
                     {
                         lineAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
+                        byte outBuffer[] = {(byte) 0b01001010};
+                        sendserial(outBuffer);
                     }
                 }
             }
@@ -918,6 +933,8 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbuttonpressed);
+                    byte outBuffer[] = {(byte) 0b01100101};
+                    sendserial(outBuffer);
                 } else {
                     if(lineCrusherBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineCrusherSwitch.isChecked())
                     {
@@ -926,6 +943,8 @@ public class EffectsFragment extends Fragment{
                     else
                     {
                         lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
+                        byte outBuffer[] = {(byte) 0b01000101};
+                        sendserial(outBuffer);
                     }
                 }
             }
@@ -1537,7 +1556,7 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micAtbButton.setBackgroundResource(R.drawable.analog_tb_buttonpressed);
-                    byte outBuffer[] = {(byte) 0b01010101};
+                    byte outBuffer[] = {(byte) 0b01100000};
                     sendserial(outBuffer);
 
 
@@ -1550,6 +1569,8 @@ public class EffectsFragment extends Fragment{
                     else
                     {
                         micAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
+                        byte outBuffer[]= {(byte) 0b01000000};
+                        sendserial(outBuffer);
                     }
                 }
             }
@@ -1645,11 +1666,15 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micRingmodButton.setBackgroundResource(R.drawable.ringmodbuttonpressed);
+                    byte outBuffer[] = {(byte) 0b01101001};
+                    sendserial(outBuffer);
                 }
                 else {
                     if(micRingmodBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micRingmodSwitch.isChecked())
                     {
                         micRingmodButton.setBackgroundResource(R.drawable.ringmodbuttoninbetween);
+                        byte outBuffer[] = {(byte) 0b01001001};
+                        sendserial(outBuffer);
                     }
                     else
                     {
@@ -1853,6 +1878,8 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micTremoloButton.setBackgroundResource(R.drawable.tremolobuttonpressed);
+                    byte outBuffer[] = {(byte) 0b01101011};
+                    sendserial(outBuffer);
                 }
                 else {
                     if(micTremoloBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micTremoloSwitch.isChecked())
@@ -1862,6 +1889,8 @@ public class EffectsFragment extends Fragment{
                     else
                     {
                         micTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
+                        byte outBuffer[] = {(byte) 0b01001011};
+                        sendserial(outBuffer);
                     }
                 }
             }
@@ -1957,6 +1986,8 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micReverbButton.setBackgroundResource(R.drawable.reverbbuttonpressed);
+                    byte outBuffer[] = {(byte) 0b01101101};
+                    sendserial(outBuffer);
                 }
                 else {
                     if(micReverbBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micReverbSwitch.isChecked())
@@ -1966,6 +1997,8 @@ public class EffectsFragment extends Fragment{
                     else
                     {
                         micReverbButton.setBackgroundResource(R.drawable.reverbbutton);
+                        byte outBuffer[] = {(byte) 0b01001101};
+                        sendserial(outBuffer);
                     }
                 }
             }
@@ -2063,6 +2096,8 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micChorusButton.setBackgroundResource(R.drawable.chorusbuttonpressed);
+                    byte outBuffer[] = {(byte) 0b01100110};
+                    sendserial(outBuffer);
                 }
                 else {
                     if(micChorusBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micChorusSwitch.isChecked())
@@ -2072,6 +2107,8 @@ public class EffectsFragment extends Fragment{
                     else
                     {
                         micChorusButton.setBackgroundResource(R.drawable.chorusbutton);
+                        byte outBuffer[] = {(byte) 0b01000110};
+                        sendserial(outBuffer);
                     }
                 }
             }
@@ -2268,6 +2305,8 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micFlangerButton.setBackgroundResource(R.drawable.flangerbuttonpressed);
+                    byte outBuffer[] = {(byte) 0b01100111};
+                    sendserial(outBuffer);
                 }
                 else {
                     if(micFlangerBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micFlangerSwitch.isChecked())
@@ -2277,6 +2316,8 @@ public class EffectsFragment extends Fragment{
                     else
                     {
                         micFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
+                        byte outBuffer[] = {(byte) 0b01000111};
+                        sendserial(outBuffer);
                     }
                 }
             }
@@ -2372,11 +2413,15 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micPhaserButton.setBackgroundResource(R.drawable.phaserbuttonpressed);
+                    byte outBuffer[] = {(byte) 0b01101000};
+                    sendserial(outBuffer);
                 }
                 else {
                     if(micPhaserBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micPhaserSwitch.isChecked())
                     {
                         micPhaserButton.setBackgroundResource(R.drawable.phaserbuttoninbetween);
+                        byte outBuffer[] = {(byte) 0b01001000};
+                        sendserial(outBuffer);
                     }
                     else
                     {
@@ -2475,6 +2520,8 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micDelayButton.setBackgroundResource(R.drawable.delaybuttonpressed);
+                    byte outBuffer[] = {(byte) 0b01101100};
+                    sendserial(outBuffer);
                 }
                 else {
                     if(micDelayBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micDelaySwitch.isChecked())
@@ -2484,6 +2531,8 @@ public class EffectsFragment extends Fragment{
                     else
                     {
                         micDelayButton.setBackgroundResource(R.drawable.delaybutton);
+                        byte outBuffer[] = {(byte) 0b01001100};
+                        sendserial(outBuffer);
                     }
                 }
             }
