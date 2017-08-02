@@ -124,12 +124,12 @@ public class EffectsFragment extends Fragment{
         lineTremoloButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!lineTremoloSwitch.isChecked())
+                if(!lineTremoloSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11001011};
                     sendserial(outBuffer);
                 }
-                else if(lineTremoloSwitch.isChecked())
+                else if(lineTremoloSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11101011};
                     sendserial(outBuffer);
@@ -207,20 +207,23 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     lineTremoloButton.setBackgroundResource(R.drawable.tremolobuttonpressed);
-                    byte outBuffer[] = {(byte) 0b11101011};
-                    sendserial(outBuffer);
+                    if(port!=null) {
+                        byte outBuffer[] = {(byte) 0b11101011};
+                        sendserial(outBuffer);
+                    }
                 } else {
                     if(lineTremoloBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineTremoloSwitch.isChecked())
                     {
                         lineTremoloButton.setBackgroundResource(R.drawable.tremolobuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b11001011};
-                        sendserial(outBuffer);
+
+                        if(port!=null) {
+                            byte outBuffer[] = {(byte) 0b11001011};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
                         lineTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
-//                        byte outBuffer[] = {(byte) 0b11001011};
-//                        sendserial(outBuffer);
                     }
                 }
             }
@@ -232,12 +235,12 @@ public class EffectsFragment extends Fragment{
         lineAtbButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!lineAtbSwitch.isChecked())
+                if(!lineAtbSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11000000};
                     sendserial(outBuffer);
                 }
-                else if(lineAtbSwitch.isChecked())
+                else if(lineAtbSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11100000};
                     sendserial(outBuffer);
@@ -315,20 +318,24 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     lineAtbButton.setBackgroundResource(R.drawable.analog_tb_buttonpressed);
-                    byte outBuffer[] = {(byte) 0b11100000};
-                    sendserial(outBuffer);
+
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b11100000};
+                        sendserial(outBuffer);
+                    }
                 } else {
                     if(lineAtbBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineAtbSwitch.isChecked())
                     {
                         lineAtbButton.setBackgroundResource(R.drawable.analog_tb_buttoninbetween);
-                        byte outBuffer[] = {(byte) 0b11000000};
-                        sendserial(outBuffer);
+
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b11000000};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
                         lineAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
-//                        byte outBuffer[] = {(byte) 0b11000000};
-//                        sendserial(outBuffer);
                     }
                 }
             }
@@ -340,12 +347,12 @@ public class EffectsFragment extends Fragment{
         lineRingmodButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!lineRingmodSwitch.isChecked())
+                if(!lineRingmodSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11001001};
                     sendserial(outBuffer);
                 }
-                else if(lineRingmodSwitch.isChecked())
+                else if(lineRingmodSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11101001};
                     sendserial(outBuffer);
@@ -421,20 +428,22 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     lineRingmodButton.setBackgroundResource(R.drawable.ringmodbuttonpressed);
-                    byte outBuffer[] = {(byte) 0b11101101};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b11101101};
+                        sendserial(outBuffer);
+                    }
                 } else {
                     if(lineRingmodBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineRingmodSwitch.isChecked())
                     {
                         lineRingmodButton.setBackgroundResource(R.drawable.ringmodbuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b11001101};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b11001101};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
                         lineRingmodButton.setBackgroundResource(R.drawable.ringmodbutton);
-//                        byte outBuffer[] = {(byte) 0b11001101};
-//                        sendserial(outBuffer);
 
                     }
                 }
@@ -447,12 +456,12 @@ public class EffectsFragment extends Fragment{
         lineDistortionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!lineDistortionSwitch.isChecked())
+                if(!lineDistortionSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11000001};
                     sendserial(outBuffer);
                 }
-                else if(lineDistortionSwitch.isChecked())
+                else if(lineDistortionSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11100001};
                     sendserial(outBuffer);
@@ -530,20 +539,22 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     lineDistortionButton.setBackgroundResource(R.drawable.analogdistbuttonpressed);
-                    byte outBuffer[] = {(byte) 0b11100001};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b11100001};
+                        sendserial(outBuffer);
+                    }
                 } else {
                     if(lineDistortionBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineDistortionSwitch.isChecked())
                     {
                         lineDistortionButton.setBackgroundResource(R.drawable.analogdistbuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b11000001};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b11000001};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
                         lineDistortionButton.setBackgroundResource(R.drawable.analogdistbutton);
-//                        byte outBuffer[] = {(byte) 0b11000001};
-//                        sendserial(outBuffer);
                     }
                 }
             }
@@ -556,12 +567,12 @@ public class EffectsFragment extends Fragment{
         lineNoisegateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!lineNoisegateSwitch.isChecked())
+                if(!lineNoisegateSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11000100};
                     sendserial(outBuffer);
                 }
-                else if(lineNoisegateSwitch.isChecked())
+                else if(lineNoisegateSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11100100};
                     sendserial(outBuffer);
@@ -638,21 +649,23 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebuttonpressed);
-                    byte outBuffer[] = {(byte) 0b11100100};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b11100100};
+                        sendserial(outBuffer);
+                    }
 
                 } else {
                     if(lineNoisegateBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineNoisegateSwitch.isChecked())
                     {
                         lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b11000100};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b11000100};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
                         lineNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
-//                        byte outBuffer[] = {(byte) 0b11000100};
-//                        sendserial(outBuffer);
                     }
                 }
             }
@@ -664,12 +677,12 @@ public class EffectsFragment extends Fragment{
         lineAutowahButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!lineAutowahSwitch.isChecked())
+                if(!lineAutowahSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11001010};
                     sendserial(outBuffer);
                 }
-                else if(lineAutowahSwitch.isChecked())
+                else if(lineAutowahSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11101010};
                     sendserial(outBuffer);
@@ -746,21 +759,23 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     lineAutowahButton.setBackgroundResource(R.drawable.autowahbuttonpressed);
-                    byte outBuffer[] = {(byte) 0b11101010};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b11101010};
+                        sendserial(outBuffer);
+                    }
 
                 } else {
                     if(lineAutowahBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineAutowahSwitch.isChecked())
                     {
                         lineAutowahButton.setBackgroundResource(R.drawable.autowahbuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b11001010};
-                        sendserial(outBuffer);
+                        if (port != null) {
+                            byte outBuffer[] = {(byte) 0b11001010};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
                         lineAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
-//                        byte outBuffer[] = {(byte) 0b11001010};
-//                        sendserial(outBuffer);
                     }
                 }
             }
@@ -774,12 +789,12 @@ public class EffectsFragment extends Fragment{
         lineReverbButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!lineReverbSwitch.isChecked())
+                if(!lineReverbSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11001101};
                     sendserial(outBuffer);
                 }
-                else if(lineReverbSwitch.isChecked())
+                else if(lineReverbSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11101101};
                     sendserial(outBuffer);
@@ -860,14 +875,18 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     lineReverbButton.setBackgroundResource(R.drawable.reverbbuttonpressed);
-                    byte outBuffer[] = {(byte) 0b11101101};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b11101101};
+                        sendserial(outBuffer);
+                    }
                 } else {
                     if(lineReverbBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineReverbSwitch.isChecked())
                     {
                         lineReverbButton.setBackgroundResource(R.drawable.reverbbuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b11001101};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b11001101};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
@@ -886,12 +905,12 @@ public class EffectsFragment extends Fragment{
         lineChorusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!lineChorusSwitch.isChecked())
+                if(!lineChorusSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11000110};
                     sendserial(outBuffer);
                 }
-                else if(lineChorusSwitch.isChecked())
+                else if(lineChorusSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11100110};
                     sendserial(outBuffer);
@@ -970,20 +989,22 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     lineChorusButton.setBackgroundResource(R.drawable.chorusbuttonpressed);
-                    byte outBuffer[] = {(byte) 0b11100110};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b11100110};
+                        sendserial(outBuffer);
+                    }
                 } else {
                     if(lineChorusBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineChorusSwitch.isChecked())
                     {
                         lineChorusButton.setBackgroundResource(R.drawable.chorusbuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b11000110};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b11000110};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
                         lineChorusButton.setBackgroundResource(R.drawable.chorusbutton);
-//                        byte outBuffer[] = {(byte) 0b11000110};
-//                        sendserial(outBuffer);
                     }
                 }
             }
@@ -995,12 +1016,12 @@ public class EffectsFragment extends Fragment{
         lineCrusherButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!lineCrusherSwitch.isChecked())
+                if(!lineCrusherSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11000101};
                     sendserial(outBuffer);
                 }
-                else if(lineCrusherSwitch.isChecked())
+                else if(lineCrusherSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11100101};
                     sendserial(outBuffer);
@@ -1080,20 +1101,22 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbuttonpressed);
-                    byte outBuffer[] = {(byte) 0b11100101};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b11100101};
+                        sendserial(outBuffer);
+                    }
                 } else {
                     if(lineCrusherBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineCrusherSwitch.isChecked())
                     {
                         lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b11000101};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b11000101};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
                         lineCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
-//                        byte outBuffer[] = {(byte) 0b11000101};
-//                        sendserial(outBuffer);
                     }
                 }
             }
@@ -1105,12 +1128,12 @@ public class EffectsFragment extends Fragment{
         lineFlangerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!lineFlangerSwitch.isChecked())
+                if(!lineFlangerSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11000111};
                     sendserial(outBuffer);
                 }
-                else if(lineFlangerSwitch.isChecked())
+                else if(lineFlangerSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11100111};
                     sendserial(outBuffer);
@@ -1189,20 +1212,22 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     lineFlangerButton.setBackgroundResource(R.drawable.flangerbuttonpressed);
-                    byte outBuffer[] = {(byte) 0b11100111};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b11100111};
+                        sendserial(outBuffer);
+                    }
                 } else {
                     if(lineFlangerBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineFlangerSwitch.isChecked())
                     {
                         lineFlangerButton.setBackgroundResource(R.drawable.flangerbuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b11000111};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b11000111};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
                         lineFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
-//                        byte outBuffer[] = {(byte) 0b11000111};
-//                        sendserial(outBuffer);
                     }
                 }
             }
@@ -1214,12 +1239,12 @@ public class EffectsFragment extends Fragment{
         linePhaserButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!linePhaserSwitch.isChecked())
+                if(!linePhaserSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11001000};
                     sendserial(outBuffer);
                 }
-                else if(linePhaserSwitch.isChecked())
+                else if(linePhaserSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11101000};
                     sendserial(outBuffer);
@@ -1298,20 +1323,22 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     linePhaserButton.setBackgroundResource(R.drawable.phaserbuttonpressed);
-                    byte outBuffer[] = {(byte) 0b11101000};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b11101000};
+                        sendserial(outBuffer);
+                    }
                 } else {
                     if(linePhaserBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !linePhaserSwitch.isChecked())
                     {
                         linePhaserButton.setBackgroundResource(R.drawable.phaserbuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b11001000};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b11001000};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
                         linePhaserButton.setBackgroundResource(R.drawable.phaserbutton);
-//                        byte outBuffer[] = {(byte) 0b11001000};
-//                        sendserial(outBuffer);
                     }
                 }
             }
@@ -1323,12 +1350,12 @@ public class EffectsFragment extends Fragment{
         lineDelayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!lineDelaySwitch.isChecked())
+                if(!lineDelaySwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11001100};
                     sendserial(outBuffer);
                 }
-                else if(lineDelaySwitch.isChecked())
+                else if(lineDelaySwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b11101100};
                     sendserial(outBuffer);
@@ -1408,20 +1435,22 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     lineDelayButton.setBackgroundResource(R.drawable.delaybuttonpressed);
-                    byte outBuffer[] = {(byte) 0b11101100};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b11101100};
+                        sendserial(outBuffer);
+                    }
                 } else {
                     if(lineDelayBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !lineDelaySwitch.isChecked())
                     {
                         lineDelayButton.setBackgroundResource(R.drawable.delaybuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b11001100};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b11001100};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
                         lineDelayButton.setBackgroundResource(R.drawable.delaybutton);
-//                        byte outBuffer[] = {(byte) 0b11001100};
-//                        sendserial(outBuffer);
                     }
                 }
             }
@@ -1572,12 +1601,12 @@ public class EffectsFragment extends Fragment{
         micNoisegateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!micNoisegateSwitch.isChecked())
+                if(!micNoisegateSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01000100};
                     sendserial(outBuffer);
                 }
-                else if(micNoisegateSwitch.isChecked())
+                else if(micNoisegateSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01100100};
                     sendserial(outBuffer);
@@ -1667,21 +1696,23 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micNoisegateButton.setBackgroundResource(R.drawable.noisegatebuttonpressed);
-                    byte outBuffer[] = {(byte) 0b01100100};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b01100100};
+                        sendserial(outBuffer);
+                    }
                 }
                 else {
                     if(micNoisegateBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micNoisegateSwitch.isChecked())
                     {
                         micNoisegateButton.setBackgroundResource(R.drawable.noisegatebuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b01000100};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b01000100};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
                         micNoisegateButton.setBackgroundResource(R.drawable.noisegatebutton);
-//                        byte outBuffer[] = {(byte) 0b01000100};
-//                        sendserial(outBuffer);
                     }
                 }
             }
@@ -1693,12 +1724,12 @@ public class EffectsFragment extends Fragment{
         micAtbButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!micAtbSwitch.isChecked())
+                if(!micAtbSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01000000};
                     sendserial(outBuffer);
                 }
-                else if(micAtbSwitch.isChecked())
+                else if(micAtbSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01100000};
                     sendserial(outBuffer);
@@ -1789,8 +1820,10 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micAtbButton.setBackgroundResource(R.drawable.analog_tb_buttonpressed);
-                    byte outBuffer[] = {(byte) 0b01100000};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b01100000};
+                        sendserial(outBuffer);
+                    }
 
 
                 }
@@ -1798,14 +1831,14 @@ public class EffectsFragment extends Fragment{
                     if(micAtbBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micAtbSwitch.isChecked())
                     {
                         micAtbButton.setBackgroundResource(R.drawable.analog_tb_buttoninbetween);
-                        byte outBuffer[]= {(byte) 0b01000000};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b01000000};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
                         micAtbButton.setBackgroundResource(R.drawable.analog_tb_button);
-//                        byte outBuffer[]= {(byte) 0b01000000};
-//                        sendserial(outBuffer);
                     }
                 }
             }
@@ -1818,12 +1851,12 @@ public class EffectsFragment extends Fragment{
         micRingmodButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!micRingmodSwitch.isChecked())
+                if(!micRingmodSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01001001};
                     sendserial(outBuffer);
                 }
-                else if(micRingmodSwitch.isChecked())
+                else if(micRingmodSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01101001};
                     sendserial(outBuffer);
@@ -1913,15 +1946,19 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micRingmodButton.setBackgroundResource(R.drawable.ringmodbuttonpressed);
-                    byte outBuffer[] = {(byte) 0b01101001};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b01101001};
+                        sendserial(outBuffer);
+                    }
                 }
                 else {
                     if(micRingmodBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micRingmodSwitch.isChecked())
                     {
                         micRingmodButton.setBackgroundResource(R.drawable.ringmodbuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b01001001};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b01001001};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
@@ -1938,12 +1975,12 @@ public class EffectsFragment extends Fragment{
         micAutowahButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!micAutowahSwitch.isChecked())
+                if(!micAutowahSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01001010};
                     sendserial(outBuffer);
                 }
-                else if(micAutowahSwitch.isChecked())
+                else if(micAutowahSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01101010};
                     sendserial(outBuffer);
@@ -2033,21 +2070,23 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micAutowahButton.setBackgroundResource(R.drawable.autowahbuttonpressed);
-                    byte outBuffer[] = {(byte) 0b01101010};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b01101010};
+                        sendserial(outBuffer);
+                    }
                 }
                 else {
                     if(micAutowahBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micAutowahSwitch.isChecked())
                     {
                         micAutowahButton.setBackgroundResource(R.drawable.autowahbuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b01001010};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b01001010};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
                         micAutowahButton.setBackgroundResource(R.drawable.autowahbutton);
-//                        byte outBuffer[] = {(byte) 0b01001010};
-//                        sendserial(outBuffer);
                     }
                 }
             }
@@ -2060,12 +2099,12 @@ public class EffectsFragment extends Fragment{
         micTremoloButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!micTremoloSwitch.isChecked())
+                if(!micTremoloSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01001011};
                     sendserial(outBuffer);
                 }
-                else if(micTremoloSwitch.isChecked())
+                else if(micTremoloSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01101011};
                     sendserial(outBuffer);
@@ -2155,21 +2194,23 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micTremoloButton.setBackgroundResource(R.drawable.tremolobuttonpressed);
-                    byte outBuffer[] = {(byte) 0b01101011};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b01101011};
+                        sendserial(outBuffer);
+                    }
                 }
                 else {
                     if(micTremoloBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micTremoloSwitch.isChecked())
                     {
                         micTremoloButton.setBackgroundResource(R.drawable.tremolobuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b01001011};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b01001011};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
                         micTremoloButton.setBackgroundResource(R.drawable.tremolobutton);
-//                        byte outBuffer[] = {(byte) 0b01001011};
-//                        sendserial(outBuffer);
                     }
                 }
             }
@@ -2182,12 +2223,12 @@ public class EffectsFragment extends Fragment{
         micReverbButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!micReverbSwitch.isChecked())
+                if(!micReverbSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01001101};
                     sendserial(outBuffer);
                 }
-                else if(micReverbSwitch.isChecked())
+                else if(micReverbSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01101101};
                     sendserial(outBuffer);
@@ -2277,21 +2318,23 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micReverbButton.setBackgroundResource(R.drawable.reverbbuttonpressed);
-                    byte outBuffer[] = {(byte) 0b01101101};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b01101101};
+                        sendserial(outBuffer);
+                    }
                 }
                 else {
                     if(micReverbBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micReverbSwitch.isChecked())
                     {
                         micReverbButton.setBackgroundResource(R.drawable.reverbbuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b01001101};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b01001101};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
                         micReverbButton.setBackgroundResource(R.drawable.reverbbutton);
-//                        byte outBuffer[] = {(byte) 0b01001101};
-//                        sendserial(outBuffer);
                     }
                 }
             }
@@ -2307,12 +2350,12 @@ public class EffectsFragment extends Fragment{
             @Override
             public void onClick(View echoView) {
 
-                if(!micChorusSwitch.isChecked())
+                if(!micChorusSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01000110};
                     sendserial(outBuffer);
                 }
-                else if(micChorusSwitch.isChecked())
+                else if(micChorusSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01100110};
                     sendserial(outBuffer);
@@ -2400,15 +2443,19 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micChorusButton.setBackgroundResource(R.drawable.chorusbuttonpressed);
-                    byte outBuffer[] = {(byte) 0b01100110};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b01100110};
+                        sendserial(outBuffer);
+                    }
                 }
                 else {
                     if(micChorusBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micChorusSwitch.isChecked())
                     {
                         micChorusButton.setBackgroundResource(R.drawable.chorusbuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b01000110};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b01000110};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
@@ -2426,12 +2473,12 @@ public class EffectsFragment extends Fragment{
         micCrusherButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!micCrusherSwitch.isChecked())
+                if(!micCrusherSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01000101};
                     sendserial(outBuffer);
                 }
-                else if(micCrusherSwitch.isChecked())
+                else if(micCrusherSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01100101};
                     sendserial(outBuffer);
@@ -2520,21 +2567,23 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micCrusherButton.setBackgroundResource(R.drawable.bitcrusherbuttonpressed);
-                    byte outBuffer[] = {(byte) 0b01100101};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b01100101};
+                        sendserial(outBuffer);
+                    }
                 }
                 else {
                     if(micCrusherBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micCrusherSwitch.isChecked())
                     {
                         micCrusherButton.setBackgroundResource(R.drawable.bitcrusherbuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b01000101};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b01000101};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
                         micCrusherButton.setBackgroundResource(R.drawable.bitcrusherbutton);
-//                        byte outBuffer[] = {(byte) 0b01000101};
-//                        sendserial(outBuffer);
                     }
                 }
             }
@@ -2546,12 +2595,12 @@ public class EffectsFragment extends Fragment{
         micFlangerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!micFlangerSwitch.isChecked())
+                if(!micFlangerSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01000111};
                     sendserial(outBuffer);
                 }
-                else if(micFlangerSwitch.isChecked())
+                else if(micFlangerSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01100111};
                     sendserial(outBuffer);
@@ -2639,21 +2688,23 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micFlangerButton.setBackgroundResource(R.drawable.flangerbuttonpressed);
-                    byte outBuffer[] = {(byte) 0b01100111};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b01100111};
+                        sendserial(outBuffer);
+                    }
                 }
                 else {
                     if(micFlangerBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micFlangerSwitch.isChecked())
                     {
                         micFlangerButton.setBackgroundResource(R.drawable.flangerbuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b01000111};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b01000111};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
                         micFlangerButton.setBackgroundResource(R.drawable.flangerbutton);
-//                        byte outBuffer[] = {(byte) 0b01000111};
-//                        sendserial(outBuffer);
                     }
                 }
             }
@@ -2665,12 +2716,12 @@ public class EffectsFragment extends Fragment{
         micPhaserButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!micPhaserSwitch.isChecked())
+                if(!micPhaserSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01001000};
                     sendserial(outBuffer);
                 }
-                else if(micPhaserSwitch.isChecked())
+                else if(micPhaserSwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01101000};
                     sendserial(outBuffer);
@@ -2760,15 +2811,19 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micPhaserButton.setBackgroundResource(R.drawable.phaserbuttonpressed);
-                    byte outBuffer[] = {(byte) 0b01101000};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b01101000};
+                        sendserial(outBuffer);
+                    }
                 }
                 else {
                     if(micPhaserBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micPhaserSwitch.isChecked())
                     {
                         micPhaserButton.setBackgroundResource(R.drawable.phaserbuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b01001000};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b01001000};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
@@ -2784,12 +2839,12 @@ public class EffectsFragment extends Fragment{
         micDelayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View echoView) {
-                if(!micDelaySwitch.isChecked())
+                if(!micDelaySwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01001100};
                     sendserial(outBuffer);
                 }
-                else if(micDelaySwitch.isChecked())
+                else if(micDelaySwitch.isChecked() && port != null)
                 {
                     byte outBuffer[] = {(byte) 0b01101100};
                     sendserial(outBuffer);
@@ -2879,21 +2934,23 @@ public class EffectsFragment extends Fragment{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     micDelayButton.setBackgroundResource(R.drawable.delaybuttonpressed);
-                    byte outBuffer[] = {(byte) 0b01101100};
-                    sendserial(outBuffer);
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b01101100};
+                        sendserial(outBuffer);
+                    }
                 }
                 else {
                     if(micDelayBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED && !micDelaySwitch.isChecked())
                     {
                         micDelayButton.setBackgroundResource(R.drawable.delaybuttoninbetween);
-                        byte outBuffer[] = {(byte) 0b01001100};
-                        sendserial(outBuffer);
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b01001100};
+                            sendserial(outBuffer);
+                        }
                     }
                     else
                     {
                         micDelayButton.setBackgroundResource(R.drawable.delaybutton);
-//                        byte outBuffer[] = {(byte) 0b01001100};
-//                        sendserial(outBuffer);
                     }
                 }
             }
