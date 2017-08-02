@@ -635,6 +635,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Microphone Effects"
+                android:textColor="#ffffffff"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="31dp"
                 android:layout_marginRight="191dp"
@@ -1250,10 +1251,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Instrument Effects"
+                android:textColor="#ffffffff"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="184dp"
-                tools:layout_editor_absoluteY="43dp"
-                tools:layout_editor_absoluteX="193dp" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintVertical_bias="0.063"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_bias="0.945" />
 
 
             <!--app:layout_constraintLeft_toLeftOf="@+id/line_flanger_button_button"-->

@@ -51,6 +51,14 @@ public class MixerFragment extends Fragment {
         myText = (TextView) view.findViewById(R.id.debugTextView);
         serialInit();
         serialSliderInit();//initialize button
+        Mixer();
+
+        return view;
+
+
+    }
+
+    public void Mixer() {
 
         final ImageButton mutebutton1 = (ImageButton) view.findViewById(R.id.sliderOneMute);
         mutebutton1.setOnClickListener(new View.OnClickListener() {
@@ -58,8 +66,7 @@ public class MixerFragment extends Fragment {
             public void onClick(View view) {
                 if (isPlay) {
                     mutebutton1.setBackgroundResource(R.drawable.mutebuttonpressed2);
-                }
-                else {
+                } else {
                     mutebutton1.setBackgroundResource(R.drawable.mutebutton2);
                 }
 
@@ -73,8 +80,7 @@ public class MixerFragment extends Fragment {
             public void onClick(View view) {
                 if (isPlay2) {
                     mutebutton2.setBackgroundResource(R.drawable.mutebuttonpressed2);
-                }
-                else {
+                } else {
                     mutebutton2.setBackgroundResource(R.drawable.mutebutton2);
                 }
                 isPlay2 = !isPlay2;
@@ -89,8 +95,7 @@ public class MixerFragment extends Fragment {
 
                 if (isPlay3) {
                     mutebutton3.setBackgroundResource(R.drawable.mutebuttonpressed2);
-                }
-                else {
+                } else {
                     mutebutton3.setBackgroundResource(R.drawable.mutebutton2);
                 }
                 isPlay3 = !isPlay3;
@@ -105,8 +110,7 @@ public class MixerFragment extends Fragment {
 
                 if (isPlay4) {
                     mutebutton4.setBackgroundResource(R.drawable.mutebuttonpressed2);
-                }
-                else {
+                } else {
                     mutebutton4.setBackgroundResource(R.drawable.mutebutton2);
                 }
 
@@ -122,8 +126,7 @@ public class MixerFragment extends Fragment {
 
                 if (isPlay5) {
                     mutebutton5.setBackgroundResource(R.drawable.mutebuttonpressed2);
-                }
-                else {
+                } else {
                     mutebutton5.setBackgroundResource(R.drawable.mutebutton2);
                 }
 
@@ -138,8 +141,7 @@ public class MixerFragment extends Fragment {
 
                 if (isPlay6) {
                     mutebutton6.setBackgroundResource(R.drawable.mutebuttonpressed2);
-                }
-                else {
+                } else {
                     mutebutton6.setBackgroundResource(R.drawable.mutebutton2);
                 }
 
@@ -154,8 +156,7 @@ public class MixerFragment extends Fragment {
 
                 if (isPlay7) {
                     solobutton1.setBackgroundResource(R.drawable.solobuttonpressed2);
-                }
-                else {
+                } else {
                     solobutton1.setBackgroundResource(R.drawable.solobutton2);
                 }
 
@@ -170,8 +171,7 @@ public class MixerFragment extends Fragment {
 
                 if (isPlay8) {
                     solobutton2.setBackgroundResource(R.drawable.solobuttonpressed2);
-                }
-                else {
+                } else {
                     solobutton2.setBackgroundResource(R.drawable.solobutton2);
                 }
 
@@ -186,8 +186,7 @@ public class MixerFragment extends Fragment {
 
                 if (isPlay9) {
                     solobutton3.setBackgroundResource(R.drawable.solobuttonpressed2);
-                }
-                else {
+                } else {
                     solobutton3.setBackgroundResource(R.drawable.solobutton2);
                 }
 
@@ -202,8 +201,7 @@ public class MixerFragment extends Fragment {
 
                 if (isPlay10) {
                     solobutton4.setBackgroundResource(R.drawable.solobuttonpressed2);
-                }
-                else {
+                } else {
                     solobutton4.setBackgroundResource(R.drawable.solobutton2);
                 }
 
@@ -219,8 +217,7 @@ public class MixerFragment extends Fragment {
 
                 if (isPlay11) {
                     solobutton5.setBackgroundResource(R.drawable.solobuttonpressed2);
-                }
-                else {
+                } else {
                     solobutton5.setBackgroundResource(R.drawable.solobutton2);
                 }
 
@@ -236,8 +233,7 @@ public class MixerFragment extends Fragment {
 
                 if (isPlay12) {
                     solobutton6.setBackgroundResource(R.drawable.solobuttonpressed2);
-                }
-                else {
+                } else {
                     solobutton6.setBackgroundResource(R.drawable.solobutton2);
                 }
 
@@ -245,12 +241,8 @@ public class MixerFragment extends Fragment {
             }
         });
 
-
-
-        return view;
-
-
     }
+
 
     /////////////////////////////////////////////serial/////////////////////////////////////////////
     //Sends a serial message
