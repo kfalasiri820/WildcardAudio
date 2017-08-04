@@ -116,6 +116,11 @@ public class EffectsFragment extends Fragment{
         final ToggleButton lineNoisegateSwitch = (ToggleButton) view.findViewById(R.id.LineNoisegateSwitch);
         final ToggleButton lineAtbSwitch = (ToggleButton) view.findViewById(R.id.LineAtbSwitch);
         final ToggleButton lineRingmodSwitch = (ToggleButton) view.findViewById(R.id.LineRingmodSwitch);
+        final ToggleButton hardDistortion = (ToggleButton) view.findViewById(R.id.hardDistortion);
+        final ToggleButton softDistortion = (ToggleButton) view.findViewById(R.id.softDistortion);
+        final ToggleButton highPass = (ToggleButton) view.findViewById(R.id.highPass);
+        final ToggleButton lowPass = (ToggleButton) view.findViewById(R.id.lowPass);
+        final ToggleButton digitalFuzz = (ToggleButton) view.findViewById(R.id.dfuzz);
 
 
         View lineTremoloView = view.findViewById(R.id.lineTremoloBottom);
@@ -341,6 +346,45 @@ public class EffectsFragment extends Fragment{
             }
         });
 
+        highPass.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b11101111};
+                        sendserial(outBuffer);
+                    }
+                    else
+                    {
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b11001111};
+                            sendserial(outBuffer);
+                        }
+                    }
+                }
+            }
+    });
+
+
+        lowPass.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b11101110};
+                        sendserial(outBuffer);
+                    }
+                    else
+                    {
+                        if(port != null) {
+                            byte outBuffer[] = {(byte) 0b11001110};
+                            sendserial(outBuffer);
+                        }
+                    }
+                }
+            }
+        });
+
+
+
         View lineRingmodView = view.findViewById(R.id.lineRingmodBottom);
         lineRingmodBehavior = BottomSheetBehavior.from(lineRingmodView);
         lineRingmodBehavior.setPeekHeight(0);
@@ -559,6 +603,41 @@ public class EffectsFragment extends Fragment{
                 }
             }
         });
+
+        hardDistortion.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b11100010};
+                        sendserial(outBuffer);
+                    }
+                } else {
+                    if (port != null) {
+                        byte outBuffer[] = {(byte) 0b11000010};
+                        sendserial(outBuffer);
+                    }
+                }
+            }
+        });
+
+
+
+        softDistortion.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    if(port != null) {
+                        byte outBuffer[] = {(byte) 0b11100011};
+                        sendserial(outBuffer);
+                    }
+                } else {
+                    if (port != null) {
+                        byte outBuffer[] = {(byte) 0b11000011};
+                        sendserial(outBuffer);
+                    }
+                }
+            }
+        });
+
 
 
         View lineNoisegateView = view.findViewById(R.id.lineNoisegateBottom);
@@ -1232,6 +1311,25 @@ public class EffectsFragment extends Fragment{
                 }
             }
         });
+
+
+//        digitalFuzz.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if (isChecked) {
+//                    if(port != null) {
+//                        byte outBuffer[] = {(byte) 0b11101111};
+//                        sendserial(outBuffer);
+//                    }
+//                    else
+//                    {
+//                        if(port != null) {
+//                            byte outBuffer[] = {(byte) 0b11001111};
+//                            sendserial(outBuffer);
+//                        }
+//                    }
+//                }
+//            }
+//        });
 
         View linePhaserView = view.findViewById(R.id.linePhaserBottom);
         linePhaserBehavior = BottomSheetBehavior.from(linePhaserView);

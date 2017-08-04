@@ -60,6 +60,20 @@ public class MixerFragment extends Fragment {
 
     public void Mixer() {
 
+        final Button UpdateButton = (Button) view.findViewById(R.id.update);
+        UpdateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(port != null)
+                {
+                    byte outBuffer[] = {(byte) 0xb0FF};
+                    sendserial(outBuffer);
+
+                }
+            }
+
+        });
+
         final ImageButton mutebutton1 = (ImageButton) view.findViewById(R.id.sliderOneMute);
         mutebutton1.setOnClickListener(new View.OnClickListener() {
             @Override

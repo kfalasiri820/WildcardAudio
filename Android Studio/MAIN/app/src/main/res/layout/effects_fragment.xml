@@ -107,6 +107,31 @@
                 tools:layout_editor_absoluteY="8dp"
                 tools:layout_editor_absoluteX="8dp" />
 
+            <TextView
+                android:id="@+id/miccrusher1"
+                app:layout_constraintTop_toTopOf="@+id/micCrusherBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/micCrusherBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/micCrusherBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Samples Dropped"
+                android:layout_marginTop="107dp"
+                app:layout_constraintVertical_bias="0.0"
+                android:layout_marginLeft="32dp" />
+
+            <TextView
+                android:id="@+id/miccrusher2"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/micCrusherBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/micCrusherBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/micCrusherBottom"
+                android:layout_height="wrap_content"
+                android:text="Bits Crushed"
+                android:layout_marginTop="107dp"
+                android:layout_marginLeft="199dp"
+                app:layout_constraintVertical_bias="0.0" />
+
+
             <ToggleButton
                 android:id="@+id/MicCrusherSwitch"
                 android:layout_width="wrap_content"
@@ -175,6 +200,44 @@
                 tools:layout_editor_absoluteY="8dp"
                 tools:layout_editor_absoluteX="8dp" />
 
+            <TextView
+                android:id="@+id/micphaser1"
+                app:layout_constraintTop_toTopOf="@+id/micPhaserBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/micPhaserBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/micPhaserBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate"
+                android:layout_marginTop="107dp"
+                app:layout_constraintVertical_bias="0.0"
+                android:layout_marginLeft="32dp" />
+
+            <TextView
+                android:id="@+id/micphaser2"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/micPhaserBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/micPhaserBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/micPhaserBottom"
+                android:layout_height="wrap_content"
+                android:text="Tone"
+                android:layout_marginTop="107dp"
+                android:layout_marginLeft="199dp"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/micphaser3"
+                app:layout_constraintTop_toTopOf="@+id/micPhaserBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/micPhaserBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/micPhaserBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resonance"
+                android:layout_marginTop="107dp"
+                android:layout_marginLeft="409dp"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+
             <ToggleButton
                 android:id="@+id/MicPhaserSwitch"
                 android:layout_width="wrap_content"
@@ -208,6 +271,8 @@
                 tools:layout_editor_absoluteY="8dp"
                 tools:layout_editor_absoluteX="8dp"
                 android:id="@+id/textView2" />
+
+
 
             <ToggleButton
                 android:id="@+id/MicDelaySwitch"
@@ -243,6 +308,42 @@
                 tools:ignore="HardcodedText"
                 tools:layout_editor_absoluteY="8dp"
                 tools:layout_editor_absoluteX="8dp" />
+
+            <TextView
+                android:id="@+id/micnoisegate1"
+                app:layout_constraintTop_toTopOf="@+id/micNoisegateBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/micNoisegateBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/micNoisegateBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Release time A"
+                android:layout_marginTop="107dp"
+                app:layout_constraintVertical_bias="0.0"
+                android:layout_marginLeft="32dp" />
+
+            <TextView
+                android:id="@+id/micnoisegate2"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/micNoisegateBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/micNoisegateBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/micNoisegateBottom"
+                android:layout_height="wrap_content"
+                android:text="Release time B"
+                android:layout_marginTop="107dp"
+                android:layout_marginLeft="199dp"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/micnoisegate3"
+                app:layout_constraintTop_toTopOf="@+id/micNoisegateBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/micNoisegateBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/micNoisegateBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Threshold"
+                android:layout_marginTop="107dp"
+                android:layout_marginLeft="409dp"
+                app:layout_constraintVertical_bias="0.0" />
 
             <ToggleButton
                 android:id="@+id/MicNoisegateSwitch"
@@ -313,6 +414,42 @@
                 tools:layout_editor_absoluteY="8dp"
                 tools:layout_editor_absoluteX="8dp" />
 
+            <TextView
+                android:id="@+id/micringmod1"
+                app:layout_constraintTop_toTopOf="@+id/micRingmodBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/micRingmodBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/micRingmodBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate"
+                android:layout_marginTop="107dp"
+                app:layout_constraintVertical_bias="0.0"
+                android:layout_marginLeft="32dp" />
+
+            <TextView
+                android:id="@+id/micringmod2"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/micRingmodBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/micRingmodBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/micRingmodBottom"
+                android:layout_height="wrap_content"
+                android:text="Center Frequency"
+                android:layout_marginTop="107dp"
+                android:layout_marginLeft="199dp"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/micringmod3"
+                app:layout_constraintTop_toTopOf="@+id/micRingmodBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/micRingmodBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/micRingmodBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Range"
+                android:layout_marginTop="107dp"
+                android:layout_marginLeft="409dp"
+                app:layout_constraintVertical_bias="0.0" />
+
             <ToggleButton
                 android:id="@+id/MicRingmodSwitch"
                 android:layout_width="wrap_content"
@@ -347,6 +484,31 @@
                 tools:ignore="HardcodedText"
                 tools:layout_editor_absoluteY="8dp"
                 tools:layout_editor_absoluteX="8dp" />
+
+            <TextView
+                android:id="@+id/mictremolo1"
+                app:layout_constraintTop_toTopOf="@+id/micTremoloBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/micTremoloBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/micTremoloBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate"
+                android:layout_marginTop="107dp"
+                app:layout_constraintVertical_bias="0.0"
+                android:layout_marginLeft="32dp" />
+
+            <TextView
+                android:id="@+id/mictremolo2"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/micTremoloBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/micTremoloBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/micTremoloBottom"
+                android:layout_height="wrap_content"
+                android:text="Depth"
+                android:layout_marginTop="107dp"
+                android:layout_marginLeft="199dp"
+                app:layout_constraintVertical_bias="0.0" />
+
 
             <ToggleButton
                 android:id="@+id/MicTremoloSwitch"
@@ -417,6 +579,42 @@
                 tools:ignore="HardcodedText"
                 tools:layout_editor_absoluteY="8dp"
                 tools:layout_editor_absoluteX="8dp" />
+
+            <TextView
+                android:id="@+id/micautowah1"
+                app:layout_constraintTop_toTopOf="@+id/micAutowahBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/micAutowahBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/micAutowahBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate"
+                android:layout_marginTop="107dp"
+                app:layout_constraintVertical_bias="0.0"
+                android:layout_marginLeft="32dp" />
+
+            <TextView
+                android:id="@+id/micautowah2"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/micAutowahBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/micAutowahBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/micAutowahBottom"
+                android:layout_height="wrap_content"
+                android:text="Center Frequency"
+                android:layout_marginTop="107dp"
+                android:layout_marginLeft="199dp"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/micautowah3"
+                app:layout_constraintTop_toTopOf="@+id/micAutowahBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/micAutowahBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/micAutowahBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Q"
+                android:layout_marginTop="107dp"
+                android:layout_marginLeft="409dp"
+                app:layout_constraintVertical_bias="0.0" />
 
             <ToggleButton
                 android:id="@+id/MicAutowahSwitch"
@@ -751,6 +949,49 @@
                 tools:layout_editor_absoluteY="8dp"
                 tools:layout_editor_absoluteX="11272dp" />
 
+            <TextView
+                android:id="@+id/linecrusher1"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineCrusherBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineCrusherBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineCrusherBottom"
+                android:layout_height="wrap_content"
+                android:text="Rate"
+                android:layout_marginLeft="32dp"
+                app:layout_constraintVertical_bias="0.812" />
+
+            <TextView
+                android:id="@+id/linecrusher2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineCrusherBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineCrusherBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineCrusherBottom"
+                android:text="Tone"
+                android:layout_marginLeft="239dp"
+                app:layout_constraintVertical_bias="0.812" />
+
+            <ToggleButton
+                android:id="@+id/dfuzz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineCrusherBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineCrusherBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineCrusherBottom"
+                android:text="ToggleButton"
+                android:layout_marginLeft="397dp" />
+
+            <TextView
+                android:id="@+id/dfuzztext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineCrusherBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineCrusherBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineCrusherBottom"
+                android:text="Digital fuzz"
+                android:layout_marginLeft="405dp"
+                app:layout_constraintVertical_bias="0.255" />
+
             <ToggleButton
                 android:id="@+id/LineCrusherSwitch"
                 android:layout_width="wrap_content"
@@ -816,6 +1057,39 @@
                 tools:ignore="HardcodedText"
                 tools:layout_editor_absoluteY="8dp"
                 tools:layout_editor_absoluteX="11272dp" />
+
+            <TextView
+                android:id="@+id/linephaser1"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/linePhaserBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/linePhaserBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/linePhaserBottom"
+                android:layout_height="wrap_content"
+                android:text="Rate"
+                android:layout_marginLeft="32dp"
+                app:layout_constraintVertical_bias="0.812" />
+
+            <TextView
+                android:id="@+id/linephaser2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/linePhaserBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/linePhaserBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/linePhaserBottom"
+                android:text="Tone"
+                android:layout_marginLeft="239dp"
+                app:layout_constraintVertical_bias="0.812" />
+
+            <TextView
+                android:id="@+id/linephaser3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/linePhaserBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/linePhaserBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/linePhaserBottom"
+                android:text="Resonance"
+                android:layout_marginLeft="414dp"
+                app:layout_constraintVertical_bias="0.812" />
 
             <ToggleButton
                 android:id="@+id/LinePhaserSwitch"
@@ -884,6 +1158,30 @@
                 tools:layout_editor_absoluteY="8dp"
                 tools:layout_editor_absoluteX="11272dp" />
 
+
+            <TextView
+                android:id="@+id/linetremolo1"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineTremoloBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineTremoloBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineTremoloBottom"
+                android:layout_height="wrap_content"
+                android:text="Rate"
+                android:layout_marginLeft="32dp"
+                app:layout_constraintVertical_bias="0.812" />
+
+            <TextView
+                android:id="@+id/linetremolo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineTremoloBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineTremoloBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineTremoloBottom"
+                android:text="Depth"
+                android:layout_marginLeft="237dp"
+                app:layout_constraintVertical_bias="0.812" />
+
+
             <ToggleButton
                 android:id="@+id/LineTremoloSwitch"
                 android:layout_width="wrap_content"
@@ -912,11 +1210,54 @@
                 android:layout_width="496dp"
                 android:layout_height="134dp"
                 android:padding="16dp"
-                android:text="line Distortion"
+                android:text="Line Distortion"
                 android:textSize="16sp"
                 tools:ignore="HardcodedText"
                 tools:layout_editor_absoluteY="8dp"
                 tools:layout_editor_absoluteX="11272dp" />
+
+            <ToggleButton
+                android:id="@+id/hardDistortion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineDistortionBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineDistortionBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineDistortionBottom"
+                android:text="ToggleButton"
+                android:layout_marginLeft="26dp" />
+
+            <ToggleButton
+                android:id="@+id/softDistortion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineDistortionBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineDistortionBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineDistortionBottom"
+                android:text="ToggleButton"
+                android:layout_marginLeft="397dp" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineDistortionBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineDistortionBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineDistortionBottom"
+                android:text="Hard Distortion"
+                android:layout_marginLeft="26dp"
+                app:layout_constraintVertical_bias="0.255" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineDistortionBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineDistortionBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineDistortionBottom"
+                android:text="Soft Distortion"
+                android:layout_marginLeft="400dp"
+                app:layout_constraintVertical_bias="0.255" />
+
 
             <ToggleButton
                 android:id="@+id/LineDistortionSwitch"
@@ -952,6 +1293,39 @@
                 tools:layout_editor_absoluteY="8dp"
                 tools:layout_editor_absoluteX="11272dp" />
 
+            <TextView
+                android:id="@+id/lineautowah1"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineAutowahBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineAutowahBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineAutowahBottom"
+                android:layout_height="wrap_content"
+                android:text="Rate"
+                android:layout_marginLeft="32dp"
+                app:layout_constraintVertical_bias="0.812" />
+
+            <TextView
+                android:id="@+id/lineautowah2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineAutowahBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineAutowahBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineAutowahBottom"
+                android:text="Center Frequency"
+                android:layout_marginLeft="199dp"
+                app:layout_constraintVertical_bias="0.812" />
+
+            <TextView
+                android:id="@+id/lineautowah3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineAutowahBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineAutowahBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineAutowahBottom"
+                android:text="Q"
+                android:layout_marginLeft="443dp"
+                app:layout_constraintVertical_bias="0.812" />
+
             <ToggleButton
                 android:id="@+id/LineAutowahSwitch"
                 android:layout_width="wrap_content"
@@ -986,6 +1360,39 @@
                 tools:ignore="HardcodedText"
                 tools:layout_editor_absoluteY="8dp"
                 tools:layout_editor_absoluteX="11272dp" />
+
+            <TextView
+                android:id="@+id/linenoisegate1"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineNoisegateBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineNoisegateBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineNoisegateBottom"
+                android:layout_height="wrap_content"
+                android:text="Release Time A"
+                android:layout_marginLeft="32dp"
+                app:layout_constraintVertical_bias="0.812" />
+
+            <TextView
+                android:id="@+id/linenoisegate2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineNoisegateBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineNoisegateBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineNoisegateBottom"
+                android:text="Release Time B"
+                android:layout_marginLeft="206dp"
+                app:layout_constraintVertical_bias="0.812" />
+
+            <TextView
+                android:id="@+id/linenoisegate3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineNoisegateBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineNoisegateBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineNoisegateBottom"
+                android:text="Threshold"
+                android:layout_marginLeft="418dp"
+                app:layout_constraintVertical_bias="0.812" />
 
             <ToggleButton
                 android:id="@+id/LineNoisegateSwitch"
@@ -1032,6 +1439,49 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent" />
+
+
+            <ToggleButton
+                android:id="@+id/highPass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineAtbBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineAtbBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineAtbBottom"
+                android:text="ToggleButton"
+                android:layout_marginLeft="26dp" />
+
+            <ToggleButton
+                android:id="@+id/lowPass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineAtbBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineAtbBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineAtbBottom"
+                android:text="ToggleButton"
+                android:layout_marginLeft="397dp" />
+
+            <TextView
+                android:id="@+id/hardPassText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineAtbBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineAtbBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineAtbBottom"
+                android:text="High Pass"
+                android:layout_marginLeft="36dp"
+                app:layout_constraintVertical_bias="0.255" />
+
+            <TextView
+                android:id="@+id/softPassText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineAtbBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineAtbBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineAtbBottom"
+                android:text="Low Pass"
+                android:layout_marginLeft="411dp"
+                app:layout_constraintVertical_bias="0.255" />
         </android.support.constraint.ConstraintLayout>
 
 
@@ -1055,6 +1505,39 @@
                 tools:ignore="HardcodedText"
                 tools:layout_editor_absoluteY="8dp"
                 tools:layout_editor_absoluteX="11272dp" />
+
+            <TextView
+                android:id="@+id/lineringmod1"
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineRingmodBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineRingmodBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineRingmodBottom"
+                android:layout_height="wrap_content"
+                android:text="Rate"
+                android:layout_marginLeft="32dp"
+                app:layout_constraintVertical_bias="0.812" />
+
+            <TextView
+                android:id="@+id/lineringmod2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineRingmodBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineRingmodBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineRingmodBottom"
+                android:text="Center Frequency"
+                android:layout_marginLeft="199dp"
+                app:layout_constraintVertical_bias="0.812" />
+
+            <TextView
+                android:id="@+id/lineringmod3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/lineRingmodBottom"
+                app:layout_constraintBottom_toBottomOf="@+id/lineRingmodBottom"
+                app:layout_constraintLeft_toLeftOf="@+id/lineRingmodBottom"
+                android:text="Range"
+                android:layout_marginLeft="443dp"
+                app:layout_constraintVertical_bias="0.812" />
 
             <ToggleButton
                 android:id="@+id/LineRingmodSwitch"
@@ -1264,6 +1747,7 @@
                 android:layout_marginRight="8dp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintHorizontal_bias="0.945" />
+
 
 
             <!--app:layout_constraintLeft_toLeftOf="@+id/line_flanger_button_button"-->
