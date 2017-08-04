@@ -22,6 +22,8 @@ __interrupt void inCharISR(){
 
 
 	/*************************UPDATING EFFECTS PARAMETERS***********************/
+	//NOT YET TESTED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 	//Read the buffer
 	char input = (char) ScibRegs.SCIRXBUF.bit.RXDT;
 	Uint16 effectID = (Uint16)(input & 0b00011111);

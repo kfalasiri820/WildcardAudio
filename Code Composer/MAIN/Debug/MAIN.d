@@ -40,12 +40,14 @@ MAIN.obj: ../Effects/tremolo.h
 MAIN.obj: ../Effects/phaser.h
 MAIN.obj: ../Effects/delay.h
 MAIN.obj: ../Effects/autoWah.h
-MAIN.obj: ../Peripherals/USARTinit.h
+MAIN.obj: ../Effects/clipDetector.h
 MAIN.obj: ../Peripherals/audioCntrl.h
 MAIN.obj: ../Peripherals/Sram.h
 MAIN.obj: ../Peripherals/digitalToAnalogConverter.h
 MAIN.obj: ../Peripherals/timer.h
 MAIN.obj: ../Peripherals/analogToDigitalConverter.h
+MAIN.obj: ../Peripherals/USART.h
+MAIN.obj: ../Peripherals/softknobs.h
 
 ../MAIN.c: 
 /Applications/ti/c2000/C2000Ware_1_00_00_00/device_support/f2833x/common/include/DSP28x_Project.h: 
@@ -87,9 +89,11 @@ MAIN.obj: ../Peripherals/analogToDigitalConverter.h
 ../Effects/phaser.h: 
 ../Effects/delay.h: 
 ../Effects/autoWah.h: 
-../Peripherals/USARTinit.h: 
+../Effects/clipDetector.h: 
 ../Peripherals/audioCntrl.h: 
 ../Peripherals/Sram.h: 
 ../Peripherals/digitalToAnalogConverter.h: 
 ../Peripherals/timer.h: 
 ../Peripherals/analogToDigitalConverter.h: 
+../Peripherals/USART.h: 
+../Peripherals/softknobs.h: 

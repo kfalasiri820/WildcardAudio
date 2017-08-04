@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Effects/autoWah.c \
+../Effects/clipDetector.c \
 ../Effects/delay.c \
 ../Effects/noiseGate.c \
 ../Effects/phaser.c \
@@ -14,6 +15,7 @@ C_SRCS += \
 
 C_DEPS += \
 ./Effects/autoWah.d \
+./Effects/clipDetector.d \
 ./Effects/delay.d \
 ./Effects/noiseGate.d \
 ./Effects/phaser.d \
@@ -23,6 +25,7 @@ C_DEPS += \
 
 OBJS += \
 ./Effects/autoWah.obj \
+./Effects/clipDetector.obj \
 ./Effects/delay.obj \
 ./Effects/noiseGate.obj \
 ./Effects/phaser.obj \
@@ -32,6 +35,7 @@ OBJS += \
 
 OBJS__QUOTED += \
 "Effects/autoWah.obj" \
+"Effects/clipDetector.obj" \
 "Effects/delay.obj" \
 "Effects/noiseGate.obj" \
 "Effects/phaser.obj" \
@@ -41,6 +45,7 @@ OBJS__QUOTED += \
 
 C_DEPS__QUOTED += \
 "Effects/autoWah.d" \
+"Effects/clipDetector.d" \
 "Effects/delay.d" \
 "Effects/noiseGate.d" \
 "Effects/phaser.d" \
@@ -50,6 +55,7 @@ C_DEPS__QUOTED += \
 
 C_SRCS__QUOTED += \
 "../Effects/autoWah.c" \
+"../Effects/clipDetector.c" \
 "../Effects/delay.c" \
 "../Effects/noiseGate.c" \
 "../Effects/phaser.c" \

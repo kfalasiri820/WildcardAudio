@@ -15,13 +15,15 @@
 #include "Effects/phaser.h"
 #include "Effects/delay.h"
 #include "Effects/autoWah.h"
-#include "Peripherals/USARTinit.h"
+#include "Effects/clipDetector.h"
 #include "Peripherals/audioCntrl.h"
 #include "Peripherals/Sram.h"
 #include "Peripherals/digitalToAnalogConverter.h"
 #include "Peripherals/timer.h"
 #include "Peripherals/analogToDigitalConverter.h"
 #include "Peripherals/digitalToAnalogConverter.h"
+#include "Peripherals/USART.h"
+#include "Peripherals/softknobs.h"
 
 
 /////////////////////////////////////////////////////////PRAGMAS/////////////////////////////////////////////////////////

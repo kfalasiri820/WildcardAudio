@@ -1,5 +1,5 @@
-#ifndef USARTINIT_H_
-#define USARTINIT_H_
+#ifndef USART_H_
+#define USART_H_
 
 /*** p r o t o t y p e s ***/
 
