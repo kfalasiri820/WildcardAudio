@@ -63,7 +63,40 @@ Uint16 recording2 = 0;          //1 if you are recording1, 0 if you are not
 /********************************EFFECT GLOBALS********************************/
 Uint32 effects[NUMBER_OF_EFFECTS] = {0};
 // * Each index is a different effect.
-char analogTBIndex = 0;
+char analogTBIndexMic = 0,
+		analogDistMic = 1,
+		analogDistHardMic = 2,
+		andlogDistSoftMic = 3,
+		noiseGateIndexMic = 4,
+		bitCrusherIndexMic = 5,
+		chorusIndexMic = 6,
+		flangerIndexMic = 7,
+		phaserIndexMic = 8,
+		ringModIndexMic = 9,
+		autoWahIndexMic = 10,
+		tremoloIndexMic = 11,
+		delayIndexMic = 12,
+		reverbIndexMic = 13,
+		lowpassIndexMic = 14,
+		highpassIndexMic = 15,
+		analogTBIndexInstr = 16,
+		analogDistInstr = 17,
+		analogDistHardInstr= 18,
+		andlogDistSoftInstr = 19,
+		noiseGateIndexInstr = 20,
+		bitCrusherIndexInstr = 21,
+		chorusIndexInstr = 22,
+		flangerIndexInstr = 23,
+		phaserIndexInstr = 24,
+		ringModIndexInstr = 25,
+		autoWahIndexInstr = 26,
+		tremoloIndexInstr = 27,
+		delayIndexInstr = 28,
+		reverbIndexInstr = 29,
+		lowpassIndexInstr = 30,
+		highpassIndexInstr = 31,
+		volumeIndex = 32,
+		panIndex = 33;
  /*
  * Each element is 32 bits describing each effect.
  * 31 on/off
